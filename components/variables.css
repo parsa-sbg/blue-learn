@@ -1,0 +1,10 @@
+:root{
+    --primary-color : #012069;
+    --app-bg-color : #ebebeb ;
+    --section-color: #fff;
+    --text-color: #000;
+}
+
+:root.dark{
+
+}

@@ -1,0 +1,35 @@
+@import "../components/reset.css";
+@import "../components/variables.css";
+@import "../components/fonts.css";
+@import "../vendor/Bootstrap/bootstrap.min.css";
+
+:root{
+    font-size: 10px;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    user-select: none;
+}
+
+body{
+    font-size: inherit;
+    background-color: var(--app-bg-color);
+}
+
+*,
+*::before,
+*::after {
+    outline: none;
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none !important;
+    color: var(--text-color);
+}
+
+a:hover{
+    color: var(primary-color);
+}
