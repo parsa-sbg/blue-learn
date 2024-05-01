@@ -11,6 +11,7 @@
     align-items: center;
     flex-wrap: wrap;
     margin-top: 6rem;
+    margin-bottom: 2rem;
 }
 .courses-section__title-wrapper{
 
@@ -133,3 +134,36 @@
 }
 
 /* end last courses */
+
+/* start our help */
+
+.ourhelp{
+
+}
+.ourhelp__box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--section-color);
+    padding: 1.5rem;
+    border-radius: 3rem;
+    margin: 0.75rem auto;
+}
+.ourhelp__icon{
+    margin-left: 2rem;
+    flex-basis: 18%;
+    max-width: 6rem;
+}
+.ourhelp__content{
+
+}
+.ourhelp__title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.ourhelp__desc{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+/* end our help */

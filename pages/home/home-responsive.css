@@ -2,13 +2,13 @@
     .container {
         width: 1250px;
     }
+
 }
 
 @media screen and (max-width: 1350px) {
     .home__image{
         width: 110%;
     }
-
 }
 @media screen and (max-width: 1200px) {
     .home__title{
@@ -19,6 +19,9 @@
     }
     .home__image{
         width: 118%;
+    }
+    .ourhelp__icon{
+        flex-basis: 25%;
     }
 }
 
@@ -36,6 +39,14 @@
         margin-left: 0rem;
         text-align: center;
         margin-top: 5rem;
+    }
+    .ourhelp__box{
+        flex-direction: column;
+        text-align: center;
+    }
+    .ourhelp__icon{
+        margin-bottom: 3rem;
+        margin-left: 0;
     }
 }
 
