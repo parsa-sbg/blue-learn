@@ -6,3 +6,7 @@
     font-family: 'IRANSans bold';
     src: url(../fonts/IRANSans/IRANSans_Bold.ttf);
 }
+@font-face {
+    font-family: 'IRANSans black';
+    src: url(../fonts/IRANSans/IRANSans_Black.ttf);
+}

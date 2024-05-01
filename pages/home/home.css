@@ -1,6 +1,67 @@
 @import "../../components/header/header.css";
 @import "../../components/header/header-responsive.css";
+@import "../../components/default.css";
 
+
+/* start helper classes */
+
+.courses-section__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+}
+.courses-section__title-wrapper{
+
+}
+.courses-section__title{
+    font-size: 2.8rem;
+    font-family: "IRANSans bold";
+    position: relative;
+    padding-right: 3rem;
+}
+.courses-section__title::before{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: .5rem;
+
+}
+.blue-bg.courses-section__title::before{
+    background-color: var(--primary-color);
+}
+.courses-section__desc{
+    font-size: 2rem;
+    color: #827b7b;
+}
+.courses-section__see-all{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 23rem;
+    height: 5rem;
+    border-radius: 3rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: all 200ms ease;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+.courses-section__see-all:hover{
+    color: #fff;
+    background-color: var(--primary-color);
+}
+.courses-section__see-all-icon{
+    
+}
+
+/* end helper classes */
 
 .main{
     padding-top: 8.5rem;
@@ -22,7 +83,7 @@
 }
 .home__title{
     font-size: 5rem;
-    font-family: "IRANSans bold";
+    font-family: "IRANSans black";
     max-width: 42rem;
 }
 .home__text{
@@ -30,13 +91,13 @@
     margin-top: 2rem;
     max-width: 44rem;
 }
-.home__btns{
+.home__links{
     display: flex;
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
-.home__btn{
+.home__link{
     border: none;
     font-size: 2rem;
     background-color: var(--primary-color);
@@ -45,7 +106,11 @@
     border-radius: 3rem;
     text-wrap: nowrap;
 }
-.home__btn:last-child{
+.home__link:hover{
+    color: #fff;
+    box-shadow: 3px 3px 10px #827b7b;
+}
+.home__link:last-child{
     background-color: green;
 
 }
@@ -60,3 +125,11 @@
 }
 
 /* end home */
+
+/* start last courses */
+
+.lastcourses{
+
+}
+
+/* end last courses */

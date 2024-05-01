@@ -47,7 +47,7 @@
 @media screen and (max-width: 576px) {
     .home__title{
         font-size: 4rem;
-        max-width: 33rem;
+        max-width: 34rem;
     }
     .home__text{
         font-size: 1.8rem;
@@ -56,6 +56,10 @@
         gap: .5rem;
         justify-content: center;
         margin-top: 2rem;
+    }
+    .courses-section__header{
+        justify-content: center;
+        gap: .5rem;
     }
 
 }
