@@ -7,6 +7,7 @@
     left: 0;
     top: 0;
     right: 0;
+    z-index: 5;
 }
 .header-wrapper{
     display: flex;
@@ -32,6 +33,7 @@
 }
 .menu-item{
     position: relative;
+
 }
 .menu-item:hover .menu-item-dropdown-list{
     visibility: visible;
@@ -42,6 +44,7 @@
     display: flex;
     gap: .5rem;
     align-items: center;
+    color: var(--text-color-light);
 }
 .menu-item-angle-down{
 }
@@ -68,7 +71,7 @@
     word-wrap: normal;
 }
 .menu-dropdown-link{
-
+    color: var(--text-color-light);
 }
 
 /* end header right */
@@ -96,6 +99,7 @@
     border-radius: 100%;
     position: relative;
     z-index: 20;
+
 }
 
 .header__search-icon,

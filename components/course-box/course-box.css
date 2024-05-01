@@ -1,0 +1,83 @@
+@import "../default.css";
+
+.coursebox{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--section-color);
+    border-radius: 2rem;
+    max-width: 40rem;
+    margin: .75rem auto;
+}
+.coursebox__banner{
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.coursebox__image{
+    width: 100%;
+}
+.coursebox__content{
+    padding: 2rem;
+}
+.coursebox__title{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.coursebox__desc{
+    font-size: 1.3rem;
+    color: var(--text-color-light);
+}
+.coursebox__teacher-star-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #dad6d6;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.coursebox__teacher-wrapper{
+
+}
+.coursebox__teacher-icon{
+
+}
+.coursebox__teacher-link{
+    color: var(--text-color-light);
+
+}
+.coursebox__star-wrapper{
+    color: rgb(245 158 11);
+}
+.coursebox__socor{
+
+}
+.coursebox__socor-icon{
+
+}
+.coursebox__registers-price-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.coursebox__registers-wrapper{
+
+}
+.coursebox__registers-icon{
+
+}
+.coursebox__registers-count{
+    color: var(--text-color-light);
+
+}
+.coursebox__price-wrapper{
+    color: rgb(3, 227, 3);
+}
+.coursebox__price{
+    font-family: "IRANsans bold";
+    font-size: 1.7rem;
+
+}
+.coursebox__unit{
+
+}

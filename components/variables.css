@@ -3,6 +3,8 @@
     --app-bg-color : #ebebeb ;
     --section-color: #fff;
     --text-color: #000;
+
+    --text-color-light: #777777;
 }
 
 :root.dark{
