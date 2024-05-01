@@ -237,6 +237,7 @@
     padding: 0 3rem;
     transition: all 200ms ease;
     z-index: 100;
+    display: none;
 }
 .mobile-menu--open{
     right: 0;
@@ -326,3 +327,45 @@
 }
 
 /* end mobile menu */
+
+
+
+/* ==========================   responsive  ====================== */
+
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1250px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    .header__mobile-toggle-btn{
+        display: flex;
+    }
+    .menu{
+        display: none;
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__search-btn,
+    .header__theme-btn{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+}
+
+
+/* ==========================   responsive  ====================== */

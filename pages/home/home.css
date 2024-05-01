@@ -1,5 +1,5 @@
 @import "../../components/header/header.css";
-@import "../../components/header/header-responsive.css";
+
 @import "../../components/default.css";
 
 
@@ -69,7 +69,7 @@
 /* start home */
 
 .home{
-
+    overflow-x: hidden;
 }
 .home-wrapper{
     display: flex;
