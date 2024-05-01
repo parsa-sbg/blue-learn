@@ -1,2 +1,62 @@
 @import "../../components/header/header.css";
 @import "../../components/header/header-responsive.css";
+
+
+.main{
+    padding-top: 8.5rem;
+}
+/* start home */
+
+.home{
+
+}
+.home-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.home__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3rem;
+}
+.home__title{
+    font-size: 5rem;
+    font-family: "IRANSans bold";
+    max-width: 42rem;
+}
+.home__text{
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    max-width: 44rem;
+}
+.home__btns{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.home__btn{
+    border: none;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    text-wrap: nowrap;
+}
+.home__btn:last-child{
+    background-color: green;
+
+}
+.home__left{
+
+}
+.home__banner{
+
+}
+.home__image{
+    width: 120%;
+}
+
+/* end home */

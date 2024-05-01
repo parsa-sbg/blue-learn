@@ -3,7 +3,10 @@
 
 .header{
     background-color: var(--section-color);
-
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
 }
 .header-wrapper{
     display: flex;
@@ -208,6 +211,8 @@
     right: 0;
     top: 0;
     bottom: 0;
+    height: 100vh;
+
     background-color: rgba(0, 0, 0, .5);
     z-index: 9;
     visibility: hidden;
