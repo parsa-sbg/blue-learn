@@ -1,0 +1,66 @@
+@import "../../components/header/header.css";
+@import "../../components/default.css";
+@import "../../components/footer/footer.css";
+
+.main{
+    padding-top: 8.5rem;
+}
+
+.maincontent{
+    margin-top: 4rem;
+}
+.maincontent-wrapper{
+    display: flex;
+    gap: 2rem;
+}
+.maincontent__right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 50%;
+}
+.maincontent__right-header{
+
+}
+.maincontent__title{
+    font-size: 3rem;
+    font-family: "IRANSans bold";
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+.maincontent__desc{
+    font-size: 2rem;
+    color: var(--text-color-light);
+}
+.maincontent__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.maincontent__btn{
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    transition: all 150ms ease;
+}
+.maincontent__btn:hover{
+    color: #fff;
+    box-shadow: 3px 3px 10px #827b7b;
+}
+.maincontent__btn-icon{
+    margin-left: 0.5rem;
+}
+.maincontent__text{
+    font-size: 2rem;
+    font-family: "IRANSans bold";
+}
+.maincontent__cover{
+    border-radius: 2rem;
+    overflow: hidden;
+    flex-basis: 50%;
+}
+.maincontent__image{
+    width: 100%;
+}

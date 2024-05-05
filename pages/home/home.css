@@ -107,6 +107,7 @@
     padding: 1rem 2rem;
     border-radius: 3rem;
     text-wrap: nowrap;
+    transition: all 150ms ease;
 }
 .home__link:hover{
     color: #fff;
