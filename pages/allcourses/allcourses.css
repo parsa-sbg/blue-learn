@@ -60,6 +60,8 @@
     font-size: 2rem;
     height: 7rem;
     margin-bottom: 1rem;
+    border-radius: 2rem;
+    padding: 0 2rem;
 }
 .courses__sort-box-icon {
     font-size: 3rem;
