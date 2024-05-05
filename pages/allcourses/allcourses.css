@@ -51,17 +51,22 @@
 
 
 /* start sorting */
-
 .courses__sort-box{
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: space-between;
+    background-color: var(--section-color);
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+.courses__sort-box-right{
+    display: flex;
+    align-items: center;
     background-color: var(--section-color);
     font-size: 2rem;
-    height: 7rem;
-    margin-bottom: 1rem;
-    border-radius: 2rem;
-    padding: 0 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;    
+    padding-right: 2rem;
 }
 .courses__sort-box-icon {
     font-size: 3rem;
@@ -69,24 +74,58 @@
 }
 .courses__sort-method-text{
     margin-left: 2rem;
+    display: flex;
+    align-items: center;
 }
 .coursees__sort-method-list{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin: 0;
     gap: 3rem;
     height: 100%;
+    padding: 0;
 }
 .coursees__sort-method-item{
     cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
+    padding: 2rem 0;
 }
 .coursees__sort-method-item--active{
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
     border-top: 2px solid var(--primary-color);
+}
+
+
+.courses__sort-box-left{
+
+}
+.courses__sort-box-search-box{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: var(--section-color);
+    font-size: 2rem;
+    height: 7rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 0 2rem;
+}
+.courses__sort-box-search-box-input{
+    width: 100%;
+    border: none;
+    background-color: var(--app-bg-color);
+    padding: 1rem;
+    border-radius: 2rem;
+    padding-left: 5rem;
+}
+.courses__sort-box-search-box-icon{
+    position: absolute;
+    left: 3rem;
 }
 
 /* end sorting */
