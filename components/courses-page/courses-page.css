@@ -4,11 +4,6 @@
 @import "../../components/footer/footer.css";
 
 
-@import "../../components/header/header.css";
-@import "../../components/course-box/course-box.css";
-@import "../../components/default.css";
-@import "../../components/footer/footer.css";
-
 
 .main{
     padding-top: 8.5rem;
@@ -135,5 +130,3 @@
 }
 
 /* end sorting */
-
-
