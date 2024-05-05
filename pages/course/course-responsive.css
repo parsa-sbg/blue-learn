@@ -52,6 +52,12 @@
     }
 
 }
+@media screen and (max-width: 470px){
+    .session{
+        flex-direction: column;
+        align-items: end;
+    }
+}
 @media screen and (max-width: 400px) {
     .maincontent__bottom{
         flex-direction: column;
