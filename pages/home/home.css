@@ -152,7 +152,8 @@
 .ourhelp__icon{
     margin-left: 2rem;
     flex-basis: 18%;
-    max-width: 6rem;
+    width: 6rem;
+    min-height: 5rem;
 }
 .ourhelp__content{
 
@@ -167,3 +168,15 @@
 }
 
 /* end our help */
+
+/* start swiper */
+
+.swiper{
+    padding-bottom: 3rem;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: var(--primary-color) !important;
+}
+
+/* end swiper */
