@@ -35,6 +35,22 @@
 @media screen and (max-width: 576px) {
 
 
+    .courseinfoes__info-box{
+        flex-direction: column;
+        text-align: center;
+    }
+    .courseinfoes__icon{
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+
+    .courseinfoes__title{
+        font-size: 1.6rem;
+    }
+    .courseinfoes__desc{
+        font-size: 1.4rem;
+    }
+
 }
 @media screen and (max-width: 400px) {
     .maincontent__bottom{
@@ -43,5 +59,13 @@
     }
     .maincontent__text{
         margin-top: 2rem;
+    }
+}
+@media screen and (max-width: 340px) {
+    .courseinfoes__title{
+        font-size: 1.4rem;
+    }
+    .courseinfoes__desc{
+        font-size: 1.3rem;
     }
 }

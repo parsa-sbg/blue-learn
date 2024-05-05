@@ -64,3 +64,38 @@
 .maincontent__image{
     width: 100%;
 }
+
+/* start course informations */
+
+.courseinfoes{
+    margin-top: 7rem;
+}
+.courseinfoes__info-box{
+    display: flex;
+    align-items: center;
+    background-color: var(--section-color);
+    margin: 0.75rem 0;
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+.courseinfoes__icon{
+    font-size: 3rem;
+    margin-left: 2rem;
+    color: var(--primary-color);
+}
+#star-icon{
+    color: #f59e0b;
+}
+.courseinfoes__details{
+
+}
+.courseinfoes__title{
+    font-size: 2rem;
+    font-family: "IRANSans bold";
+}
+.courseinfoes__desc{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+/* end course informations */
