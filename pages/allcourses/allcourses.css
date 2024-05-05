@@ -1,0 +1,92 @@
+@import "../../components/header/header.css";
+@import "../../components/course-box/course-box.css";
+@import "../../components/default.css";
+@import "../../components/footer/footer.css";
+
+
+.main{
+    padding-top: 8.5rem;
+}
+
+/* satrt courses header */
+
+.courses__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+}
+.courses__title{
+    font-size: 2.8rem;
+    font-family: "IRANSans bold";
+    position: relative;
+    padding-right: 3rem;
+}
+.courses__title::before{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: .5rem;
+
+}
+.blue-bg.courses__title::before{
+    background-color: var(--primary-color);
+}
+.courses__count{
+    text-align: left;
+    width: 23rem;
+    height: 5rem;
+    font-size: 2rem;
+    color: var(--text-color-light);
+}
+
+/* end courses header */
+
+
+/* start sorting */
+
+.courses__sort-box{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--section-color);
+    font-size: 2rem;
+    height: 7rem;
+    margin-bottom: 1rem;
+}
+.courses__sort-box-icon {
+    font-size: 3rem;
+    margin-left: 1.5rem;
+}
+.courses__sort-method-text{
+    margin-left: 2rem;
+}
+.coursees__sort-method-list{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 3rem;
+    height: 100%;
+}
+.coursees__sort-method-item{
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.coursees__sort-method-item--active{
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+}
+
+/* end sorting */
+
+
