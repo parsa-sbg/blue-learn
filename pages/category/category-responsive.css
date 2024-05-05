@@ -1,0 +1,48 @@
+@media (min-width: 1400px) {
+    .container {
+        width: 1250px;
+    }
+
+}
+
+@media screen and (max-width: 1350px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    .courses__sort-method-text{
+        margin-top: 1rem;
+    }
+    .courses__sort-box-right{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .coursees__sort-method-list{
+        margin-top: 2rem;
+    }
+    .coursees__sort-method-item{
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+.courses__sort-box{
+    flex-direction: column-reverse;
+}
+
+}
+
+@media screen and (max-width: 576px) {
+
+}
+@media screen and (max-width: 400px) {
+    .coursees__sort-method-list{
+        gap: 2rem;
+    }
+}
