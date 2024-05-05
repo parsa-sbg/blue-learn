@@ -1,0 +1,149 @@
+@import "../default.css";
+
+.footer {
+    margin-top: 6rem;
+    background-color: var(--section-color);
+    padding-top: 4rem;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    border-top: 2px solid var(--primary-color);
+}
+
+.footer__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--text-color-light);
+    padding-bottom: 2rem;
+}
+
+.footer__about-us {
+    flex-basis: 30%;
+
+}
+
+.footer__about-us-title {
+    font-size: 2rem;
+    font-family: "IRANSans bold";
+
+}
+
+.footer__about-us-desc {
+    font-size: 1.8rem;
+    color: var(--text-color-light);
+    line-height: 3rem;
+}
+
+.footer__useful-links {
+    flex-basis: 30%;
+}
+
+.footer__useful-links-title {
+    font-size: 2rem;
+    font-family: "IRANSans bold";
+}
+
+.footer__useful-links-list {}
+
+.footer__useful-links-item {
+    font-size: 1.8rem;
+    color: var(--text-color-light);
+    margin-top: 1rem;
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    gap: 1rem;
+}
+
+.footer__socials-title {
+    font-size: 2rem;
+    font-family: "IRANSans bold";
+}
+
+.footer__social {
+    font-size: 1.8rem;
+    color: var(--text-color-light);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer__social-icon {
+    font-size: 3rem;
+    margin-left: 1rem;
+
+}
+
+.fa-instagram {
+    color: red;
+}
+
+.fa-telegram {
+    color: blue;
+}
+
+.footer__social-link {}
+
+.footer__copy-right{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.footer__me{
+    font-size: 1.6rem;
+    color: var(--text-color-light);
+}
+
+/* ==========================   responsive  ====================== */
+
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1250px;
+    }
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 992px) {
+
+    .footer__about-us,
+    .footer__useful-links,
+    .footer__socials {
+        text-align: center;
+    }
+
+    .footer__social {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer__about-us,
+    .footer__useful-links {
+        flex-basis: 50%;
+    }
+
+    .footer__socials {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {}
+
+@media screen and (max-width: 410px) {
+
+    .footer__about-us,
+    .footer__useful-links,
+    .footer__socials {
+        flex-basis: 100%;
+        margin-top: 2rem;
+    }
+}
+
+
+/* ==========================   responsive  ====================== */

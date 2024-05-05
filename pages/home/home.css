@@ -1,6 +1,7 @@
 @import "../../components/header/header.css";
 @import "../../components/course-box/course-box.css";
 @import "../../components/default.css";
+@import "../../components/footer/footer.css";
 
 
 /* start helper classes */
@@ -180,3 +181,4 @@
 }
 
 /* end swiper */
+
