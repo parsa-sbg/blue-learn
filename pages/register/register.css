@@ -1,0 +1,94 @@
+@import "../../components/header/header.css";
+@import "../../components/default.css";
+@import "../../components/footer/footer.css";
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo{
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.register-form{
+    background-color: var(--section-color);
+    padding: 2rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+.form-name{
+    font-size: 1.4rem;
+    font-family: "IRANSans bold";
+    
+}
+.reftologin{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.reftologin a{
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-family: "IRANSans bold";
+}
+.input-wrapper{
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.input-icon{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    margin-left: 1rem;
+    font-size: 1.6rem;
+}
+input{
+    width: 100%;
+    background-color: var(--app-bg-color);
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-left: 4rem;
+    font-size: 1.6rem;
+}
+.name-input{
+
+}
+.user-name-input{
+
+}
+.email-input{
+
+}
+.phone-input{
+
+}
+.password-input{
+
+}
+.submit-btn{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    color: #fff;
+    background-color: var(--primary-color);
+    border-radius: 3rem;
+    font-family: "IRANSans bold";
+    font-size: 1.4rem;
+}
+.rules{
+    font-size: 1.4rem;
+    max-width: 30rem;
+    text-align: center;
+    padding-bottom: 1.6rem;
+    margin-top: 1rem;
+}
+.rules span {
+    color: var(--primary-color);
+}
