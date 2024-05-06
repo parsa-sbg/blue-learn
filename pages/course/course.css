@@ -1,6 +1,9 @@
 @import "../../components/header/header.css";
 @import "../../components/default.css";
 @import "../../components/footer/footer.css";
+@import "../../components/session/session.css";
+@import "../../components/session/session-responsive.css";
+
 
 .main{
     padding-top: 8.5rem;
@@ -140,54 +143,10 @@
     align-items: center;
 }
 
-
-
 .sessions__wraper{
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-.session{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--section-color);
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    cursor: pointer;
-    font-size: 1.6rem;
-    color: var(--text-color-light);
-}
-.session__right{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.session__number{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 4rem;
-    min-height: 4rem;
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 50%;
-    margin-left: 2rem;
-}
-.session__title{
-    margin-bottom: 0;
-}
-.session__left{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 1rem;
-}
-.session__time{
 
-}
-.session__icon{
-    font-size: 2.5rem;
-    margin-right: 2rem;
-}
 /* end course sessions */
