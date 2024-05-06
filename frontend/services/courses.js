@@ -10,7 +10,7 @@ const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
     courses.slice(0, count).forEach(course => {
     
         const coursebox = document.createElement('div')
-        coursebox.className = wrapperType == 'swiper' ? 'swiper-slide' : 'col-12 col-sm-6 col-lg-4'
+        coursebox.className = wrapperType == 'swiper' ? 'swiper-slide' : 'col-12 col-md-6 col-lg-4'
         coursebox.insertAdjacentHTML('beforeend', `
 
                 <div class="coursebox">
