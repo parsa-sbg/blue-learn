@@ -15,11 +15,12 @@ const mobileMenu = document.querySelector('.mobile-menu__list')
 window.addEventListener('load', async () => {
 
     const allMenues = await getAllMenues()
-    // handle dtnamization menues in mobile menu
+    // handle dynamization menues in mobile menu
     renderMenuesInWrapper(allMenues, mobileMenu, 'mobile')
 
+    // handle dynamization menues in desktop menu
+    renderMenuesInWrapper(allMenues, menu, 'desktop')
 
-    
     handleSearchBoxShow()
     handleOpenMobileMenu()
 })

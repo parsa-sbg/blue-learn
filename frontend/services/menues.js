@@ -8,7 +8,6 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
     const menuesFragment = document.createDocumentFragment();
 
     if (wrapperType == 'mobile') {
-        
 
         menues.forEach(menu => {
             console.log(menu);
@@ -44,9 +43,36 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
         
     }else{
 
-        
         menues.forEach(menu => {
+            console.log(menu);
+            const menuElem = document.createElement('li')
+            menuElem.className = 'menu-item'
+
+            menuElem.insertAdjacentHTML('beforeend', `
+
+                    <a class="menu-link" href="../category/category.html?gat-name=${menu.href}">
+                        ${menu.title}
+                        ${menu.submenus.length ? `<i class="fas fa-angle-down menu-item-angle-down"></i>` : ``}
+
+                        ${menu.submenus.length ? `
+                                    <ul class="menu-item-dropdown-list">
+                                    ${menu.submenus.map( subMenu => `
+
+                                    <li class="menu-dropdown-item">
+                                        <a href="../course/course.html?short-name=${subMenu.href}" class="menu-dropdown-link">${subMenu.title}</a>
+                                    </li>
+                                    
+                                ` ).join("")}
+                                </ul>
+                        ` : `
+                        
+                        `}
+                    </a>
+            `)
+            menuesFragment.appendChild(menuElem)
         })
+        wrapper.appendChild(menuesFragment)
+
     }
 
 
