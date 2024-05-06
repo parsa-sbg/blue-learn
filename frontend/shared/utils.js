@@ -13,4 +13,28 @@ const addClass = (className, element) => {
     element.classList.add(className)
 }
 
-export { addClass , removeClass, toggleClass }
+const showTimerSwal = (icon, title, confirmButtonText, callback) => {
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: true,
+        timer: 3000,
+        timerProgressBar: true,
+      });
+      Toast.fire({
+        icon,
+        title,
+        confirmButtonText
+      }).then(()=> {
+        callback()
+      });
+
+}
+
+export {
+    addClass,
+    removeClass,
+    toggleClass,
+    showTimerSwal,
+}
