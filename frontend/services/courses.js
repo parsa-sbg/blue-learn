@@ -5,13 +5,12 @@ const getAllCourses = async () => {
     return allCourses
 }
 
-const renderCourseBoxInWrapper = (courses, wrapper, count) => {
+const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
     const coursesFragment = document.createDocumentFragment();
     courses.slice(0, count).forEach(course => {
-        console.log(course);
-
+    
         const coursebox = document.createElement('div')
-        coursebox.className = 'col-12 col-sm-6 col-lg-4'
+        coursebox.className = wrapperType == 'swiper' ? 'swiper-slide' : 'col-12 col-sm-6 col-lg-4'
         coursebox.insertAdjacentHTML('beforeend', `
 
                 <div class="coursebox">
@@ -57,6 +56,15 @@ const renderCourseBoxInWrapper = (courses, wrapper, count) => {
     
 }
 
+const getPopularCourses = async () => {
+    const res = await fetch('http://localhost:4000/v1/courses/popular')
+    const popularCourses = await res.json()
+    return popularCourses
+}
 
 
-export { getAllCourses , renderCourseBoxInWrapper}
+export { 
+    getAllCourses,
+    renderCourseBoxInWrapper,
+    getPopularCourses,
+}

@@ -1,12 +1,26 @@
-import { getAllCourses , renderCourseBoxInWrapper } from "../../services/courses.js"
+import {
+    getAllCourses,
+    renderCourseBoxInWrapper,
+    getPopularCourses,
+} from "../../services/courses.js"
+
 
 const lastcoursesWrapper = document.querySelector('.lastcourses__courses .row')
+const swiperWrapper = document.querySelector('.swiper-wrapper')
 
 
 window.addEventListener('load', async () => {
+
+    // render last courses
     const allCourses = await getAllCourses()
-    
     renderCourseBoxInWrapper(allCourses, lastcoursesWrapper, 6)
+
+
+    // render popular courses
+    const popularCourses = await getPopularCourses()
+    renderCourseBoxInWrapper(popularCourses, swiperWrapper, 'swiper',)
+
+    
 })
 
 
