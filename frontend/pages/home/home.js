@@ -1,5 +1,24 @@
-// handle swiper
+import { getAllCourses , renderCourseBoxInWrapper } from "../../services/courses.js"
 
+const lastcoursesWrapper = document.querySelector('.lastcourses__courses .row')
+
+
+window.addEventListener('load', async () => {
+    const allCourses = await getAllCourses()
+    
+    renderCourseBoxInWrapper(allCourses, lastcoursesWrapper, 6)
+})
+
+
+
+
+
+
+
+
+
+
+// handle swiper
 const swiper = new Swiper('.swiper', {
     speed: 800,
     loop: true,
