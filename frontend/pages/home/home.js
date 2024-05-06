@@ -13,7 +13,7 @@ window.addEventListener('load', async () => {
 
     // render last courses
     const allCourses = await getAllCourses()
-    renderCourseBoxInWrapper(allCourses, lastcoursesWrapper, 6)
+    renderCourseBoxInWrapper(allCourses, lastcoursesWrapper, 'normal', 6)
 
 
     // render popular courses
