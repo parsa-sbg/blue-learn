@@ -11,20 +11,26 @@
 .coursebox__banner{
     border-radius: 2rem;
     overflow: hidden;
+    height: 19.4rem;
 }
 .coursebox__image{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .coursebox__content{
     padding: 2rem;
 }
 .coursebox__title{
+    display: block;
     font-size: 2rem;
     cursor: pointer;
+    min-height: 6.2rem;
 }
 .coursebox__desc{
     font-size: 1.3rem;
     color: var(--text-color-light);
+    min-height: 6rem;
 }
 .coursebox__teacher-star-wrapper{
     display: flex;
