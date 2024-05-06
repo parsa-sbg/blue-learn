@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
             showTimerSwal(
                 'success',
                 'شما با موفقیت ثبت نام شدید',
-                'فهمیدم',
+                'ورود به پنل',
                 () => {
                     location.href = "../home/"
                 }

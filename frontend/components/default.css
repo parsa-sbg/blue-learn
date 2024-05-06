@@ -34,3 +34,12 @@ a {
 a:hover{
     color: var(primary-color);
 }
+
+/* swal styles */
+
+.swal2-popup{
+    font-size: 2rem !important;
+}
+.swal2-confirm{
+    background-color: var(--primary-color) !important;
+}
