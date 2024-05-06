@@ -22,17 +22,17 @@ body{
     text-align: center;
 }
 .form-name{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-family: "IRANSans bold";
     
 }
 .reftologin{
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-top: 1rem;
 }
 .reftologin a{
     color: var(--primary-color);
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-family: "IRANSans bold";
 }
 .input-wrapper{
