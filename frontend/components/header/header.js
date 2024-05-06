@@ -33,8 +33,11 @@ const handleOpenMobileMenu = () => {
 
     mobileMenuItems.forEach(mobileMenu => {
         mobileMenu.addEventListener('click', () => {
-            toggleClass('mobile-menu__dropdown-list--open', mobileMenu.lastChild.previousElementSibling)
-            toggleClass('mobile-menu__item-angle-left--open', mobileMenu.firstChild.nextElementSibling.lastElementChild)
+            if (mobileMenu.firstChild.nextElementSibling.lastElementChild.tagName == 'svg') {
+                toggleClass('mobile-menu__dropdown-list--open', mobileMenu.lastChild.previousElementSibling)
+                toggleClass('mobile-menu__item-angle-left--open', mobileMenu.firstChild.nextElementSibling.lastElementChild)
+            }
+
         })
     })
 

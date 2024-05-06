@@ -236,13 +236,14 @@
 .mobile-menu{
     position: fixed;
     top: 0;
-    right: -31.6rem;
+    right: -33rem;
     bottom: 0;
     background-color: var(--section-color);
     padding: 0 3rem;
     transition: all 200ms ease;
     z-index: 100;
     display: none;
+    width: 33rem;
 }
 .mobile-menu--open{
     right: 0;
@@ -328,7 +329,9 @@
 
 }
 .mobile-menu__dropdown-link{
-
+    text-wrap: wrap;
+    font-size: 1.6rem;
+    color: var(--text-color-light);
 }
 
 /* end mobile menu */
