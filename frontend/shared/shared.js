@@ -11,7 +11,7 @@ import {
 
 const menu = document.querySelector('.menu')
 const mobileMenu = document.querySelector('.mobile-menu__list')
-
+const headerLogo = document.querySelector('.header__logo')
 
 window.addEventListener('load', async () => {
 
@@ -26,4 +26,8 @@ window.addEventListener('load', async () => {
 
     handleSearchBoxShow()
     handleOpenMobileMenu()
+
+    headerLogo.addEventListener('click', () => {
+        location.href = '../home/'
+    })
 })

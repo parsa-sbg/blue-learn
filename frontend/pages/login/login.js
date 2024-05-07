@@ -6,6 +6,9 @@ const submitBtn = document.querySelector('.submit-btn')
 const nameInput = document.querySelector('#name-input')
 const passwordInput = document.querySelector('#password-input')
 
+const logo = document.querySelector('.logo')
+
+
 
 window.addEventListener('load', () => {
 
@@ -48,5 +51,7 @@ window.addEventListener('load', () => {
         }
     })
 
-
+    logo.addEventListener('click', () => {
+        location.href = "../home/"
+    })
 })

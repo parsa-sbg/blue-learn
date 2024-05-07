@@ -164,7 +164,7 @@
 /* start header logo */
 
 .header__logo{
-
+    cursor: pointer;
 }
 .header__logo-icon{
     width: 100%;
