@@ -1,6 +1,7 @@
 import {
     handleSearchBoxShow,
-     handleOpenMobileMenu
+    handleOpenMobileMenu,
+    getAndShowUserNameInHeader
 } from "../components/header/header.js";
 
 import {
@@ -20,6 +21,8 @@ window.addEventListener('load', async () => {
 
     // handle dynamization menues in desktop menu
     renderMenuesInWrapper(allMenues, menu, 'desktop')
+
+    getAndShowUserNameInHeader()
 
     handleSearchBoxShow()
     handleOpenMobileMenu()

@@ -32,9 +32,15 @@ const showTimerSwal = (icon, title, confirmButtonText, callback) => {
 
 }
 
+const getUserToken = () => {
+    const userToken = JSON.parse(localStorage.getItem("userToken"));
+    return userToken ? userToken : null;
+};
+
 export {
     addClass,
     removeClass,
     toggleClass,
     showTimerSwal,
+    getUserToken
 }

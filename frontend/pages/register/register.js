@@ -9,11 +9,11 @@ window.addEventListener('load', () => {
     submitBtn.addEventListener('click', async event => {
         event.preventDefault()
 
-        const nameInputValue = document.querySelector('#name-input').value
-        const userNameInputValue = document.querySelector('#user-name-input').value
-        const emailInputValue = document.querySelector('#email-input').value
-        const phoneInputValue = document.querySelector('#phone-input').value
-        const passwordInputValue = document.querySelector('#password-input').value
+        let nameInputValue = document.querySelector('#name-input').value
+        let userNameInputValue = document.querySelector('#user-name-input').value
+        let emailInputValue = document.querySelector('#email-input').value
+        let phoneInputValue = document.querySelector('#phone-input').value
+        let passwordInputValue = document.querySelector('#password-input').value
 
         const response = await registerNewUser(
             nameInputValue.trim(),

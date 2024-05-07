@@ -1,8 +1,17 @@
-import { addClass, removeClass, toggleClass } from "../../shared/utils.js"
+import {
+    addClass,
+    removeClass,
+    toggleClass,
+    getUserToken
+} from "../../shared/utils.js"
+
+import { getUserInfos } from "../../services/auth.js"
 
 const cover = document.querySelector('.cover')
 const searchBoxBtn = document.querySelector('.header__search-btn')
 const mobileMenu = document.querySelector('.mobile-menu')
+
+const headerUsername = document.querySelector('.header__username')
 
 const closeMobileMenu = () => {
     removeClass('mobile-menu--open', mobileMenu)
@@ -52,4 +61,17 @@ const handleOpenMobileMenu = () => {
     })
 }
 
-export { handleSearchBoxShow , handleOpenMobileMenu}
+const getAndShowUserNameInHeader = async () => {
+    const userToken = getUserToken()
+    const userInfos = await getUserInfos(userToken)
+
+    console.log(userInfos);
+    if(userToken){
+        headerUsername.setAttribute('href', '#')
+        headerUsername.innerHTML = userInfos.data.name
+    }else{
+        headerUsername.setAttribute('href', '../login/login.html')
+        headerUsername.innerHTML = 'ورود/ثبت نام'
+    }
+}
+export { handleSearchBoxShow , handleOpenMobileMenu, getAndShowUserNameInHeader}

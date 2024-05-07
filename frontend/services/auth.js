@@ -47,8 +47,23 @@ const loginUser = async (identifier, password) => {
     }
 }
 
+const getUserInfos = async (userToken) => {
+    const res = await fetch ('http://localhost:4000/v1/auth/me', {
+        headers: {
+            "Authorization" : `bearer ${userToken}`
+        }
+    })
+    const data = await res.json()
+    
+    return {
+        res,
+        data
+    }
+}
+
 export {
     registerNewUser,
     saveIntoLocalStorage,
-    loginUser
+    loginUser,
+    getUserInfos
 }

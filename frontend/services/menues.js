@@ -43,7 +43,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
     }else{
 
         menues.forEach(menu => {
-            console.log(menu);
+         
             const menuElem = document.createElement('li')
             menuElem.className = 'menu-item'
 
