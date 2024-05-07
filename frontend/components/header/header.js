@@ -68,7 +68,7 @@ const getAndShowUserNameInHeader = async () => {
     console.log(userInfos);
     if(userToken){
         headerUsername.setAttribute('href', '#')
-        headerUsername.innerHTML = userInfos.data.name
+        headerUsername.innerHTML = userInfos.data.name + '<i class="header__username-icon fa fa-user"></i>'
     }else{
         headerUsername.setAttribute('href', '../login/login.html')
         headerUsername.innerHTML = 'ورود/ثبت نام'
