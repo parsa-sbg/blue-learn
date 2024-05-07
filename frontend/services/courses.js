@@ -62,9 +62,25 @@ const getPopularCourses = async () => {
     return popularCourses
 }
 
+const getCourseData = async (courseShortname, userToken) => {
+    const res = await fetch(`http://localhost:4000/v1/courses/${courseShortname}`,{
+        method: "GET",
+        headers: {
+            "Authorization" : `bearer ${userToken}`
+        }
+    })
+    const data = await res.json()
+
+    return {
+        res,
+        data
+    }
+}
+
 
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
     getPopularCourses,
+    getCourseData
 }

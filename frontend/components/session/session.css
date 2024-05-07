@@ -8,9 +8,14 @@
     background-color: var(--section-color);
     padding: 1rem 2rem;
     border-radius: 3rem;
-    cursor: pointer;
     font-size: 1.6rem;
     color: var(--text-color-light);
+}
+a.session{
+    cursor: pointer;
+}
+a.session:hover{
+    font-family: "IRANsans bold";
 }
 .session__right{
     display: flex;

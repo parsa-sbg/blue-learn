@@ -89,10 +89,11 @@
                         </div>
                         <div class="maincontent__bottom">
                             <a href="#" class="maincontent__btn">
-                                <i class="maincontent__btn-icon fas fa-graduation-cap"></i>
-                                ثبت نام در دوره
+                                <!-- loaded from js -->
                             </a>
-                            <span class="maincontent__text">1,300,000 تومن</span>
+                            <span class="maincontent__text"> 
+                                <!-- loaded from js -->
+                            </span>
                         </div>
                     </div>
     
@@ -113,7 +114,9 @@
                             <i class="courseinfoes__icon fa fa-clock "></i>
                             <div class="courseinfoes__details">
                                 <h4 class="courseinfoes__title">مدت زمان دوره</h4>
-                                <span class="courseinfoes__desc">1 ساعت</span>
+                                <span class="courseinfoes__desc" id="course-time">
+                                    <!-- loaded from js -->
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -122,7 +125,7 @@
                             <i class="courseinfoes__icon fas fa-calendar-alt "></i>
                             <div class="courseinfoes__details">
                                 <h4 class="courseinfoes__title">آخرین بروزرسانی</h4>
-                                <span class="courseinfoes__desc">1403/02/15</span>
+                                <span class="courseinfoes__desc" id="last-update">1403/02/15</span>
                             </div>
                         </div>
                     </div>
@@ -131,7 +134,7 @@
                             <i class="courseinfoes__icon fas fa-user-friends "></i>
                             <div class="courseinfoes__details">
                                 <h4 class="courseinfoes__title">روش پشتیبانی</h4>
-                                <span class="courseinfoes__desc">آنلاین</span>
+                                <span class="courseinfoes__desc" id="support">آنلاین</span>
                             </div>
                         </div>
                     </div>
@@ -148,7 +151,7 @@
                         <div class="courseinfoes__info-box">
                             <i class="courseinfoes__icon fas fa-users "></i>
                             <div class="courseinfoes__details">
-                                <h4 class="courseinfoes__title">57</h4>
+                                <h4 class="courseinfoes__title" id="registers">57</h4>
                                 <span class="courseinfoes__desc">دانشجو</span>
                             </div>
                         </div>
@@ -157,8 +160,8 @@
                         <div class="courseinfoes__info-box">
                             <i class="courseinfoes__icon fa fa-star" id="star-icon"></i>
                             <div class="courseinfoes__details">
-                                <h4 class="courseinfoes__title">5.0</h4>
-                                <span class="courseinfoes__desc">رضایت</span>
+                                <h4 class="courseinfoes__title" id="star">5.0</h4>
+                                <span class="courseinfoes__desc" id="scroll-point">رضایت</span>
                             </div>
                         </div>
                     </div>
@@ -169,7 +172,7 @@
             </div>
         </section>
 
-        <section class="sessions">
+        <section class="sessions" id="sessions">
             <div class="container">
 
                 <div class="course__header">
@@ -181,46 +184,7 @@
 
                 <div class="sessions__wraper">
 
-                    <a href="#" class="session">
-                        <div class="session__right">
-                            <span class="session__number">1</span>
-                            <p class="session__title">تشریح نحوه آلوده سازی ویروس استاکس نت (StuxNet)</p>
-                        </div>
-                        <div class="session__left">
-                            <span class="session__time">04:39</span>
-                            <i class="session__icon fa fa-play"></i>
-                        </div>
-                    </a>
-                    <a href="#" class="session">
-                        <div class="session__right">
-                            <span class="session__number">2</span>
-                            <p class="session__title">برای پیاده سازی این نوع سناریو ها نیازمند آسیب پذیری هستیم؟</p>
-                        </div>
-                        <div class="session__left">
-                            <span class="session__time">07:89</span>
-                            <i class="session__icon fa fa-play"></i>
-                        </div>
-                    </a>
-                    <a href="#" class="session">
-                        <div class="session__right">
-                            <span class="session__number">3</span>
-                            <p class="session__title">تشریح حملات HID (Human Interface Device) با یکسری مثال ها در دنیای واقعی</p>
-                        </div>
-                        <div class="session__left">
-                            <span class="session__time">22:00</span>
-                            <i class="session__icon fa fa-lock"></i>
-                        </div>
-                    </a>
-                    <a href="#" class="session">
-                        <div class="session__right">
-                            <span class="session__number">4</span>
-                            <p class="session__title">روش های مختلف پیاده سازی BadUsb + انتخاب دیوایس مناسب برای BadUsb</p>
-                        </div>
-                        <div class="session__left">
-                            <span class="session__time">12:25</span>
-                            <i class="session__icon fa fa-lock"></i>
-                        </div>
-                    </a>
+                    <!-- sessions loaded from js -->
 
                 </div>
                 
@@ -275,6 +239,6 @@
 
     <script type="module" src="../../shared/shared.js"></script>
     <script src="../../vendor/FontAwesome5/all.min.js"></script>
-    <script src="course.js"></script>
+    <script type="module" src="course.js"></script>
 </body>
 </html>

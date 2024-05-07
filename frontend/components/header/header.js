@@ -65,7 +65,6 @@ const getAndShowUserNameInHeader = async () => {
     const userToken = getUserToken()
     const userInfos = await getUserInfos(userToken)
 
-    console.log(userInfos);
     if(userToken){
         headerUsername.setAttribute('href', '#')
         headerUsername.innerHTML = userInfos.data.name + '<i class="header__username-icon fa fa-user"></i>'

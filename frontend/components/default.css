@@ -32,7 +32,7 @@ a {
 }
 
 a:hover{
-    color: var(primary-color);
+    color: var(--primary-color);
 }
 
 /* swal styles */
