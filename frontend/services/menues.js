@@ -10,7 +10,6 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
     if (wrapperType == 'mobile') {
 
         menues.forEach(menu => {
-            console.log(menu);
             const menuElem = document.createElement('li')
             menuElem.className = 'mobile-menu__list-item'
 

@@ -24,7 +24,6 @@ window.addEventListener('load', () => {
             passwordInputValue.trim()
         )
 
-        console.log(response)
 
         if (response.res.ok) {
             const userToken = response.data.accessToken
