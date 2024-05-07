@@ -11,7 +11,7 @@ window.addEventListener('load', async () => {
         const courseData = course.data
         console.log(courseData);
 
-        // get elements
+        /////  get elements  /////
         const courseTitle = document.querySelector('.maincontent__title')
         const courseDesc = document.querySelector('.maincontent__desc')
         const courseText = document.querySelector('.maincontent__text')
@@ -78,12 +78,13 @@ window.addEventListener('load', async () => {
 
         // course sessions
         if(courseData.sessions.length){
+
             if(courseData.isUserRegisteredToThisCourse){
 
                 courseData.sessions.forEach((session, index) => {
                     console.log(session);
                     courseSessionsWrapper.insertAdjacentHTML('beforeend',`
-                        <a href="#" class="session">
+                        <a href="../episode/episode.html?course-s-n=${courseData.shortName}&session-id=${session._id}&session-num=${index+1}" class="session">
                             <div class="session__right">
                                 <span class="session__number">${index+1}</span>
                                 <p class="session__title">${session.title}</p>
@@ -101,7 +102,7 @@ window.addEventListener('load', async () => {
                 courseData.sessions.forEach((session, index) => {
                     console.log(session);
                     courseSessionsWrapper.insertAdjacentHTML('beforeend',`
-                        <${session.free ? 'a' : 'i'} href="#" class="session">
+                        <${session.free ? 'a' : 'i'} href="../episode/episode.html?course-s-n=${courseData.shortName}&session-id=${session._id}&session-num=${index+1}" class="session">
                             <div class="session__right">
                                 <span class="session__number">${index+1}</span>
                                 <p class="session__title">${session.title}</p>
@@ -114,13 +115,12 @@ window.addEventListener('load', async () => {
                     `)
                 })
             }
+            
         }else{
+            // when no video has been uploaded
             courseSessionsWrapper.innerHTML = '<div class="alert alert-danger fs-2">هنوز ویدیویی آپلود نشده</div>'
         }
         
-
-
-
     }else{
         // when course not found
         document.querySelector('main').innerHTML = '<div style="height: 50rem;" class="alert alert-danger text-center fs-1 d-flex align-items-center justify-content-center">دوره مورد نظر یافت نشد</div>'

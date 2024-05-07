@@ -77,10 +77,24 @@ const getCourseData = async (courseShortname, userToken) => {
     }
 }
 
+const getSessionInfos = async (courseShortName, sessionId, userToken) => {
+    const res = await fetch(`http://localhost:4000/v1/courses/${courseShortName}/${sessionId}`,{
+        headers : {
+            Authorization : `bearer ${userToken}`
+        }
+    })
+    const data = await res.json()
+    return {
+        res,
+        data
+    }
+}
+
 
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
     getPopularCourses,
-    getCourseData
+    getCourseData,
+    getSessionInfos
 }
