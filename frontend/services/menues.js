@@ -15,7 +15,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
 
             menuElem.insertAdjacentHTML('beforeend', `
                     <div class="mobile-menu__item-wrapper">
-                        <a class="mobile-menu__item-link" href="../category/category.html?gat-name=${menu.href}">
+                        <a class="mobile-menu__item-link" href="../category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
                         ${menu.title}
                         </a>
                         ${menu.submenus.length ? '<i class="fas fa-angle-left mobile-menu__item-angle-left"></i>' : ''}
@@ -49,7 +49,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
 
             menuElem.insertAdjacentHTML('beforeend', `
 
-                    <a class="menu-link" href="../category/category.html?gat-name=${menu.href}">
+                    <a class="menu-link" href="../category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
                         ${menu.title}
                         ${menu.submenus.length ? `<i class="fas fa-angle-down menu-item-angle-down"></i>` : ``}
 
