@@ -100,14 +100,6 @@ const getCagegoryCourses = async (courseShortName) => {
     }
 }
 
-const globalSearch = async (searchValue) => {
-    const res = await fetch(`http://localhost:4000/v1/search/${searchValue}`)
-    const data = await res.json()
-
-    console.log(res);
-    console.log(data);
-}
-
 
 export { 
     getAllCourses,
@@ -116,5 +108,4 @@ export {
     getCourseData,
     getSessionInfos,
     getCagegoryCourses,
-    globalSearch
 }

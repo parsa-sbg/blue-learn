@@ -18,10 +18,25 @@ const closeMobileMenu = () => {
     removeClass('cover--show', cover)
 }
 
-const handleSearchBoxShow = () => {
+const handleSearchBoxLogic = () => {
     const globalSearchDropdown = document.querySelector('.haeder__global-search-dropdown-wrapper')
+    const globalSearchInput = document.querySelector('.header__global-search-dropdown-input')
+    const dropDownSearchBtn = document.querySelector('.header__search-dropdown-icon')
+
+    const redirectToSearchPage = () => {
+        const searchValue = globalSearchInput.value.trim()
+        location.href = `../search/search.html?search-value=${searchValue}`
+    }
 
 
+    globalSearchInput.addEventListener('keyup', event => {
+        if (event.key == "Enter") {
+            redirectToSearchPage()
+        }
+    })
+    dropDownSearchBtn.addEventListener('click',() => {
+        redirectToSearchPage()
+    })
     searchBoxBtn.addEventListener('click', () => {
         searchBoxBtn.style.zIndex = "10"
         addClass('haeder__global-search-dropdown-wrapper--show',globalSearchDropdown)
@@ -73,4 +88,4 @@ const getAndShowUserNameInHeader = async () => {
         headerUsername.innerHTML = 'ورود/ثبت نام'
     }
 }
-export { handleSearchBoxShow , handleOpenMobileMenu, getAndShowUserNameInHeader}
+export { handleSearchBoxLogic , handleOpenMobileMenu, getAndShowUserNameInHeader}

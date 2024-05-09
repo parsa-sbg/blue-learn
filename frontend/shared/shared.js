@@ -1,5 +1,5 @@
 import {
-    handleSearchBoxShow,
+    handleSearchBoxLogic,
     handleOpenMobileMenu,
     getAndShowUserNameInHeader
 } from "../components/header/header.js";
@@ -24,7 +24,7 @@ window.addEventListener('load', async () => {
 
     getAndShowUserNameInHeader()
 
-    handleSearchBoxShow()
+    handleSearchBoxLogic()
     handleOpenMobileMenu()
 
     headerLogo.addEventListener('click', () => {
