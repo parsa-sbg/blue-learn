@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
+<!-- to apply the wheme quickly -->
+<script>
+    const theme = localStorage.getItem('bluelearn-darkmode')
+    if(theme == 'true'){
+        document.documentElement.classList.add('dark')
+    }
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +72,9 @@
                             </div>
                         </div>
                     </button>
-                    <i class="fa fa-sun header__theme-btn"></i>
+                    <button class="header__theme-btn header__theme-btn--dark">
+                        <i class="fa fa-sun header__theme-btn-icon"></i>
+                    </button>
                     <a class="header__username" href="#"></a>
                 </div>
                 

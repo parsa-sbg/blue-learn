@@ -1,9 +1,10 @@
 import {
     handleSearchBoxLogic,
     handleOpenMobileMenu,
-    getAndShowUserNameInHeader
+    getAndShowUserNameInHeader,
+    handleDarkMode
 } from "../components/header/header.js";
-
+handleDarkMode()
 import {
     getAllMenues,
     renderMenuesInWrapper
@@ -13,7 +14,10 @@ const menu = document.querySelector('.menu')
 const mobileMenu = document.querySelector('.mobile-menu__list')
 const headerLogo = document.querySelector('.header__logo')
 
+
 window.addEventListener('load', async () => {
+
+    
 
     const allMenues = await getAllMenues()
     // handle dynamization menues in mobile menu

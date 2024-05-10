@@ -11,6 +11,7 @@
 
 .maincontent{
     margin-top: 4rem;
+    color: var(--text-color);
 }
 .maincontent-wrapper{
     display: flex;
@@ -28,7 +29,6 @@
 .maincontent__title{
     font-size: 3rem;
     font-family: "IRANSans bold";
-    color: var(--text-color);
     margin-bottom: 2rem;
 }
 .maincontent__desc{
@@ -95,6 +95,7 @@
 .courseinfoes__title{
     font-size: 2rem;
     font-family: "IRANSans bold";
+    color: var(--text-color);
 }
 .courseinfoes__desc{
     font-size: 1.5rem;
@@ -112,6 +113,7 @@
     flex-wrap: wrap;
     margin-top: 6rem;
     margin-bottom: 4rem;
+    color: var(--text-color);
 }
 .course__title{
     font-size: 2.8rem;

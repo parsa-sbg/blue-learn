@@ -35,6 +35,7 @@ main{
     position: relative;
     padding-right: 4rem;
     margin-bottom: 2rem;
+    color: var(--text-color);
 }
 .session-infoes__course-name::before,
 .all-sessions__title::before{

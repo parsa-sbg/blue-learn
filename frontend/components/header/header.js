@@ -88,4 +88,48 @@ const getAndShowUserNameInHeader = async () => {
         headerUsername.innerHTML = 'ورود/ثبت نام'
     }
 }
-export { handleSearchBoxLogic , handleOpenMobileMenu, getAndShowUserNameInHeader}
+
+const handleDarkMode = () => {
+    const changeThemeBtns = document.querySelectorAll('.header__theme-btn')
+    const theme = localStorage.getItem('bluelearn-darkmode')
+
+    const changeToDark = () => {
+        changeThemeBtns.forEach(btn=> {
+            btn.innerHTML = '<i class="fa fa-moon header__theme-btn-icon"></i>'
+            localStorage.setItem('bluelearn-darkmode', true)
+            addClass('header__theme-btn--dark', btn)
+    
+            document.documentElement.classList.add('dark')
+        })
+
+    }
+    const changeToLight = () => {
+        changeThemeBtns.forEach(btn => {
+            btn.innerHTML = '<i class="fa fa-sun header__theme-btn-icon"></i>'
+            localStorage.setItem('bluelearn-darkmode', false)
+            removeClass('header__theme-btn--dark', btn)
+            document.documentElement.classList.remove('dark')
+        })
+
+    }
+
+    if(theme == 'true'){
+        changeToDark()
+    }else{
+        changeToLight()
+    }
+
+    changeThemeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.className.includes('header__theme-btn--dark')) {
+                changeToLight()
+            }else{
+                changeToDark()
+            }
+            
+        })
+    })
+}
+
+
+export { handleSearchBoxLogic , handleOpenMobileMenu, getAndShowUserNameInHeader, handleDarkMode}

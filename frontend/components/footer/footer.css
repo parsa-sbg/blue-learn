@@ -7,6 +7,7 @@
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
     border-top: 2px solid var(--primary-color);
+
 }
 
 .footer__content {
@@ -15,6 +16,7 @@
     justify-content: space-between;
     border-bottom: 2px solid var(--text-color-light);
     padding-bottom: 2rem;
+    color: var(--text-color);
 }
 
 .footer__about-us {
@@ -25,13 +27,13 @@
 .footer__about-us-title {
     font-size: 2rem;
     font-family: "IRANSans bold";
-
 }
 
 .footer__about-us-desc {
     font-size: 1.8rem;
     color: var(--text-color-light);
     line-height: 3rem;
+    color: var(--text-color-light);
 }
 
 .footer__useful-links {
@@ -43,14 +45,17 @@
     font-family: "IRANSans bold";
 }
 
-.footer__useful-links-list {}
+.footer__useful-links-list {
+}
 
 .footer__useful-links-item {
     font-size: 1.8rem;
-    color: var(--text-color-light);
     margin-top: 1rem;
 }
+.footer__useful-links-item a{
+    color: var(--text-color-light);
 
+}
 .footer__socials {
     display: flex;
     flex-direction: column;

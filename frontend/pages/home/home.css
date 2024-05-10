@@ -22,6 +22,7 @@
     font-family: "IRANSans bold";
     position: relative;
     padding-right: 3rem;
+    color: var(--text-color);
 }
 .courses-section__title::before{
     content: "";
@@ -82,6 +83,7 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 3rem;
+    color: var(--text-color);
 }
 .home__title{
     font-size: 5rem;
