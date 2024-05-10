@@ -23,19 +23,19 @@ const handleSearchBoxLogic = () => {
     const globalSearchInput = document.querySelector('.header__global-search-dropdown-input')
     const dropDownSearchBtn = document.querySelector('.header__search-dropdown-icon')
 
-    const redirectToSearchPage = () => {
-        const searchValue = globalSearchInput.value.trim()
+    const redirectToSearchPage = (input) => {
+        const searchValue = input.value.trim()
         location.href = `../search/search.html?search-value=${searchValue}`
     }
 
 
     globalSearchInput.addEventListener('keyup', event => {
         if (event.key == "Enter") {
-            redirectToSearchPage()
+            redirectToSearchPage(globalSearchInput)
         }
     })
     dropDownSearchBtn.addEventListener('click',() => {
-        redirectToSearchPage()
+        redirectToSearchPage(globalSearchInput)
     })
     searchBoxBtn.addEventListener('click', () => {
         searchBoxBtn.style.zIndex = "10"
@@ -45,6 +45,19 @@ const handleSearchBoxLogic = () => {
     cover.addEventListener('click', () => {
         removeClass('haeder__global-search-dropdown-wrapper--show',globalSearchDropdown)
         closeMobileMenu()
+    })
+
+    // mobile manu search logic
+    const mobileGlobalSearchInput = document.querySelector('.mobile-menu__search-box-input')
+    const mobileGropDownSearchBtn = document.querySelector('.mobile-menu__search-box-icon')
+
+    mobileGlobalSearchInput.addEventListener('keyup', event => {
+        if (event.key == "Enter") {
+            redirectToSearchPage(mobileGlobalSearchInput)
+        }
+    })
+    mobileGropDownSearchBtn.addEventListener('click',() => {
+        redirectToSearchPage(mobileGlobalSearchInput)
     })
 }
 

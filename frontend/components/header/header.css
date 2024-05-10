@@ -166,9 +166,10 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 /* end header left */
