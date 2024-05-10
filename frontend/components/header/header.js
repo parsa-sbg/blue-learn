@@ -90,7 +90,7 @@ const getAndShowUserNameInHeader = async () => {
 }
 
 const handleDarkMode = () => {
-    const changeThemeBtns = document.querySelectorAll('.header__theme-btn')
+    const changeThemeBtns = [document.querySelector('.header__theme-btn'),document.querySelector('.mobile__theme-btn')]
     const theme = localStorage.getItem('bluelearn-darkmode')
 
     const changeToDark = () => {

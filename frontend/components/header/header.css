@@ -98,7 +98,8 @@
 }
 
 .header__search-btn,
-.header__theme-btn{
+.header__theme-btn,
+.mobile__theme-btn{
     background-color: transparent;
     border: none;
     border-radius: 100%;
@@ -112,7 +113,8 @@
 
 .header__search-icon,
 .header__theme-btn-icon,
-.mobile-menu__theme-btn{
+.mobile-menu__theme-btn,
+.mobile__theme-btn-icon{
     width: 2rem;
     height: 2rem;
     padding: 2rem;
@@ -258,6 +260,7 @@
 
 .mobile-menu__header{
     display: flex;
+    gap: 1.5rem;
     padding: 3rem 0;
     border-bottom: 2px solid #edf3f3;
     margin-bottom: 3rem;
