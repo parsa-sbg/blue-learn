@@ -283,6 +283,9 @@
 }
 
 .mobile-menu__close-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 6rem;
     height: 6rem;
     border: none;
@@ -290,6 +293,21 @@
     font-size: 2rem;
     background-color: var(--app-bg-color);
     color: var(--text-color);
+}
+.mobile-menu__close-btn::after,
+.mobile-menu__close-btn::before{
+    content: "";
+    background-color: var(--text-color);
+    width: 4rem;
+    height: .3rem;
+    border-radius: 3rem;
+    left: 50%;
+}
+.mobile-menu__close-btn::after{
+    transform: rotate(45deg) translate(8px, -9px);
+}
+.mobile-menu__close-btn::before{
+    transform: rotate(-45deg) translate(-8px, -9px);
 }
 .mobile-menu__theme-btn{
 
