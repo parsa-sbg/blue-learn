@@ -73,6 +73,7 @@
 
 .home{
     overflow-x: hidden;
+    margin-top: 5rem;
 }
 .home-wrapper{
     display: flex;
