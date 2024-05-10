@@ -37,6 +37,7 @@ const swiper = new Swiper('.swiper', {
     speed: 800,
     loop: true,
     spaceBetween: 20,
+    slidesPerView: 3,
 
 
     pagination: {

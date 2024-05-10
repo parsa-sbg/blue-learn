@@ -17,6 +17,7 @@ body{
     font-size: inherit;
     background-color: var(--app-bg-color);
     font-family: "IRANSans";
+    transition: background-color 80ms ease;
 }
 
 *,
@@ -24,6 +25,7 @@ body{
 *::after {
     outline: none;
     box-sizing: inherit;
+    transition: color 50ms ease;
 }
 
 a {

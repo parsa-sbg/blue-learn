@@ -43,10 +43,9 @@
 }
 .courses__count{
     text-align: left;
-    width: 23rem;
-    height: 5rem;
     font-size: 2rem;
     color: var(--text-color-light);
+    margin-right: 3rem;
 }
 
 /* end courses header */
