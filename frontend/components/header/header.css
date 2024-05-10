@@ -141,7 +141,7 @@
 .mobile-menu__search-box{
     position: relative;
     padding: .5rem;
-    background-color: #edf3f3;
+    background-color: var(--section-color);
     cursor: default;
     border-radius: 3rem;
 }
@@ -151,6 +151,10 @@
     border: none;
     font-size: 2rem;
     background-color: transparent;
+    color: var(--text-color);
+}
+.mobile-menu__search-box{
+    background-color: var(--app-bg-color);
 }
 .header__search-dropdown-icon,
 .mobile-menu__search-box-icon{
@@ -161,6 +165,7 @@
     margin: auto;
     width: 2rem;
     height: 2rem;
+    color: var(--text-color);
 }
 
 /* end header left */
@@ -227,7 +232,7 @@
     bottom: 0;
     height: 100vh;
 
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .7);
     z-index: 9;
     visibility: hidden;
     opacity: 0;
@@ -274,6 +279,8 @@
     border: none;
     border-radius: 3rem;
     font-size: 2rem;
+    background-color: var(--app-bg-color);
+    color: var(--text-color);
 }
 .mobile-menu__theme-btn{
 
@@ -308,6 +315,7 @@
 }
 .mobile-menu__item-angle-left{
     transition: all 500ms ease;
+    color: var(--text-color);
 }
 
 .mobile-menu__item-angle-left--open{

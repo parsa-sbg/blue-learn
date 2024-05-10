@@ -45,6 +45,7 @@
 
 }
 .coursebox__teacher-icon{
+    color: var(--text-color-light);
 
 }
 .coursebox__teacher-link{
@@ -70,7 +71,7 @@
 
 }
 .coursebox__registers-icon{
-
+    color: var(--text-color-light);
 }
 .coursebox__registers-count{
     color: var(--text-color-light);

@@ -165,6 +165,7 @@
 .ourhelp__title{
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 .ourhelp__desc{
     font-size: 1.5rem;
@@ -178,10 +179,13 @@
 .swiper{
     padding-bottom: 3rem;
 }
-
+.swiper-pagination-bullet{
+    background-color: var(--text-color) !important;
+}
 .swiper-pagination-bullet-active{
     background-color: var(--primary-color) !important;
 }
+
 
 /* end swiper */
 
