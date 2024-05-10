@@ -1,6 +1,6 @@
 :root{
 
-    --primary-color : #2a51ab;
+    --primary-color : #006bc9;
     --app-bg-color : #edf0f2 ;
     --section-color: #fff;
     --text-color: #000;
@@ -8,7 +8,7 @@
 }
 
 :root.dark{
-    --primary-color : #2a51ab;
+    --primary-color : #006bc9;
     --app-bg-color : #111827 ;
     --section-color: #242a38;
     --text-color: #ffffff;

@@ -16,6 +16,10 @@ body{
     cursor: pointer;
 }
 
+.logo-icon{
+    width: 20rem;
+}
+
 .register-form{
     background-color: var(--section-color);
     padding: 2rem;

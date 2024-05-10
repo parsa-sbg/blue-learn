@@ -12,7 +12,7 @@ import {
 
 const menu = document.querySelector('.menu')
 const mobileMenu = document.querySelector('.mobile-menu__list')
-const headerLogo = document.querySelector('.header__logo')
+const logos = [document.querySelector('.header__logo-wrapper'), document.querySelector('.mobile-menu__logo-wrapper')]
 
 
 window.addEventListener('load', async () => {
@@ -31,7 +31,10 @@ window.addEventListener('load', async () => {
     handleSearchBoxLogic()
     handleOpenMobileMenu()
 
-    headerLogo.addEventListener('click', () => {
-        location.href = '../home/'
+    logos.forEach(logo => {
+        logo.addEventListener('click', () => {
+            location.href = '../home/'
+        })
     })
+
 })

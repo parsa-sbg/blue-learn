@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     gap: 3rem;
+    height: 100%;
 }
 .menu{
     display: flex;
@@ -31,6 +32,8 @@
     gap: 4rem;
     font-size: 2rem;
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
 }
 .menu-item{
     position: relative;
@@ -173,12 +176,14 @@
 
 /* start header logo */
 
-.header__logo{
+.header__logo-wrapper{
+    height: 100% !important;
     cursor: pointer;
+    padding: 1.5rem 1rem;
 }
 .header__logo-icon{
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .header__mobile-toggle-btn {
@@ -270,9 +275,13 @@
     border-bottom: 2px solid #edf3f3;
     margin-bottom: 3rem;
 }
-.mobile-menu__logo{
-
+.mobile-menu__logo-wrapper{
+    width: 12rem;
 }
+.mobile-menu__logo-icon{
+    width: 100%;
+}
+
 .mobile-menu__close-btn{
     width: 6rem;
     height: 6rem;
