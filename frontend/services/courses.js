@@ -37,7 +37,7 @@ const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
                             </div>
                             <div class="coursebox__price-wrapper">
                                 ${course.price? `
-                                    <span class="coursebox__price">${course.price}</span>
+                                    <span class="coursebox__price">${course.price.toLocaleString()}</span>
                                     <span class="coursebox__unit">تومان</span>
                                 ` : `
                                     <span class="coursebox__price">رایگان</span>
