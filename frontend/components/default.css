@@ -4,14 +4,13 @@
 @import "../vendor/Bootstrap/bootstrap.min.css";
 
 :root{
-    font-size: 10px;
+    font-size: 8.8px;
 }
 
 html{
     box-sizing: border-box;
     font-size: 1.6rem;
     user-select: none;
-
 }
 
 body{
@@ -19,7 +18,7 @@ body{
     background-color: var(--app-bg-color);
     font-family: "IRANSans";
     transition: background-color 80ms ease;
-    /* zoom: .85; */
+
 }
 
 *,

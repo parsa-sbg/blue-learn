@@ -5,7 +5,7 @@
     flex-direction: column;
     background-color: var(--section-color);
     border-radius: 2rem;
-    max-width: 40rem;
+    max-width: 42rem;
     margin: .75rem auto;
 }
 .coursebox__banner{
