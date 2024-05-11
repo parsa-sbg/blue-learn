@@ -1,3 +1,4 @@
+import { getUserToken } from "../shared/utils.js"
 
 const getAllCourses = async () => {
     const res = await fetch('http://localhost:4000/v1/courses')
@@ -100,6 +101,34 @@ const getCagegoryCourses = async (courseShortName) => {
     }
 }
 
+const createNewCourse = async (name, description, cover , shortName, price, categoryID ,support) => {
+    
+    const formData = new FormData()
+
+    formData.append('name', name)
+    formData.append('description', description)
+    formData.append('cover', cover)
+    formData.append('shortName', shortName)
+    formData.append('price', price)
+    formData.append('categoryID', categoryID)
+    formData.append('support', support)
+    formData.append('status', 'start')
+
+    const res = await fetch ('http://localhost:4000/v1/courses',{
+        method: "POST",
+        headers: {
+            Authorization : `bearer ${getUserToken()}`,
+        },
+        body : formData
+    })
+    
+    const data = await res.json()
+    return {
+        res,
+        data
+    }
+    
+}
 
 export { 
     getAllCourses,
@@ -108,4 +137,5 @@ export {
     getCourseData,
     getSessionInfos,
     getCagegoryCourses,
+    createNewCourse
 }

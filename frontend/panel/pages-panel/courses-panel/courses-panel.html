@@ -293,7 +293,7 @@
             </div>
 
 
-            <form class="addcourse-form" action="">
+            <form onsubmit="return false" class="addcourse-form">
 
                 <div class="addcourse-form__wrapper">
                     <label for="name">نام دوره</label>
@@ -308,15 +308,17 @@
                 <div class="addcourse-form__wrapper">
                     <label for="category">دسته بندی</label>
                     <select name="category" id="category">
-                        <option class="category-option" value="">فرانت اند</option>
-                        <option class="category-option" value="">بک اند</option>
-                        <option class="category-option" value="">اندروید</option>
                     </select>
                 </div>
 
                 <div class="addcourse-form__wrapper">
                     <label for="price">قیمت</label>
                     <input id="price" type="number">
+                </div>
+
+                <div class="addcourse-form__wrapper">
+                    <label for="support">روش پشتیبانی</label>
+                    <input id="support" type="text">
                 </div>
 
                 <div class="addcourse-form__wrapper">
@@ -330,7 +332,7 @@
                 </div>
 
                 <div class="addcourse-form__btn-wrapper">
-                    <button class="addcourse-form__btn">افزودن دوره</button>
+                    <button type="submit" class="addcourse-form__btn">افزودن دوره</button>
                 </div>
 
             </form>
@@ -389,7 +391,7 @@
 
     <script src=".../../../../../vendor/FontAwesome5/all.min.js"></script>
     <script type="module" src="../../shared-panel/shared-panel.js"></script>
-    <script src="courses-panel.js"></script>
+    <script type="module" src="courses-panel.js"></script>
 </body>
 
 </html>

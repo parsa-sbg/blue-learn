@@ -43,6 +43,7 @@ main {
 
 .addcourse-form{
     display: flex;
+    align-items: center;
     margin-top: 3rem;
     flex-wrap: wrap;
     gap: 3rem;
@@ -78,7 +79,9 @@ input{
     font-size: 2rem;
     border-radius: 1rem;
     padding: .5rem 1rem;
-    border: 1px solid var(--text-color-light);
+    border: none;
+    color: var(--text-color);
+    background-color: var(--app-bg-color);
 }
 
 
@@ -92,19 +95,30 @@ input{
     color: var(--text-color);
     border: none;
     max-width: 34rem;
+    background-color: transparent;
 }
 #cover::-webkit-file-upload-button{
     border: none;
     cursor: pointer;
     border-radius: 1rem;
-    border: 1px solid var(--text-color-light);
-    background-color: #fff;
+    border: none;
+    color: var(--text-color);
+    background-color: var(--app-bg-color);
+    padding: .5rem 1rem;
 }
 
 #category{
     font-size: 1.8rem;
     border-radius: 1rem;
-    padding: .5rem .3rem;
+    padding: .5rem .7rem;
+    background-color: var(--app-bg-color);
+    color: var(--text-color);
+    border: none;
+}
+.category-option{
+    border: none;
+    margin: 1rem;
+
 }
 
 #price{
@@ -131,8 +145,10 @@ input{
     width: 100%;
     height: 100%;
     border-radius: 1rem;
-    border: 1px solid var(--text-color-light);
-
+    border: none;
+    background-color: var(--app-bg-color);
+    color: var(--text-color);
+    padding: 1rem;
 }
 
 .addcourse-form__btn-wrapper{
