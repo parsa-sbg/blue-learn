@@ -3,6 +3,7 @@
 
 main {
     padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
 }
 
 /* start title */
@@ -32,4 +33,170 @@ main {
     background-color: var(--primary-color);
 }
 
+.sub-title{
+    font-size: 2.3rem;
+}
+
 /* end title */
+
+/* start add course form */
+
+.addcourse-form{
+    display: flex;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    gap: 3rem;
+    background-color: var(--section-color);
+    padding: 3rem;
+    border-radius: 3rem;
+}
+.addcourse-form__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+label{
+    color: var(--text-color);
+    font-size: 2rem;
+    position: relative;
+    padding-right: 1.5rem;
+}
+label::before{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary-color);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 100%;
+}
+
+input{
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--text-color-light);
+}
+
+
+#name{
+    max-width: 22rem;
+}
+#shortname{
+    width: 10rem;
+}
+#cover{
+    color: var(--text-color);
+    border: none;
+    max-width: 34rem;
+}
+#cover::-webkit-file-upload-button{
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 1px solid var(--text-color-light);
+    background-color: #fff;
+}
+
+#category{
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    padding: .5rem .3rem;
+}
+
+#price{
+    -moz-appearance: textfield;
+    appearance: textfield;
+    max-width: 14rem;
+}
+#price::-webkit-outer-spin-button,
+#price::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.category-option{
+
+}
+
+.desc-wrapper{
+    width: 100%;
+    min-height: 15rem;
+}
+
+#desc{
+    font-size: 1.8rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--text-color-light);
+
+}
+
+.addcourse-form__btn-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+}
+.addcourse-form__btn{
+    font-size: 2rem;
+    border: none;
+    border-radius: 3rem;
+    padding: .5rem 5rem;
+    color: var(--primary-color);
+    font-family: "IRANsans bold";
+    background-color: transparent;
+    transition: all 200ms ease;
+}
+.addcourse-form__btn:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* end add course form */
+
+
+
+/* start courses */
+
+.courses-table{
+    font-size: 2rem;
+    width: 100%;
+    color: var(--text-color);
+    margin-top: 3rem;
+
+}
+.courses-table__header{
+    position: relative;
+    padding-right: 1.2rem;
+    padding-bottom: 0.8rem;
+}
+.courses-table__item-number{
+    width: 2rem;
+}
+.courses-table__item{
+    border: 1px solid var(--text-color);
+    padding: .5rem 1rem;
+}
+.courses-table__item-price{
+    /* max-width: 16rem; */
+}
+.courses-table__delete-btn{
+    border: 1px solid var(--text-color);
+    width: 10rem;
+}
+.courses-table__delete-btn button{
+    width: 100%;
+    border-radius: 1rem;
+    transition: all 200ms ease;
+    border: none;
+}
+.courses-table__delete-btn button:hover{
+    background-color: rgb(237, 0, 0);
+    color: #fff;
+}
+
+/* end courses */

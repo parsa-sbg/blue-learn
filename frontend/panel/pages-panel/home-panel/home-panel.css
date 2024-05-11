@@ -3,6 +3,7 @@
 
 main {
     padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
 }
 
 /* start title */
@@ -31,5 +32,10 @@ main {
     border-radius: .5rem;
     background-color: var(--primary-color);
 }
+
+.sub-title{
+    font-size: 2.3rem;
+}
+
 
 /* end title */

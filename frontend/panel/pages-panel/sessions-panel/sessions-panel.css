@@ -32,4 +32,9 @@ main {
     background-color: var(--primary-color);
 }
 
+.sub-title{
+    font-size: 2.3rem;
+}
+
+
 /* end title */
