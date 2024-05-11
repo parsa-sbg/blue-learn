@@ -298,16 +298,16 @@
 .mobile-menu__close-btn::before{
     content: "";
     background-color: var(--text-color);
-    width: 4rem;
+    width: 5rem;
     height: .3rem;
     border-radius: 3rem;
     left: 50%;
 }
 .mobile-menu__close-btn::after{
-    transform: rotate(45deg) translate(8px, -9px);
+    transform: rotate(45deg) translate(7px, -7px);
 }
 .mobile-menu__close-btn::before{
-    transform: rotate(-45deg) translate(-8px, -9px);
+    transform: rotate(-45deg) translate(-7px, -7px);
 }
 .mobile-menu__theme-btn{
 

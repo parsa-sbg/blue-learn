@@ -121,13 +121,13 @@
 
 }
 .home__left{
-
+    flex-basis: 60%;
 }
 .home__banner{
 
 }
 .home__image{
-    width: 120%;
+    width: 110%;
 }
 
 /* end home */
