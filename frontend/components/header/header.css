@@ -382,6 +382,20 @@
 
 /* end mobile menu */
 
+/* start panel link */
+
+.panel-link{
+    border: 2px solid var(--primary-color);
+    padding: .3rem 1rem;
+    width: fit-content;
+    display: none;
+}
+.panel-link--show{
+    display: block;
+}
+
+/* end panel link */
+
 
 
 /* ==========================   responsive  ====================== */

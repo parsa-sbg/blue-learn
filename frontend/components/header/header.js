@@ -93,6 +93,8 @@ const getAndShowUserNameInHeader = async () => {
     const userToken = getUserToken()
     const userInfos = await getUserInfos(userToken)
 
+    const panelLinks = document.querySelectorAll('.panel-link')
+
     if(userToken){
         headerUsername.setAttribute('href', '#')
         headerUsername.innerHTML = userInfos.data.name + '<i class="header__username-icon fa fa-user"></i>'
@@ -100,6 +102,14 @@ const getAndShowUserNameInHeader = async () => {
         headerUsername.setAttribute('href', '../login/login.html')
         headerUsername.innerHTML = 'ورود/ثبت نام'
     }
+
+    // show panel link when the user is admin
+    if (userInfos.data.role == 'ADMIN') {
+        panelLinks.forEach(panelLink => {
+            addClass('panel-link--show', panelLink)
+        })
+    }
+
 }
 
 const handleDarkMode = () => {
