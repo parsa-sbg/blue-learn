@@ -1,3 +1,5 @@
+import { getUserToken } from "../shared/utils.js"
+
 const registerNewUser = async (name, username, email, phone, password, confirmPassword) => {
     const newUserInfoes = {
         name,
@@ -61,9 +63,20 @@ const getUserInfos = async (userToken) => {
     }
 }
 
+const routeProtection = async () => {
+    const userToken = getUserToken()
+    const userInfos = await getUserInfos(userToken)
+
+    if (userInfos.data.role !== 'ADMIN') {
+        console.log('no admin');
+        location.replace('../../../pages/home/index.html')
+    }
+}
+
 export {
     registerNewUser,
     saveIntoLocalStorage,
     loginUser,
-    getUserInfos
+    getUserInfos,
+    routeProtection
 }
