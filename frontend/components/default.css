@@ -4,8 +4,7 @@
 @import "../vendor/Bootstrap/bootstrap.min.css";
 
 :root{
-    font-size: 9.3px;
-    zoom: .85;
+    font-size: 10px;
 }
 
 html{
@@ -20,7 +19,7 @@ body{
     background-color: var(--app-bg-color);
     font-family: "IRANSans";
     transition: background-color 80ms ease;
-
+    /* zoom: .85; */
 }
 
 *,
