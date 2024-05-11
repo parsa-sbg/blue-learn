@@ -145,4 +145,10 @@ const handleDarkMode = () => {
 }
 
 
-export { handleSearchBoxLogic , handleOpenMobileMenu, getAndShowUserNameInHeader, handleDarkMode}
+export {
+    handleSearchBoxLogic,
+    handleOpenMobileMenu,
+    getAndShowUserNameInHeader,
+    handleDarkMode,
+    closeMobileMenu
+}
