@@ -32,6 +32,26 @@ const showTimerSwal = (icon, title, confirmButtonText, callback) => {
 
 }
 
+const showQuestionSwal = (icon, title, confirmButtonText, secondTitle , callback) => {
+    Swal.fire({
+        title: title,
+        icon: icon,
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: confirmButtonText,
+        cancelButtonText: 'نه'
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: secondTitle,
+            icon: "success"
+          }).then(callback());
+        }
+      });
+}
+
 const getUserToken = () => {
     const userToken = JSON.parse(localStorage.getItem("userToken"));
     return userToken ? userToken : null;
@@ -48,5 +68,6 @@ export {
     toggleClass,
     showTimerSwal,
     getUserToken,
-    getUrlParam
+    getUrlParam,
+    showQuestionSwal
 }

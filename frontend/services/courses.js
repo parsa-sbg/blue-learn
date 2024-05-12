@@ -130,6 +130,16 @@ const createNewCourse = async (name, description, cover , shortName, price, cate
     
 }
 
+const deleteCourse = async courseId => {
+    const res = await fetch(`http://localhost:4000/v1/courses/${courseId}`,{
+        method: "DELETE",
+        headers:{
+            Authorization : `bearer ${getUserToken()}`
+        }
+    })
+    console.log(res);
+}
+
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
@@ -137,5 +147,6 @@ export {
     getCourseData,
     getSessionInfos,
     getCagegoryCourses,
-    createNewCourse
+    createNewCourse,
+    deleteCourse
 }
