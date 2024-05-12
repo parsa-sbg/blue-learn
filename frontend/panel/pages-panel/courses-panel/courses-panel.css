@@ -1,6 +1,7 @@
 @import "../../../components/header/header.css";
 @import "../../../components/default.css";
 @import "../../components-panel/panel-titles.css";
+@import "../../components-panel/panel-form.css";
 
 main {
     padding-top: 8.5rem;
@@ -9,49 +10,6 @@ main {
 
 
 /* start add course form */
-
-.addcourse-form{
-    display: flex;
-    align-items: center;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-    gap: 3rem;
-    background-color: var(--section-color);
-    padding: 3rem;
-    border-radius: 3rem;
-}
-.addcourse-form__wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-label{
-    color: var(--text-color);
-    font-size: 2rem;
-    position: relative;
-    padding-right: 1.5rem;
-}
-label::before{
-    content: "";
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    background-color: var(--primary-color);
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    border-radius: 100%;
-}
-
-input{
-    font-size: 2rem;
-    border-radius: 1rem;
-    padding: .5rem 1rem;
-    border: none;
-    color: var(--text-color);
-    background-color: var(--app-bg-color);
-}
 
 
 #name{
@@ -87,7 +45,6 @@ input{
 .category-option{
     border: none;
     margin: 1rem;
-
 }
 
 #price{
@@ -120,26 +77,6 @@ input{
     padding: 1rem;
 }
 
-.addcourse-form__btn-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; 
-}
-.addcourse-form__btn{
-    font-size: 2rem;
-    border: none;
-    border-radius: 3rem;
-    padding: .5rem 5rem;
-    color: var(--primary-color);
-    font-family: "IRANsans bold";
-    background-color: transparent;
-    transition: all 200ms ease;
-}
-.addcourse-form__btn:hover{
-    background-color: var(--primary-color);
-    color: #fff;
-}
 
 /* end add course form */
 
@@ -152,7 +89,6 @@ input{
     width: 100%;
     color: var(--text-color);
     margin-top: 3rem;
-
 }
 .courses-table__header{
     position: relative;

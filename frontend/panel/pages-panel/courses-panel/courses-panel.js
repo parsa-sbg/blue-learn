@@ -2,7 +2,7 @@ import { showTimerSwal , showQuestionSwal } from "../../../shared/utils.js";
 import { getAllCatrgories } from "../../../services/categories.js";
 import { createNewCourse, getAllCourses , deleteCourse} from "../../../services/courses.js";
 
-const createCourseBtn = document.querySelector('.addcourse-form__btn')
+const createCourseBtn = document.querySelector('.form__btn')
 const categoryWrapper = document.querySelector('#category')
 const newCourseFileInput = document.querySelector('#cover')
 const allCatrgories = await getAllCatrgories()

@@ -149,8 +149,46 @@
 
                 <h2 class="title blue-bg">پنل مدیریت | جلسات</h2>
 
+                <div class="title-wrapper">
+                    <h3 class="title sub-title blue-bg">افزودن جلسه</h3>
+                </div>
 
-                
+
+                <form onsubmit="return false" class="form">
+
+                    <div class="form__wrapper">
+                        <label for="name">نام جلسه</label>
+                        <input id="name" type="text">
+                    </div>
+    
+                    <div class="form__wrapper">
+                        <label for="time">زمان</label>
+                        <input id="time" type="text">
+                    </div>
+    
+                    <div class="form__wrapper">
+                        <label for="course">دوره</label>
+                        <select name="course" id="course">
+                        </select>
+                    </div>
+
+                    <label class="checkbox-wrapper">
+                        <span class="checkbox__label">رایگان</span>
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+    
+                    <div class="form__wrapper">
+                        <label for="video">ویدیو دوره</label>
+                        <input type="file" id="video">
+                    </div>
+    
+                    <div class="form__btn-wrapper">
+                        <button type="submit" class="form__btn">افزودن جلسه</button>
+                    </div>
+    
+                </form>
+
             </div>
         </div>
     </main>

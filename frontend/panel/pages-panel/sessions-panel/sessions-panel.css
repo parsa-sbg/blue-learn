@@ -1,8 +1,160 @@
 @import "../../../components/header/header.css";
 @import "../../../components/default.css";
 @import "../../components-panel/panel-titles.css";
+@import "../../components-panel/panel-form.css";
 
 
 main {
     padding-top: 8.5rem;
 }
+
+/* start add session */
+
+#name {
+    max-width: 22rem;
+}
+
+#time {
+    width: 10rem;
+}
+
+#course {
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    padding: .5rem .7rem;
+    background-color: var(--app-bg-color);
+    color: var(--text-color);
+    border: none;
+}
+
+#free{
+    width: 3rem;
+    height: 3rem;
+}
+
+#video {
+    color: var(--text-color);
+    border: none;
+    max-width: 34rem;
+    background-color: transparent;
+    padding: 0;
+}
+#video::-webkit-file-upload-button{
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    color: var(--text-color);
+    background-color: var(--app-bg-color);
+    padding: .5rem .7rem;
+}
+/* custom select box */
+/* The container */
+.checkbox-wrapper {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 57px;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkbox-wrapper input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 60%;
+    height: 34.78px;
+    width: 34.78px;
+    background-color: var(--app-bg-color);
+    transition: all 100ms ease;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkbox-wrapper:hover input ~ .checkmark {
+    background-color: #313131;
+    display: flex;
+    flex-direction: colomn;
+  }
+  .checkbox-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 52px;
+    font-size: 2rem;
+    padding: 0;
+  }
+  .checkbox-wrapper::before{
+    display: none;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkbox-wrapper input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    transition: all 200ms ease;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkbox-wrapper input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox-wrapper .checkmark:after {
+    left: 14px;
+    top: 8px;
+    width: 8px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  
+  .checkbox__label{
+    position: relative;
+    padding-right: 1.5rem;
+    color: var(--text-color);
+    font-size:2rem ;
+  }
+  .checkbox__label::before{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary-color);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border-radius: 100%;
+  }
+/* custom select box */
+
+
+/* end add session */
+
+
