@@ -17,13 +17,21 @@ const getAndShowAllCourses = async () => {
 
 
     coursesTableBody.innerHTML = ''
+    coursesTableBody.insertAdjacentHTML('beforeend',`
+                    <tr>
+                        <th></th>
+                        <th class="courses-table__header">نام دوره</th>
+                        <th class="courses-table__header">نام کوتاه</th>
+                        <th class="courses-table__header">حذف</th>
+                    </tr>
+    `)
     allCourses.forEach((course, index) => {
         console.log(course);
         const tr = document.createElement('tr')
         tr.insertAdjacentHTML('afterbegin', `
             <td class="courses-table__item courses-table__item-number">${index +1 }</td>
             <td class="courses-table__item">${course.name}</td>
-            <td class="courses-table__item courses-table__item-price">${course.price ? course.price : 'رایگان'}</td>
+            <td class="courses-table__item courses-table__item-price">${course.shortName}</td>
             <td class="courses-table__delete-btn"><button onclick="showSwalAndDeleteCourse('${course._id}','${course.name}')">حذف</button></td>
         `)
         coursesFragment.appendChild(tr)
