@@ -140,6 +140,13 @@ const deleteCourse = async courseId => {
     console.log(res);
 }
 
+const getAllSessions = async () => {
+    const res = await fetch('http://localhost:4000/v1/courses/sessions')
+    const data = await res.json()
+
+    return data
+}
+
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
@@ -148,5 +155,6 @@ export {
     getSessionInfos,
     getCagegoryCourses,
     createNewCourse,
-    deleteCourse
+    deleteCourse,
+    getAllSessions
 }

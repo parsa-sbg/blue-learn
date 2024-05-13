@@ -27,8 +27,7 @@
 
 }
 @media screen and (max-width: 400px) {
-    .addcourse-form{
+    .form{
         padding: 1.5rem;
     }
-
 }

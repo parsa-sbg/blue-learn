@@ -1,0 +1,17 @@
+table{
+    font-size: 2rem;
+    width: 100%;
+    color: var(--text-color);
+    margin-top: 3rem;
+}
+
+th{
+    position: relative;
+    padding-right: 1.2rem;
+    padding-bottom: 0.8rem;
+}
+
+td {
+    border: 1px solid var(--text-color);
+    padding: .5rem 1rem;
+}

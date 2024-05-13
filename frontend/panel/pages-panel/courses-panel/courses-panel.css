@@ -2,6 +2,7 @@
 @import "../../../components/default.css";
 @import "../../components-panel/panel-titles.css";
 @import "../../components-panel/panel-form.css";
+@import "../../components-panel/panel-table.css";
 
 main {
     padding-top: 8.5rem;
@@ -84,31 +85,15 @@ main {
 
 /* start courses */
 
-.courses-table{
-    font-size: 2rem;
-    width: 100%;
-    color: var(--text-color);
-    margin-top: 3rem;
-}
-.courses-table__header{
-    position: relative;
-    padding-right: 1.2rem;
-    padding-bottom: 0.8rem;
-}
 .courses-table__item-number{
     width: 2rem;
 }
-.courses-table__item{
-    border: 1px solid var(--text-color);
-    padding: .5rem 1rem;
-}
 .courses-table__item-price{
-    /* max-width: 16rem; */
+
 }
 .courses-table__delete-btn{
     border: 1px solid var(--text-color);
     width: 10rem;
-    /* display: math; */
 }
 .courses-table__delete-btn button{
     width: 100%;
