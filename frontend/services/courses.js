@@ -167,6 +167,17 @@ const addNewSession = async (courseId ,title, video, time, free) => {
     console.log(data);
 }
 
+const deleteSession = async (sessionId) => {
+    const res = await fetch(`http://localhost:4000/v1/courses/sessions/${sessionId}`,{
+        method: "DELETE",
+        headers:{
+            Authorization : `bearer ${getUserToken()}`
+        }
+    })
+
+    return res
+}
+
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
@@ -177,5 +188,6 @@ export {
     createNewCourse,
     deleteCourse,
     getAllSessions,
-    addNewSession
+    addNewSession,
+    deleteSession
 }
