@@ -185,7 +185,7 @@ main {
     color: var(--text-color);
     border: 1px solid var(--primary-color);
     margin-bottom: 2rem;
-    
+
     transition: all 300ms ease;
 }
 .accordion__panel{
@@ -256,4 +256,13 @@ main {
     background-color: red;
 }
 
+#time{
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+#time::-webkit-outer-spin-button,
+#time::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /* end all sessions */

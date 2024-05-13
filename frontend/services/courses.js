@@ -147,6 +147,26 @@ const getAllSessions = async () => {
     return data
 }
 
+const addNewSession = async (courseId ,title, video, time, free) => {
+    const formData = new FormData()
+
+    formData.append('title', title)
+    formData.append('video', video)
+    formData.append('time', time)
+    formData.append('free', free)
+
+    const res = await fetch (`http://localhost:4000/v1/courses/${courseId}/sessions`,{
+        method: "POST",
+        headers: {
+           Authorization : `bearer ${getUserToken()}`
+        },
+        body : formData
+    })
+    const data = await res.json()
+
+    console.log(data);
+}
+
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
@@ -156,5 +176,6 @@ export {
     getCagegoryCourses,
     createNewCourse,
     deleteCourse,
-    getAllSessions
+    getAllSessions,
+    addNewSession
 }

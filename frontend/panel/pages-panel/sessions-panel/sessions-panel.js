@@ -1,15 +1,30 @@
-import { getAllCourses , getAllSessions } from "../../../services/courses.js"
+import { getAllCourses , getAllSessions , addNewSession } from "../../../services/courses.js"
 
+let video 
+const videoInpurElem = document.querySelector('#video')
+let allCourses
+
+// preper courses list
+const preperCoursesList = async () => {
+    allCourses = await getAllCourses()
+    const courseSelectElem = document.querySelector('#course')
+    allCourses.forEach(course => {
+        courseSelectElem.insertAdjacentHTML('beforeend',`
+            <option value="${course._id}">${course.name}</option>
+        `)
+    })
+}
+
+// add new session logic
+const formBtn = document.querySelector('.form__btn')
 
 
 // get and show all courses
 const getAndShowAllCourses = async () => {
     const sessionsWrapper = document.querySelector('.sessions-wrapper')
-    const allCourses = await getAllCourses()
     const coursesFragment = document.createDocumentFragment()
 
     allCourses.forEach(course => {
-        console.log(course);
         const accordionWrapper = document.createElement('div')
         accordionWrapper.className = 'accordion-wrapper'
         accordionWrapper.insertAdjacentHTML('beforeend', `
@@ -35,7 +50,6 @@ const getAndShowAllSessions = async () => {
     const allSessions = await getAllSessions()
 
     allSessions.forEach(session => {
-        console.log(session.course._id);
         document.getElementById(session.course._id).insertAdjacentHTML('beforeend', `
 
             <div class="accordion__panel-item">
@@ -54,7 +68,27 @@ const getAndShowAllSessions = async () => {
 }
 
 
+/////////////////////////////////////// =>  events <= /////////////////////////////////////
+
+formBtn.addEventListener('click', async () => {
+    const courseId = document.querySelector('#course').value
+    const name = document.querySelector('#name').value
+    const time = document.querySelector('#time').value
+    const free = document.querySelector('#free').checked ? 1 : 0
+
+
+
+    addNewSession(courseId, name, video, time, free)
+})
+
+// save video in variable
+videoInpurElem.addEventListener('change', event => {
+    video = event.target.files[0]
+})
+
+
 window.addEventListener('load', async () => {
+    await preperCoursesList()
     await getAndShowAllCourses()
     await getAndShowAllSessions()
 
