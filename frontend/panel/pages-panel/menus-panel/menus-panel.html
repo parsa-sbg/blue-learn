@@ -145,9 +145,78 @@
 
     <main class="main">
         <div class="container">
+
             <div class="title-wrapper">
                 <h2 class="title blue-bg">پنل مدیریت | منوها</h2>
             </div>
+
+            <div class="title-wrapper">
+                <h3 class="title sub-title blue-bg">افزودن منو</h3>
+            </div>
+
+            <form onsubmit="return false" class="form">
+
+                <div class="form__wrapper">
+                    <label for="name">نام منو</label>
+                    <input id="name" type="text">
+                </div>
+
+                <div class="form__wrapper">
+                    <label for="href">آدرس*</label>
+                    <input id="href" type="text">
+                </div>
+
+                <div class="form__wrapper">
+                    <label for="parent">پرنت*</label>
+                    <select name="parent" id="parent">
+
+                        <option class="parent-option" value="">rhrs</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form__btn-wrapper">
+                    <button type="submit" class="form__btn">افزودن منو</button>
+                </div>
+
+            </form>
+
+            <div class="title-wrapper">
+                <h3 class="title sub-title blue-bg">همه منوها</h3>
+            </div>
+
+            <div class="menus-wrapper">
+
+                <div class="accordion-wrapper">
+
+                    <button class="accordion__btn">
+                        parsa
+                        <div class="accordion__btn-left">
+                            <div class="accordion__panel-item__delbtn">حذف منو</div>
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                    </button>
+        
+                    <div class="accordion__panel">
+
+                        <div class="accordion__panel-item">
+                            <div class="accordion__panel-item__right">
+                                <span class="accordion__panel-item__number">1</span>
+                                <p class="accordion__panel-item__title">mdm</p>
+                            </div>
+            
+                            <div class="accordion__panel-item__left">
+                                <button class="accordion__panel-item__delbtn">حذف منو</button>
+                            </div>
+                        </div>
+            
+                    </div>
+                    
+                </div>
+
+            </div>
+
         </div>
     </main>
 
@@ -156,7 +225,7 @@
 
     <script src=".../../../../../vendor/FontAwesome5/all.min.js"></script>
     <script type="module" src="../../shared-panel/shared-panel.js"></script>
-    <script src="manus-panel.js"></script>
+    <script type="module" src="manus-panel.js"></script>
 </body>
 
 </html>

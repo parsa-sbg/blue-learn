@@ -1,8 +1,55 @@
 @import "../../../components/header/header.css";
 @import "../../../components/default.css";
 @import "../../components-panel/panel-titles.css";
+@import "../../components-panel/panel-form.css";
+@import "../../components-panel/panel-accordion.css";
 
 
 main {
     padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
 }
+
+/* start add menu */
+
+#name {
+
+}
+
+#href {
+
+}
+
+#parent {
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    padding: .5rem .7rem;
+    background-color: var(--app-bg-color);
+    color: var(--text-color);
+    border: none;
+}
+.parent-option{
+    border: none;
+    margin: 1rem;
+}
+
+/* end add menu */
+
+/* start all menus */
+
+.menus-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: 2rem;
+    margin-top: 3rem;
+    color: var(--text-color);
+}
+
+.accordion__btn-left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* end all menus */
