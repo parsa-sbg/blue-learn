@@ -1,8 +1,9 @@
 import {
     getAllMenues,
-    addNewMenu
+    addNewMenu,
+    deleteMenu
 } from "../../../services/menues.js"
-import { showTimerSwal } from "../../../shared/utils.js";
+import { showQuestionSwal, showTimerSwal } from "../../../shared/utils.js";
 let allMenues;
 
 const formSubmitBtn = document.querySelector('.form__btn')
@@ -38,7 +39,7 @@ const displayMenusInSelectInputAndAllMenus = () => {
             <button class="accordion__btn">
                 ${menu.title}
                 <div class="accordion__btn-left">
-                    <div class="accordion__panel-item__delbtn">حذف منو</div>
+                    <div onclick="showSwalAndDeleteMenu('${menu._id}')" class="accordion__panel-item__delbtn">حذف منو</div>
                     <i class="fa fa-angle-down"></i>
                 </div>
             </button>
@@ -55,7 +56,7 @@ const displayMenusInSelectInputAndAllMenus = () => {
                             </div>
             
                             <div class="accordion__panel-item__left">
-                                <button class="accordion__panel-item__delbtn">حذف منو</button>
+                                <button onclick="showSwalAndDeleteMenu('${submenu._id}')" class="accordion__panel-item__delbtn">حذف منو</button>
                             </div>
                         </div>
                     ` ).join('')}
@@ -90,9 +91,21 @@ const handleOpenAccordion = () => {
     })
 }
 
+const showSwalAndDeleteMenu = (menuId) => {
+    console.log(menuId);
+    showQuestionSwal('warning', 'آیا از حذف این منو اطمینان دارید؟', 'بله', 'منو مورد نظر با موفقیت حذف شد.',
+    async () => {
+        await deleteMenu(menuId)
+        allMenues = await getAllMenues()
+        displayMenusInSelectInputAndAllMenus()
+        handleOpenAccordion()
+    })
+}
+
 
 /////////////////////////// events ///////////////////////////
 
+window.showSwalAndDeleteMenu = showSwalAndDeleteMenu
 window.addEventListener('load', async () => {
     allMenues = await getAllMenues()
     displayMenusInSelectInputAndAllMenus()

@@ -111,8 +111,19 @@ const addNewMenu = async (title, href, parentId) => {
     }
 }
 
+const deleteMenu = async (menuId) => {
+    const res = await fetch(`http://localhost:4000/v1/menus/${menuId}`,{
+        method: "DELETE",
+        headers: {
+            Authorization : `bearer ${getUserToken()}`
+        }
+    })
+    return res
+}
+
 export {
     getAllMenues,
     renderMenuesInWrapper,
-    addNewMenu
+    addNewMenu,
+    deleteMenu
 }
