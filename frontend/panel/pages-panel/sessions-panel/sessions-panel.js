@@ -1,23 +1,21 @@
-import { getAllCourses , getAllSessions , addNewSession } from "../../../services/courses.js"
+import { getAllCourses, getAllSessions, addNewSession } from "../../../services/courses.js"
 
-let video 
+let video
 const videoInpurElem = document.querySelector('#video')
 let allCourses
+
+const formBtn = document.querySelector('.form__btn')
 
 // preper courses list
 const preperCoursesList = async () => {
     allCourses = await getAllCourses()
     const courseSelectElem = document.querySelector('#course')
     allCourses.forEach(course => {
-        courseSelectElem.insertAdjacentHTML('beforeend',`
+        courseSelectElem.insertAdjacentHTML('beforeend', `
             <option value="${course._id}">${course.name}</option>
         `)
     })
 }
-
-// add new session logic
-const formBtn = document.querySelector('.form__btn')
-
 
 // get and show all courses
 const getAndShowAllCourses = async () => {
@@ -34,10 +32,7 @@ const getAndShowAllCourses = async () => {
                 <i class="fa fa-angle-down"></i>
             </button>
 
-            <div class="accordion__panel" id="${course._id}">
-
-            </div>
-
+            <div class="accordion__panel" id="${course._id}"></div>
             
         `)
         coursesFragment.appendChild(accordionWrapper)
@@ -67,18 +62,42 @@ const getAndShowAllSessions = async () => {
     })
 }
 
+const fillEmptyAccordionPanels = () => {
+    const accordionPanels = document.querySelectorAll('.accordion__panel')
+    const emptyPanels = []
+    accordionPanels.forEach(panel => {
+        console.log(panel.innerHTML);
+        if (!panel.innerHTML) {
+            emptyPanels.push(panel)
+        }
+    })
+    console.log(emptyPanels);
+    emptyPanels.forEach(emptyPanel => {
+        emptyPanel.insertAdjacentHTML('beforeend', `
+            <div class="accordion__panel-item">
+                <div class="accordion__panel-item__right">
+                    <p class="accordion__panel-item__title text-danger">هنوز جلسه ای برای این دوره اضافه نشده</p>
+                </div>
+            </div>
+        `)
+    })
+}
 
 /////////////////////////////////////// =>  events <= /////////////////////////////////////
 
-formBtn.addEventListener('click', async () => {
+
+// add new session logic
+formBtn.addEventListener('click', async event => {
+    event.preventDefault()
     const courseId = document.querySelector('#course').value
     const name = document.querySelector('#name').value
     const time = document.querySelector('#time').value
     const free = document.querySelector('#free').checked ? 1 : 0
 
-
-
     addNewSession(courseId, name, video, time, free)
+    getAndShowAllCourses()
+    getAndShowAllSessions()
+    fillEmptyAccordionPanels()
 })
 
 // save video in variable
@@ -91,6 +110,10 @@ window.addEventListener('load', async () => {
     await preperCoursesList()
     await getAndShowAllCourses()
     await getAndShowAllSessions()
+
+
+    // fill empty accordion panels
+    fillEmptyAccordionPanels()
 
     // handle open accordion panel 
     const accordionBtns = document.querySelectorAll('.accordion__btn')
