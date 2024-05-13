@@ -2,7 +2,6 @@ import {
     addClass,
     removeClass,
     toggleClass,
-    getUserToken
 } from "../../shared/utils.js"
 
 import { getUserInfos } from "../../services/auth.js"
@@ -34,16 +33,16 @@ const handleSearchBoxLogic = () => {
             redirectToSearchPage(globalSearchInput)
         }
     })
-    dropDownSearchBtn.addEventListener('click',() => {
+    dropDownSearchBtn.addEventListener('click', () => {
         redirectToSearchPage(globalSearchInput)
     })
     searchBoxBtn.addEventListener('click', () => {
         searchBoxBtn.style.zIndex = "10"
-        addClass('haeder__global-search-dropdown-wrapper--show',globalSearchDropdown)
+        addClass('haeder__global-search-dropdown-wrapper--show', globalSearchDropdown)
         addClass('cover--show', cover)
     })
     cover.addEventListener('click', () => {
-        removeClass('haeder__global-search-dropdown-wrapper--show',globalSearchDropdown)
+        removeClass('haeder__global-search-dropdown-wrapper--show', globalSearchDropdown)
         closeMobileMenu()
     })
 
@@ -56,7 +55,7 @@ const handleSearchBoxLogic = () => {
             redirectToSearchPage(mobileGlobalSearchInput)
         }
     })
-    mobileGropDownSearchBtn.addEventListener('click',() => {
+    mobileGropDownSearchBtn.addEventListener('click', () => {
         redirectToSearchPage(mobileGlobalSearchInput)
     })
 }
@@ -90,38 +89,38 @@ const handleOpenMobileMenu = () => {
 }
 
 const getAndShowUserNameInHeader = async () => {
-    const userToken = getUserToken()
-    const userInfos = await getUserInfos(userToken)
+    const userInfos = await getUserInfos()
 
     const panelLinks = document.querySelectorAll('.panel-link')
 
-    if(userToken){
+    if (userInfos) {
         headerUsername.setAttribute('href', '#')
         headerUsername.innerHTML = userInfos.data.name + '<i class="header__username-icon fa fa-user"></i>'
-    }else{
+
+        // show panel link when the user is admin
+        if (userInfos.data.role == 'ADMIN') {
+            panelLinks.forEach(panelLink => {
+                addClass('panel-link--show', panelLink)
+            })
+        }
+
+    } else {
         headerUsername.setAttribute('href', '../login/login.html')
         headerUsername.innerHTML = 'ورود/ثبت نام'
-    }
-
-    // show panel link when the user is admin
-    if (userInfos.data.role == 'ADMIN') {
-        panelLinks.forEach(panelLink => {
-            addClass('panel-link--show', panelLink)
-        })
     }
 
 }
 
 const handleDarkMode = () => {
-    const changeThemeBtns = [document.querySelector('.header__theme-btn'),document.querySelector('.mobile__theme-btn')]
+    const changeThemeBtns = [document.querySelector('.header__theme-btn'), document.querySelector('.mobile__theme-btn')]
     const theme = localStorage.getItem('bluelearn-darkmode')
 
     const changeToDark = () => {
-        changeThemeBtns.forEach(btn=> {
+        changeThemeBtns.forEach(btn => {
             btn.innerHTML = '<i class="fa fa-moon header__theme-btn-icon"></i>'
             localStorage.setItem('bluelearn-darkmode', true)
             addClass('header__theme-btn--dark', btn)
-    
+
             document.documentElement.classList.add('dark')
         })
 
@@ -136,9 +135,9 @@ const handleDarkMode = () => {
 
     }
 
-    if(theme == 'true'){
+    if (theme == 'true') {
         changeToDark()
-    }else{
+    } else {
         changeToLight()
     }
 
@@ -146,10 +145,10 @@ const handleDarkMode = () => {
         btn.addEventListener('click', () => {
             if (btn.className.includes('header__theme-btn--dark')) {
                 changeToLight()
-            }else{
+            } else {
                 changeToDark()
             }
-            
+
         })
     })
 }

@@ -1,9 +1,11 @@
-import { getAllMenues } from "../../../services/menues.js"
+import {
+    getAllMenues,
+    addNewMenu
+} from "../../../services/menues.js"
+import { showTimerSwal } from "../../../shared/utils.js";
 let allMenues;
 
-
-/////////////////////////// add new menu logic ///////////////////////////
-
+const formSubmitBtn = document.querySelector('.form__btn')
 
 
 
@@ -11,17 +13,16 @@ let allMenues;
 
 
 const displayMenusInSelectInputAndAllMenus = () => {
+
     const selectParentWrapper = document.querySelector('#parent')
-    selectParentWrapper.innerHTML = '<option class="parent-option" value="null">ندارد</option>'
+    selectParentWrapper.innerHTML = '<option class="parent-option" value="">ندارد</option>'
 
     const allMenusWrapper = document.querySelector('.menus-wrapper')
     allMenusWrapper.innerHTML = ''
     const allMenusFragment = document.createDocumentFragment()
 
     allMenues.forEach(menu => {
-        console.log(menu);
         const submenus = Array.from(menu.submenus)
-        console.log(submenus);
 
         // dispaly in input
         selectParentWrapper.insertAdjacentHTML('beforeend', `
@@ -78,7 +79,16 @@ const displayMenusInSelectInputAndAllMenus = () => {
     allMenusWrapper.appendChild(allMenusFragment)
 }
 
+// handle open accordion panel 
 
+const handleOpenAccordion = () => {
+    const accordionBtns = document.querySelectorAll('.accordion__btn')
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.nextElementSibling.classList.toggle('accordion__panel--open')
+        })
+    })
+}
 
 
 /////////////////////////// events ///////////////////////////
@@ -86,12 +96,25 @@ const displayMenusInSelectInputAndAllMenus = () => {
 window.addEventListener('load', async () => {
     allMenues = await getAllMenues()
     displayMenusInSelectInputAndAllMenus()
+    handleOpenAccordion()
 
-    // handle open accordion panel 
-    const accordionBtns = document.querySelectorAll('.accordion__btn')
-    accordionBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.nextElementSibling.classList.toggle('accordion__panel--open')
+})
+
+
+/// add new menu logic ///
+formSubmitBtn.addEventListener('click', async () => {
+    const title = document.querySelector('#name').value
+    const href = document.querySelector('#href').value
+    const parentId = document.querySelector('#parent').value
+
+    const response = await addNewMenu(title, href, parentId)
+    if (response.res.ok) {
+        showTimerSwal('success', 'منو اضافه شد', 'باشه', async () => {
+
+            allMenues = await getAllMenues()
+
+            displayMenusInSelectInputAndAllMenus()
+            handleOpenAccordion()
         })
-    })
+    }
 })

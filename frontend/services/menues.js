@@ -1,3 +1,5 @@
+import { getUserToken } from "../shared/utils.js"
+
 const getAllMenues = async () => {
     const res = await fetch ('http://localhost:4000/v1/menus')
     const allMenues = await res.json()
@@ -77,8 +79,40 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
 
 }
 
+const addNewMenu = async (title, href, parentId) => {
+    console.log(parentId);
+    let newMenuData 
+    if(parentId){
+        newMenuData = {
+            title,
+            href,
+            parent: parentId
+        }
+    }else{
+        newMenuData = {
+            title,
+            href
+        }
+    }
+    
+    const res = await fetch ('http://localhost:4000/v1/menus/',{
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json",
+            Authorization : `bearer ${getUserToken()}`
+        },
+        body: JSON.stringify(newMenuData)
+    })
+    const data = await res.json()
+
+    return{
+        res,
+        data
+    }
+}
 
 export {
     getAllMenues,
-    renderMenuesInWrapper
+    renderMenuesInWrapper,
+    addNewMenu
 }

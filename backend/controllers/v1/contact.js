@@ -41,16 +41,22 @@ exports.asnwer = async (req, res, next) => {
 
     const { email, answer } = req.body;
     var transporter = nodemailer.createTransport({
+      port: 587,
+      secure: true,
       service: "gmail",
+      host: "smtp.ethereal.email",
       auth: {
-        user: "sabzlearnir@gmail.com",
+        // user: "sabzlearnir@gmail.com",
+        user: "bluelearn.manager@gmail.com",
         // pass: "h z v g l t m f l s y v z p h q",
-        pass: "r t f p n x v q j x x o p x a o",
+        // pass: "r t f p n x v q j x x o p x a o",
+        pass: "95157753Ss",
       },
     });
 
     var mailOptions = {
-      from: "sabzlearnir@gmail.com",
+      // from: "sabzlearnir@gmail.com",
+      from: "bluelearn.manager@gmail.com",
       to: email,
       subject: "پاسخ پیغام شما از سمت آکادمی سبزلرن",
       text: answer,

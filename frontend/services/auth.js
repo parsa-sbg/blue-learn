@@ -49,7 +49,12 @@ const loginUser = async (identifier, password) => {
     }
 }
 
-const getUserInfos = async (userToken) => {
+const getUserInfos = async () => {
+    const userToken = getUserToken()
+    if (!userToken) {
+        return null
+    }
+
     const res = await fetch ('http://localhost:4000/v1/auth/me', {
         headers: {
             "Authorization" : `bearer ${userToken}`
