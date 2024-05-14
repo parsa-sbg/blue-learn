@@ -89,11 +89,25 @@ const getAllUsers = async () => {
     return data
 }
 
+const deleteUser = async (userId) => {
+    console.log(`http://localhost:4000/v1/users/${userId}`);
+    const res = await fetch (`http://localhost:4000/v1/users/${userId}` ,{
+        method: "DELETE",
+        headers: {
+            Authorization: `bearer ${getUserToken()}`
+        }
+    })
+    console.log(res);
+    console.log(await res.json());
+    return res
+}
+
 export {
     registerNewUser,
     saveIntoLocalStorage,
     loginUser,
     getUserInfos,
     routeProtection,
-    getAllUsers
+    getAllUsers,
+    deleteUser
 }

@@ -1,9 +1,10 @@
-import { getAllUsers } from "../../../services/auth.js";
+import { deleteUser, getAllUsers } from "../../../services/auth.js";
+import { showQuestionSwal } from "../../../shared/utils.js";
 
 let allUsers
 
 
-const desplayAllUsers = async () => {
+const displayAllUsers = async () => {
     allUsers = await getAllUsers()
     allUsers.reverse()
     const usersWrapper = document.querySelector('.users-wrapper .row')
@@ -16,8 +17,7 @@ const desplayAllUsers = async () => {
     const adminsFragment = document.createDocumentFragment()
 
     allUsers.forEach(user => {
-        console.log(user);
-
+        
         if (user.role == 'USER') {
             const courseBoxCol = document.createElement('div')
             courseBoxCol.className = 'col-12 col-sm-6 col-md-4 col-xl-3'
@@ -28,7 +28,7 @@ const desplayAllUsers = async () => {
                     <div class="user-box__header">
                         <span class="user-box__name">${user.name}</span>
                         <div class="user-box__btns">
-                            <button class="user-box__removebtn">حذف</button>
+                            <button onclick="showSwalAndDeleteUser('${user._id}','${user.name}')" class="user-box__removebtn">حذف</button>
                             <button class="user-box__promotbtn">ارتقا</button>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ const desplayAllUsers = async () => {
                         <div class="user-box__header">
                             <span class="user-box__name">${user.name}</span>
                             <div class="user-box__btns">
-                                <button class="user-box__removebtn">حذف</button>
+                                <button class="user-box__removebtn">عزل</button>
                             </div>
                         </div>
 
@@ -90,8 +90,18 @@ const desplayAllUsers = async () => {
 
 }
 
+const showSwalAndDeleteUser = (userId, userName) => {
+    showQuestionSwal('warning', `آیا از حذف این کاربر با نام ${userName} اطمینان دارید؟`, 'بله', 'کاربر مورد نظر حذف شد.',
+        async () => {
+            await deleteUser(userId)
+            displayAllUsers()
+        }
+    )
+}
+
 // events 
 
+window.showSwalAndDeleteUser = showSwalAndDeleteUser
 window.addEventListener('load', () => {
-    desplayAllUsers()
+    displayAllUsers()
 })
