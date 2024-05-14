@@ -5,4 +5,120 @@
 
 main {
     padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
+
 }
+
+/* start admins */
+
+.admins-wrapper{
+
+}
+
+/* end admins */
+
+
+/* start user box */
+
+.user-box{
+    background-color: var(--section-color);
+    color: var(--text-color);
+
+    border-radius: 3rem;
+
+    margin-bottom: 23.5px;
+
+    margin: 10.525px 4px;
+
+    border: 2px solid var(--section-color);
+
+    position: relative;
+
+
+}
+.user-box__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+
+    padding: .5rem 1rem;
+}
+.user-box__name{
+
+}
+.user-box__btns{
+
+}
+.user-box__removebtn{
+    color: var(--text-color);
+    border-radius: 3rem;
+    background-color: var(--app-bg-color);
+    border: none;
+    padding: .3rem 1rem;
+    transition: all 200ms ease;
+}
+.user-box__removebtn:hover{
+    background-color: red;
+    color: #fff;
+}
+.user-box__promotbtn{
+    color: var(--text-color);
+    border-radius: 3rem;
+    background-color: var(--app-bg-color);
+    border: none;
+    padding: .3rem 1rem;
+    transition: all 200ms ease;
+}
+.user-box__promotbtn:hover{
+    background-color: green;
+    color: #fff;
+}
+.user-box__infos{
+    font-size: 1.6rem;
+    padding: .5rem 1.5rem;
+    background-color: var(--section-color);
+    border: 2px solid var(--primary-color);
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 2rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 200ms ease;
+}
+.user-box__header:hover ~ .user-box__infos{
+    opacity: 1;
+    height: auto;
+}
+.user-box:hover{
+    border: 2px solid var(--primary-color);
+}
+.user-box__info-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.user-box__info-label{
+
+}
+.user-box__info{
+
+}
+
+/* end user box */
+
+/* start all users */
+
+.users-wrapper{
+    
+}
+
+/* end all users */
+

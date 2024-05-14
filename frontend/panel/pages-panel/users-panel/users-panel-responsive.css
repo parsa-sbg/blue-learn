@@ -1,0 +1,50 @@
+@media (min-width: 1400px) {
+    .container {
+        width: 1250px;
+    }
+
+}
+
+@media screen and (max-width: 1350px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+
+}
+
+@media screen and (max-width: 992px) {
+
+    .user-box__header{
+        font-size: 1.6rem;
+    }
+    .user-box__infos{
+        font-size: 1.4rem;
+        padding: .8rem;
+    }
+    .user-box__info-wrapper{
+        gap: 0rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .user-box__header{
+        font-size: 1.8rem;
+    }
+    .user-box__infos{
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+    .user-box__info-wrapper{
+        gap: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+
+}
+@media screen and (max-width: 400px) {
+
+}
