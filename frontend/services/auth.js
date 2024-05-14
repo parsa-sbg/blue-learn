@@ -78,10 +78,22 @@ const routeProtection = async () => {
     }
 }
 
+const getAllUsers = async () => {
+    const res = await fetch('http://localhost:4000/v1/users',{
+        headers: {
+            Authorization : `bearer ${getUserToken()}`
+        }
+    })
+    const data = await res.json()
+
+    return data
+}
+
 export {
     registerNewUser,
     saveIntoLocalStorage,
     loginUser,
     getUserInfos,
-    routeProtection
+    routeProtection,
+    getAllUsers
 }
