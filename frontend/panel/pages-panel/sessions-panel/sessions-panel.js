@@ -56,7 +56,7 @@ const getAndShowAllSessions = async () => {
 
             <div class="accordion__panel-item">
                 <div class="accordion__panel-item__right">
-                    <span class="accordion__panel-item__number">1</span>
+                    <span class="accordion__panel-item__number">${document.getElementById(session.course._id).childElementCount + 1}</span>
                     <p class="accordion__panel-item__title">${session.title}</p>
                 </div>
 
