@@ -105,7 +105,7 @@ const getAndShowUserNameInHeader = async () => {
         }
 
     } else {
-        headerUsername.setAttribute('href', '/pages/login/login.html')
+        headerUsername.setAttribute('href', "/pages/login/login.html")
         headerUsername.innerHTML = 'ورود/ثبت نام'
     }
 

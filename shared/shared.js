@@ -22,6 +22,7 @@ window.addEventListener('load', async () => {
     const allMenues = await getAllMenues()
     console.log(allMenues);
 
+    getAndShowUserNameInHeader()
 
     // handle dynamization menues in mobile menu
     renderMenuesInWrapper(allMenues, mobileMenu, 'mobile')
@@ -31,7 +32,7 @@ window.addEventListener('load', async () => {
 
 
 
-    getAndShowUserNameInHeader()
+
 
     handleSearchBoxLogic()
     handleOpenMobileMenu()
