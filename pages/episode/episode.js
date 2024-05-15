@@ -33,7 +33,7 @@ window.addEventListener('load', async () => {
     ////  set course data in elements  /////
 
     // session video
-    sessionVideoElem.setAttribute('src', `http://localhost:4000/courses/covers/${sessionInfos.video}`)
+    sessionVideoElem.setAttribute('src',`https://bluelearn-bc.liara.run/courses/covers/${sessionInfos.video}`)
     
     // session number
     sessionNumberElem.innerHTML = sessionNumber

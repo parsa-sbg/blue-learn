@@ -51,7 +51,7 @@ window.addEventListener('load', async () => {
         }
 
         // cover
-        courseImage.setAttribute('src', `http://localhost:4000/courses/covers/${courseData.cover}`)
+        courseImage.setAttribute('src', `https://bluelearn-bc.liara.run/courses/covers/${courseData.cover}`)
 
         // course time
         let courseTime = 0

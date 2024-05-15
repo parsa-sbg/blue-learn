@@ -15,11 +15,11 @@ const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
         coursebox.insertAdjacentHTML('beforeend', `
 
                 <div class="coursebox">
-                    <a href="../course/course.html?short-name=${course.shortName}" class="coursebox__banner">
+                    <a href="./pages/course/course.html?short-name=${course.shortName}" class="coursebox__banner">
                         <img class="coursebox__image" src="https://bluelearn-bc.liara.run/courses/covers/${course.cover}" alt="">
                     </a>
                     <div class="coursebox__content">
-                        <a href="../course/course.html?short-name=${course.shortName}" class="coursebox__title">${course.name}</a>
+                        <a href="./pages/course/course.html?short-name=${course.shortName}" class="coursebox__title">${course.name}</a>
                         <p class="coursebox__desc">${course.description}</p>
                         <div class="coursebox__teacher-star-wrapper">
                             <div class="coursebox__teacher-wrapper">
