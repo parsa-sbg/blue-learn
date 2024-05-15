@@ -37,7 +37,7 @@
 }
 .menu-item{
     position: relative;
-
+    padding: 2rem 0 ;
 }
 .menu-item:hover .menu-item-dropdown-list{
     visibility: visible;
@@ -57,8 +57,9 @@
     visibility: hidden;
     opacity: 0;
     height: 0;
+    overflow: hidden;
     position: absolute;
-    top: 5rem;
+    top: 7rem;
     padding: 0;
     text-wrap: nowrap;
     transition: all 200ms ease;
