@@ -24,7 +24,7 @@ const handleSearchBoxLogic = () => {
 
     const redirectToSearchPage = (input) => {
         const searchValue = input.value.trim()
-        location.href = `../search/search.html?search-value=${searchValue}`
+        location.href = `../../pages/search/search.html?search-value=${searchValue}`
     }
 
 
@@ -105,7 +105,7 @@ const getAndShowUserNameInHeader = async () => {
         }
 
     } else {
-        headerUsername.setAttribute('href', '../login/login.html')
+        headerUsername.setAttribute('href', '../../pages/login/login.html')
         headerUsername.innerHTML = 'ورود/ثبت نام'
     }
 

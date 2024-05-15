@@ -24,14 +24,6 @@ window.addEventListener('load', async () => {
 })
 
 
-
-
-
-
-
-
-
-
 // handle swiper
 const swiper = new Swiper('.swiper', {
     speed: 800,

@@ -22,7 +22,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
 
             menuElem.insertAdjacentHTML('beforeend', `
                     <div class="mobile-menu__item-wrapper">
-                        <a class="mobile-menu__item-link" href="../category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
+                        <a class="mobile-menu__item-link" href="../../../pages/category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
                         ${menu.title}
                         </a>
                         ${menu.submenus.length ? '<i class="fas fa-angle-left mobile-menu__item-angle-left"></i>' : ''}
@@ -34,7 +34,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
                             ${menu.submenus.map( subMenu => `
                             
                                 <li class="mobile-menu__dropdown-item">
-                                    <a href="../course/course.html?short-name=${subMenu.href}" class="mobile-menu__dropdown-link">${subMenu.title}</a>
+                                    <a href="../../../pages/course/course.html?short-name=${subMenu.href}" class="mobile-menu__dropdown-link">${subMenu.title}</a>
                                 </li>
                             ` ).join("")}
                         </ul>
@@ -56,7 +56,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
 
             menuElem.insertAdjacentHTML('beforeend', `
 
-                    <a class="menu-link" href="../category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
+                    <a class="menu-link" href="../../../pages/category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
                         ${menu.title}
                         ${menu.submenus.length ? `<i class="fas fa-angle-down menu-item-angle-down"></i>` : ``}
 
@@ -65,7 +65,7 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
                                     ${menu.submenus.map( subMenu => `
 
                                     <li class="menu-dropdown-item">
-                                        <a href="../course/course.html?short-name=${subMenu.href}" class="menu-dropdown-link">${subMenu.title}</a>
+                                        <a href="../../../pages/course/course.html?short-name=${subMenu.href}" class="menu-dropdown-link">${subMenu.title}</a>
                                     </li>
                                     
                                 ` ).join("")}
