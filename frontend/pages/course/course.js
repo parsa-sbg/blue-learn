@@ -56,12 +56,12 @@ window.addEventListener('load', async () => {
         // course time
         let courseTime = 0
         courseData.sessions.forEach(session => {
-          let sessionTime = session.time.slice(0, 3)
-          if (sessionTime[sessionTime.length - 1] == ':') {
-            sessionTime = sessionTime.slice(0, 2)
+          let sessionTime = session.time
+          
+            sessionTime = sessionTime
             courseTime += +sessionTime / 60
           }
-        })
+        )
         courseTimeElem.innerHTML = `${Math.ceil(courseTime)} ساعت`
 
         // course last update
@@ -108,7 +108,7 @@ window.addEventListener('load', async () => {
                                 <p class="session__title">${session.title}</p>
                             </div>
                             <div class="session__left">
-                                <span class="session__time">${session.time}</span>
+                                <span class="session__time">${session.time} دقیقه</span>
                                 <i class="session__icon ${session.free? 'fa fa-play' : 'fa fa-lock'}"></i>
                             </div>
                         </>

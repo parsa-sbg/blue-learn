@@ -114,11 +114,13 @@
 }
 .home__link:hover{
     color: #fff;
-    box-shadow: 3px 3px 10px #827b7b;
+    background-color: #0055a0;
 }
 .home__link:last-child{
-    background-color: green;
-
+    background-color: #008000;
+}
+.home__link:last-child:hover{
+    background-color: #006e00;
 }
 .home__left{
     flex-basis: 60%;

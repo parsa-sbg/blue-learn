@@ -42,7 +42,7 @@ window.addEventListener('load', async () => {
     sessionTitleElem.innerHTML = sessionInfos.title
 
     // session time 
-    sessionTimeElem.innerHTML = sessionInfos.time
+    sessionTimeElem.innerHTML = sessionInfos.time + ' دقیقه' 
 
     // all sessions
     if(isUserRegistered){
@@ -56,7 +56,7 @@ window.addEventListener('load', async () => {
                         <p class="session__title">${session.title}</p>
                     </div>
                     <div class="session__left">
-                        <span class="session__time">${session.time}</span>
+                        <span class="session__time">${session.time} دقیقه</span>
                         <i class="session__icon fa fa-play"></i>
                     </div>
                 </a>
@@ -74,7 +74,7 @@ window.addEventListener('load', async () => {
                         <p class="session__title">${session.title}</p>
                     </div>
                     <div class="session__left">
-                        <span class="session__time">${session.time}</span>
+                        <span class="session__time">${session.time} دقیقه</span>
                         <i class="session__icon ${session.free? 'fa fa-play' : 'fa fa-lock'}"></i>
                     </div>
                 </>
