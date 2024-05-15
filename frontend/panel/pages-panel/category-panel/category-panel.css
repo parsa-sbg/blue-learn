@@ -1,0 +1,9 @@
+@import "../../../components/header/header.css";
+@import "../../../components/default.css";
+@import "../../components-panel/panel-titles.css";
+
+
+main {
+    padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
+}

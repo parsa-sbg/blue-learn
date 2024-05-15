@@ -1,5 +1,5 @@
 import { deleteUser, getAllUsers } from "../../../services/auth.js";
-import { showQuestionSwal } from "../../../shared/utils.js";
+import { showQuestionSwal, showTimerSwal } from "../../../shared/utils.js";
 
 let allUsers
 
@@ -29,7 +29,7 @@ const displayAllUsers = async () => {
                         <span class="user-box__name">${user.name}</span>
                         <div class="user-box__btns">
                             <button onclick="showSwalAndDeleteUser('${user._id}','${user.name}')" class="user-box__removebtn">حذف</button>
-                            <button class="user-box__promotbtn">ارتقا</button>
+                            <button onclick="showMainAdminSwal()" class="user-box__promotbtn">ارتقا</button>
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@ const displayAllUsers = async () => {
                         <div class="user-box__header">
                             <span class="user-box__name">${user.name}</span>
                             <div class="user-box__btns">
-                                <button class="user-box__removebtn">عزل</button>
+                                <button onclick="showMainAdminSwal()" class="user-box__removebtn">عزل</button>
                             </div>
                         </div>
 
@@ -99,9 +99,16 @@ const showSwalAndDeleteUser = (userId, userName) => {
     )
 }
 
+const showMainAdminSwal = () => {
+    showTimerSwal('warning', 'تنها مدیر اصلی میتواند ادمین ها را اضافه یا حذف کند!', 'باشه',
+        () => { }
+    )
+}
+
 // events 
 
 window.showSwalAndDeleteUser = showSwalAndDeleteUser
+window.showMainAdminSwal = showMainAdminSwal
 window.addEventListener('load', () => {
     displayAllUsers()
 })

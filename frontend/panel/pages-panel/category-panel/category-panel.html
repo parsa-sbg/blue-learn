@@ -4,7 +4,7 @@
 <!-- to apply the wheme quickly -->
 <script>
     const theme = localStorage.getItem('bluelearn-darkmode')
-    if(theme == 'true'){
+    if (theme == 'true') {
         document.documentElement.classList.add('dark')
     }
 </script>
@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پنل | صفحه اصلی</title>
     <link rel="stylesheet" href="../../../vendor/FontAwesome5/all.min.css">
-    <link rel="stylesheet" href="users-panel.css">
-    <link rel="stylesheet" href="users-panel-responsive.css">
+    <link rel="stylesheet" href="category-panel.css">
+    <link rel="stylesheet" href="category-panel-responsive.css">
 </head>
 
 <body>
@@ -159,38 +159,9 @@
 
     <main class="main">
         <div class="container">
-
-
             <div class="title-wrapper">
-                <h2 class="title blue-bg">پنل مدیریت | کاربران</h2>
+                <h2 class="title blue-bg">پنل مدیریت | دسته بندی ها</h2>
             </div>
-
-            <div class="admins-wrapper">
-
-                <div class="title-wrapper">
-                    <h3 class="title sub-title blue-bg">ادمین ها</h3>
-                </div>
-
-                <div class="row">
-
-                   <!-- loaded from js -->
-
-                </div>
-            </div>
-
-            <div class="users-wrapper">
-
-                <div class="title-wrapper">
-                    <h3 class="title sub-title blue-bg">تمامی کاربران</h3>
-                </div>
-
-                <div class="row">
-
-                    <!-- loaded from js -->
-
-                </div>
-            </div>
-
         </div>
     </main>
 
@@ -198,9 +169,8 @@
 
 
     <script src=".../../../../../vendor/FontAwesome5/all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../../shared-panel/shared-panel.js"></script>
-    <script type="module" src="users-panel.js"></script>
+    <script type="module" src="category-panel.js"></script>
 </body>
 
 </html>
