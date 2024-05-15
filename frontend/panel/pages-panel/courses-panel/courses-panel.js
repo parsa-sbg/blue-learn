@@ -6,6 +6,7 @@ const createCourseBtn = document.querySelector('.form__btn')
 const categoryWrapper = document.querySelector('#category')
 const newCourseFileInput = document.querySelector('#cover')
 const allCatrgories = await getAllCatrgories()
+console.log(allCatrgories);
 let cover = null 
 
 const  coursesTableBody = document.querySelector('.courses-table-body')
@@ -21,7 +22,7 @@ const getAndShowAllCourses = async () => {
                     <tr>
                         <th></th>
                         <th class="courses-table__header">نام دوره</th>
-                        <th class="courses-table__header">نام کوتاه</th>
+                        <th class="courses-table__header">آدرس</th>
                         <th class="courses-table__header">حذف</th>
                     </tr>
     `)

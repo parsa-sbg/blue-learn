@@ -159,9 +159,58 @@
 
     <main class="main">
         <div class="container">
+
             <div class="title-wrapper">
                 <h2 class="title blue-bg">پنل مدیریت | دسته بندی ها</h2>
             </div>
+
+            <div class="title-wrapper">
+                <h3 class="title sub-title blue-bg">افزودن دسته بندی</h3>
+            </div>
+
+            <form onsubmit="return false" class="form">
+
+                <div class="form__wrapper">
+                    <label for="name">نام دسته بندی</label>
+                    <input id="name" type="text">
+                </div>
+
+                <div class="form__wrapper">
+                    <label for="href">آدرس</label>
+                    <input id="href" type="text">
+                </div>
+
+
+                <div class="form__btn-wrapper">
+                    <button type="submit" class="form__btn">افزودن دسته بندی</button>
+                </div>
+
+            </form>
+
+            <div class="title-wrapper">
+                <h3 class="title sub-title blue-bg">همه دسته بندی ها</h3>
+            </div>
+
+            <table class="category-table">
+                <tbody class="category-table-body">
+
+                    <tr>
+                        <th class="category-table__header"></th>
+                        <th class="category-table__header">نام</th>
+                        <th class="category-table__header">آدرس</th>
+                        <th class="category-table__header">حذف</th>
+                    </tr>
+
+                    <tr>
+                        <td class="category-table__item category-table__item-number">1</td>
+                        <td class="category-table__item">فرانت اند</td>
+                        <td class="category-table__item">frontend</td>
+                        <td class="category-table__delete-btn"><button>حذف</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+
         </div>
     </main>
 
