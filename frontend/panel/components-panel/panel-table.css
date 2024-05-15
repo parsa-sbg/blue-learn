@@ -3,6 +3,7 @@ table{
     width: 100%;
     color: var(--text-color);
     margin-top: 3rem;
+    user-select: text;
 }
 
 th{
