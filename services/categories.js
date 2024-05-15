@@ -5,7 +5,12 @@ const getAllCatrgories = async () => {
 
     const data = await allCategories.json()
 
-    return data
+    if(data.length){
+        return data
+    }else{
+        return []
+    }
+
 } 
 
 const addNewCategory = async (title, name) => {
