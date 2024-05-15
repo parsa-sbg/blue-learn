@@ -21,11 +21,15 @@ window.addEventListener('load', async () => {
 
     const allMenues = await getAllMenues()
     console.log(allMenues);
+
+
     // handle dynamization menues in mobile menu
     renderMenuesInWrapper(allMenues, mobileMenu, 'mobile')
 
     // handle dynamization menues in desktop menu
     renderMenuesInWrapper(allMenues, menu, 'desktop')
+
+
 
     getAndShowUserNameInHeader()
 

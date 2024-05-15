@@ -10,7 +10,7 @@ const registerNewUser = async (name, username, email, phone, password, confirmPa
         confirmPassword
     }
 
-    const res = await fetch('http://localhost:4000/v1/auth/register',{
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/auth/register',{
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const saveIntoLocalStorage = (key, value) => {
 };
 
 const loginUser = async (identifier, password) => {
-    const res = await fetch('http://localhost:4000/v1/auth/login',{
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/auth/login',{
         method : "POST",
         headers:{
             "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const getUserInfos = async () => {
         return null
     }
 
-    const res = await fetch ('http://localhost:4000/v1/auth/me', {
+    const res = await fetch ('https://bluelearn-bc.liara.run/v1/auth/me', {
         headers: {
             "Authorization" : `bearer ${userToken}`
         }
@@ -79,7 +79,7 @@ const routeProtection = async () => {
 }
 
 const getAllUsers = async () => {
-    const res = await fetch('http://localhost:4000/v1/users',{
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/users',{
         headers: {
             Authorization : `bearer ${getUserToken()}`
         }
@@ -90,8 +90,8 @@ const getAllUsers = async () => {
 }
 
 const deleteUser = async (userId) => {
-    console.log(`http://localhost:4000/v1/users/${userId}`);
-    const res = await fetch (`http://localhost:4000/v1/users/${userId}` ,{
+    console.log(`https://bluelearn-bc.liara.run/v1/users/${userId}`);
+    const res = await fetch (`https://bluelearn-bc.liara.run/v1/users/${userId}` ,{
         method: "DELETE",
         headers: {
             Authorization: `bearer ${getUserToken()}`

@@ -1,9 +1,14 @@
 import { getUserToken } from "../shared/utils.js"
 
 const getAllMenues = async () => {
-    const res = await fetch ('http://localhost:4000/v1/menus')
+    const res = await fetch ('https://bluelearn-bc.liara.run/v1/menus')
     const allMenues = await res.json()
-    return allMenues
+
+    if (allMenues.length){
+        return allMenues
+    }else{
+        return []
+    }
 }
 
 const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
@@ -95,7 +100,7 @@ const addNewMenu = async (title, href, parentId) => {
         }
     }
     
-    const res = await fetch ('http://localhost:4000/v1/menus/',{
+    const res = await fetch ('https://bluelearn-bc.liara.run/v1/menus/',{
         method: "POST",
         headers: {
             "Content-Type" : "application/json",
@@ -112,7 +117,7 @@ const addNewMenu = async (title, href, parentId) => {
 }
 
 const deleteMenu = async (menuId) => {
-    const res = await fetch(`http://localhost:4000/v1/menus/${menuId}`,{
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/menus/${menuId}`,{
         method: "DELETE",
         headers: {
             Authorization : `bearer ${getUserToken()}`
