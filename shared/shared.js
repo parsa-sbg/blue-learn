@@ -38,7 +38,7 @@ window.addEventListener('load', async () => {
 
     logos.forEach(logo => {
         logo.addEventListener('click', () => {
-            location.href = '../home/'
+            location.href = '../../index.html'
         })
     })
 
