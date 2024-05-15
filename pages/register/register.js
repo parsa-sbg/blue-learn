@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
                 'شما با موفقیت ثبت نام شدید',
                 'ورود به پنل',
                 () => {
-                    location.href = "../../index.html"
+                    location.href = "/index.html"
                 }
             )
 
@@ -69,7 +69,7 @@ window.addEventListener('load', () => {
     })
 
     logo.addEventListener('click', () => {
-        location.href = "../../index.html"
+        location.href = "/index.html"
     })
 
 })

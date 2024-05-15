@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
                 'شما با موفقیت وارد شدید',
                 'ورود به پنل',
                 () => {
-                    location.href = "../../index.html"
+                    location.href = "/index.html"
                 }
             )
         }else {
@@ -52,6 +52,6 @@ window.addEventListener('load', () => {
     })
 
     logo.addEventListener('click', () => {
-        location.href = "../../index.html"
+        location.href = "/index.html"
     })
 })
