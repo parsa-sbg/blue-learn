@@ -1,8 +1,9 @@
-import { getAllCatrgories , deleteCategory} from "../../../services/categories.js";
-import { showQuestionSwal } from "../../../shared/utils.js";
+import { getAllCatrgories , deleteCategory , addNewCategory} from "../../../services/categories.js";
+import { showQuestionSwal, showTimerSwal } from "../../../shared/utils.js";
 
 let allCategories
 
+const submitBtn = document.querySelector('.form__btn')
 
 
 const renderAllCategoriesInTable = async () => {
@@ -39,12 +40,43 @@ const showSwalAndDeleteCategory = (categoryId) => {
     )
 }
 
+const validateAndAddNewCat = async (title, name) => {
+    const response = await addNewCategory(title, name)
+
+    console.log(response);
+
+    if(response.res.ok){
+        showTimerSwal('success', 'دسته بندی جدید با موفقیت اضافه شد.', 'باشه', () => {})
+        renderAllCategoriesInTable()
+        document.querySelector('#name').value = ''
+        document.querySelector('#href').value = ''
+    }else{
+
+        if(response.data.message[0].name == 'title'){
+            showTimerSwal('warning', 'نام دسته بندی الزامی است!', 'باشه', () => {})
+        }else if (response.data.message[0].name == 'name') {
+            showTimerSwal('warning', 'آدرس دسته بندی الزامی است!', 'باشه', () => {})
+        }
+
+    }
+}
+
+
+
 // events 
+
+submitBtn.addEventListener('click', () => {
+    const titleValue = document.querySelector('#name').value
+    const hrefValue = document.querySelector('#href').value
+
+    validateAndAddNewCat(titleValue, hrefValue)
+    
+})
 
 
 window.showSwalAndDeleteCategory = showSwalAndDeleteCategory
+window.validateAndAddNewCat = validateAndAddNewCat
 window.addEventListener('load', async () => {
     
-    console.log('loaded');
     renderAllCategoriesInTable()
 })

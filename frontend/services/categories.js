@@ -8,6 +8,30 @@ const getAllCatrgories = async () => {
     return data
 } 
 
+const addNewCategory = async (title, name) => {
+
+    const newCatInfo = {
+        title,
+        name
+    }
+
+    const res = await fetch('http://localhost:4000/v1/category',{
+        method: "POST",
+        headers: {
+            Authorization : `bearer ${getUserToken()}`,
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(newCatInfo)
+    })
+    const data = await res.json()
+    
+    
+    return {
+        data,
+        res
+    }
+}
+
 const deleteCategory = async (categoryId) => {
     const res = await fetch (`http://localhost:4000/v1/category/${categoryId}`,{
         method: "DELETE",
@@ -20,5 +44,6 @@ const deleteCategory = async (categoryId) => {
 
 export {
     getAllCatrgories,
-    deleteCategory
+    deleteCategory,
+    addNewCategory
 }
