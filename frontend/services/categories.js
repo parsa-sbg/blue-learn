@@ -6,4 +6,7 @@ const getAllCatrgories = async () => {
     return data
 } 
 
-export { getAllCatrgories }
+
+export {
+    getAllCatrgories,
+}
