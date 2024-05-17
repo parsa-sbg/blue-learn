@@ -1,6 +1,8 @@
 import { showTimerSwal , showQuestionSwal } from "../../../shared/utils.js";
 import { getAllCatrgories } from "../../../services/categories.js";
 import { createNewCourse, getAllCourses , deleteCourse} from "../../../services/courses.js";
+import { createLoader } from "../../../shared/loader.js";
+const loader = createLoader('در حال آپلود ...')
 
 const createCourseBtn = document.querySelector('.form__btn')
 const categoryWrapper = document.querySelector('#category')
@@ -66,6 +68,8 @@ allCatrgories.forEach(category => {
 createCourseBtn.addEventListener('click', async event => {
     event.preventDefault()
 
+    loader.show()
+
     const newCourseName = document.querySelector('#name').value
     const newCourseDescrioption = document.querySelector('#desc').value
     const newCourseShortName = document.querySelector('#shortname').value
@@ -82,7 +86,13 @@ createCourseBtn.addEventListener('click', async event => {
         newCourseCategoryId,
         newCourseSupport,
     )
-    if (!response.res.ok) {
+
+    loader.hide()
+    if (response.res.ok) {
+        getAndShowAllCourses()
+        showTimerSwal('success', 'دوره با موفقیت اضافه شد', 'فهمیدم', () => {
+        })
+    }else {
         showTimerSwal('error', response.data.message[0].message, 'فهمیدم', () => {})
     }
 })
