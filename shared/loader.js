@@ -1,10 +1,10 @@
-const createLoader = () => {
+const createLoader = (text) => {
 
     
     document.body.insertAdjacentHTML('beforeend', `
         <div class="loader">
             <div class="loader__anim"></div>
-            <span class="loader__text">در حال انجام</span>
+            ${text ? `<span class="loader__text">${text}</span>` : ``}
         </div>
     `)
 

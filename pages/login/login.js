@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 
     submitBtn.addEventListener('click', async event => {
         event.preventDefault()
-        
+
         laoder.show()
 
         const response = await loginUser(nameInput.value, passwordInput.value)
