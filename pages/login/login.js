@@ -1,5 +1,7 @@
 import { loginUser , saveIntoLocalStorage } from "../../services/auth.js";
 import { showTimerSwal } from "../../shared/utils.js";
+import { createLoader } from "../../shared/loader.js";
+const laoder = createLoader()
 
 const submitBtn = document.querySelector('.submit-btn')
 
@@ -14,12 +16,14 @@ window.addEventListener('load', () => {
 
     submitBtn.addEventListener('click', async event => {
         event.preventDefault()
+        laoder.show()
 
         const response = await loginUser(nameInput.value, passwordInput.value)
 
-        console.log(response);
+        laoder.hide()
         
         if (response.res.ok) {
+            laoder.hide()
             const userToken = response.data.accessToken
             saveIntoLocalStorage('userToken', userToken)
 
