@@ -57,7 +57,8 @@ const renderMenuesInWrapper = (menues, wrapper, wrapperType) => {
             menuElem.insertAdjacentHTML('beforeend', `
 
                     <a class="menu-link" href="/pages/category/category.html?cat-name=${menu.href}&cat-title=${menu.title}">
-                        ${menu.title}
+                    ${menu.title}                    
+                    </a>
                         ${menu.submenus.length ? `<i class="fas fa-angle-down menu-item-angle-down"></i>` : ``}
 
                         ${menu.submenus.length ? `
