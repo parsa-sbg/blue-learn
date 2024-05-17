@@ -4,8 +4,9 @@ import {
     addNewSession,
     deleteSession
 } from "../../../services/courses.js"
-
-import { showQuestionSwal } from "../../../shared/utils.js"
+import { showQuestionSwal , showTimerSwal } from "../../../shared/utils.js"
+import { createLoader } from "../../../shared/loader.js";
+const loader = createLoader('در حال آپلود ...')
 
 let video
 const videoInpurElem = document.querySelector('#video')
@@ -29,6 +30,7 @@ const getAndShowAllCourses = async () => {
     const sessionsWrapper = document.querySelector('.sessions-wrapper')
     const coursesFragment = document.createDocumentFragment()
 
+    sessionsWrapper.innerHTML = ''
     allCourses.forEach(course => {
         const accordionWrapper = document.createElement('div')
         accordionWrapper.className = 'accordion-wrapper'
@@ -103,21 +105,58 @@ const showSwalAndDeleteSession = async (sessionId) => {
     })
 }
 
+const handleOpenAcacordion = () => {
+
+    const accordionBtns = document.querySelectorAll('.accordion__btn')
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.nextElementSibling.classList.toggle('accordion__panel--open')
+        })
+    })
+}
+
 /////////////////////////////////////// =>  events <= /////////////////////////////////////
 
 
 // add new session logic
 formBtn.addEventListener('click', async event => {
     event.preventDefault()
+
+    loader.show()
+
     const courseId = document.querySelector('#course').value
     const name = document.querySelector('#name').value
     const time = document.querySelector('#time').value
     const free = document.querySelector('#free').checked ? 1 : 0
 
-    addNewSession(courseId, name, video, time, free)
-    getAndShowAllCourses()
-    getAndShowAllSessions()
-    fillEmptyAccordionPanels()
+    const response = await addNewSession(courseId, name, video, time, free)
+    loader.hide()
+
+    if(response.res.ok){
+        showTimerSwal('success', 'جلسه با موفقیت اضافه شد.', 'فهمیدم', async () => {
+            await getAndShowAllCourses()
+            await getAndShowAllSessions()
+            fillEmptyAccordionPanels()
+            handleOpenAcacordion()
+        })
+    }else{
+        console.log(response.data.message);
+
+        switch (response.data.message[0].name) {
+            case 'title' : showTimerSwal('error', 'عنوان جلسه الزامی است.', 'فهمیدم', () => {})
+            break;
+
+            case 'video': showTimerSwal('error', 'فایل ویدیوی جلسه الزامی است.', 'فهمیدم', () => {})
+            break;
+
+            case 'time' : showTimerSwal('error', 'زمان جلسه الزامی است.', 'فهمیدم', () => {})
+            break;
+
+            default : showTimerSwal('error', 'مشکلی رخ داد !', 'فهمیدم', () => {})
+
+        }
+    }
+
 })
 
 // save video in variable
@@ -135,12 +174,7 @@ window.addEventListener('load', async () => {
     // fill empty accordion panels
     fillEmptyAccordionPanels()
 
-    // handle open accordion panel 
-    const accordionBtns = document.querySelectorAll('.accordion__btn')
-    accordionBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            btn.nextElementSibling.classList.toggle('accordion__panel--open')
-        })
-    })
+    handleOpenAcacordion()
+
 
 })

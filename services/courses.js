@@ -164,7 +164,10 @@ const addNewSession = async (courseId ,title, video, time, free) => {
     })
     const data = await res.json()
 
-    console.log(data);
+    return {
+        res,
+        data
+    }
 }
 
 const deleteSession = async (sessionId) => {
