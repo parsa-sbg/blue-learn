@@ -1,6 +1,7 @@
 import { registerNewUser, saveIntoLocalStorage } from "../../services/auth.js";
 import { showTimerSwal } from "../../shared/utils.js";
-
+import { createLoader } from "../../shared/loader.js";
+const laoder = createLoader()
 
 const submitBtn = document.querySelector('.submit-btn')
 const logo = document.querySelector('.logo')
@@ -16,6 +17,8 @@ window.addEventListener('load', () => {
         let phoneInputValue = document.querySelector('#phone-input').value
         let passwordInputValue = document.querySelector('#password-input').value
 
+        laoder.show()
+
         const response = await registerNewUser(
             nameInputValue.trim(),
             userNameInputValue.trim(),
@@ -24,6 +27,10 @@ window.addEventListener('load', () => {
             passwordInputValue.trim(),
             passwordInputValue.trim()
         )
+
+        laoder.hide()
+
+
 
 
         if (response.res.ok) {

@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
 
     submitBtn.addEventListener('click', async event => {
         event.preventDefault()
+        
         laoder.show()
 
         const response = await loginUser(nameInput.value, passwordInput.value)
@@ -23,7 +24,6 @@ window.addEventListener('load', () => {
         laoder.hide()
         
         if (response.res.ok) {
-            laoder.hide()
             const userToken = response.data.accessToken
             saveIntoLocalStorage('userToken', userToken)
 
