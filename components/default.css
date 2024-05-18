@@ -18,7 +18,6 @@ body{
     background-color: var(--app-bg-color);
     font-family: "IRANSans";
     transition: background-color 80ms ease;
-
 }
 
 *,
@@ -27,7 +26,6 @@ body{
     outline: none;
     box-sizing: inherit;
     transition: color 50ms ease;
-
 }
 
 a {
@@ -47,3 +45,26 @@ a:hover{
 .swal2-confirm{
     background-color: var(--primary-color) !important;
 }
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--section-color);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color); 
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #005aa8; 
+  }
+
+/* scrollbar */
