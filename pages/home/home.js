@@ -25,15 +25,12 @@ window.addEventListener('load', async () => {
 
 
 // handle swiper
-const swiper = new Swiper('.swiper', {
+new Swiper('.swiper', {
     speed: 800,
-    loop: true,
     spaceBetween: 20,
-    slidesPerView: 3,
-
 
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination'
     },
 
     autoplay: {
