@@ -1,0 +1,215 @@
+/* @import "../../../components/header/header.css"; */
+@import "../../../components/default.css";
+@import "../../../components/course-box/course-box.css";
+
+.main{
+
+}
+
+body{
+    background-color: var(--section-color);
+    padding: 5rem ;
+}
+
+/* start menu */
+
+.account-menu{
+    position: sticky;
+    top: 2rem;
+    height: 100vh;
+    background-color: var(--section-color);
+    padding: 0 2rem;
+    z-index: 5;
+    transition: all 200ms ease;
+}
+.account-menu__logo-wrapper{
+    max-width: 25rem;
+    display: block;
+}
+.account-menu__logo{
+    width: 100%;
+}
+
+.account-menu__list{
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.account-menu__list-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    transition: all 200ms ease;
+    text-wrap: nowrap;
+    padding-right: 2rem;
+}
+.account-menu__list-item:last-child:hover{
+    background-color: red;
+}
+.account-menu__list-item:hover{
+    color: #fff;
+    background-color: var(--primary-color);
+
+}
+.account-menu__list-item-icon{
+
+}
+.account-menu__list-link{
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+
+}
+.account-menu__list-link:hover{
+    color: #fff;
+}
+.account-menu__list-logout{
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    width: 100%;
+    text-align: start;
+    padding: 1.5rem;
+}
+.account-menu__list-logout:hover{
+    color: #fff;
+}
+
+
+/* end menu */
+
+/* start account content */
+
+.account-content{
+    background-color: var(--app-bg-color);
+    border-radius: 5rem;
+    color: var(--text-color);
+    padding: 5rem;
+    font-size: 2rem;
+}
+
+.account-content__head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--text-color-light);
+}
+
+.mobile-toggle-btn {
+    width: 49.25px;
+    height: 52.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-toggle-btn-line {
+    width: 3rem;
+    height: 0.4rem;
+    background-color: var(--primary-color);
+    position: relative;
+    border-radius: 3rem;
+    transition: all 100ms ease;
+}
+
+.mobile-toggle-btn-line::after,
+.mobile-toggle-btn-line::before {
+    position: absolute;
+    content: " ";
+    width: 3rem;
+    height: 0.4rem;
+    background-color: var(--primary-color);
+    border-radius: 3rem;
+    transition: all 100ms ease;
+}
+
+.mobile-toggle-btn-line::after {
+    top: 1rem;
+}
+
+.mobile-toggle-btn-line::before {
+    top: -1rem;
+}
+
+.account-content__head-right{
+    display: flex;
+    align-items: center;
+}
+.account-content__welcome{
+    margin: 0;
+
+}
+.theme-btn{
+    background-color: transparent;
+    border: none;
+    width: 52.2px;
+    height: 52.2px;
+    padding: 0;
+}
+.theme-btn-icon{
+    background-color: var(--section-color);
+    width: 2rem;
+    height: 2rem;
+    padding: 2rem;
+    color: var(--text-color) !important;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.course-box__btn{
+    display: block;
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-radius: 3rem;
+}
+.account-content__courses{
+    margin-top: 2rem;
+
+}
+.account-content__name{
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+.account-content__courses-wrapper{
+
+}
+.course-box__btn:hover{
+    color: #fff;
+    background-color: #0055a0;
+}
+
+/* end account content */
+
+/* cover */
+
+.cover{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 9;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    transition: all 50ms ease;
+}
+.cover--show{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+/* cover */
