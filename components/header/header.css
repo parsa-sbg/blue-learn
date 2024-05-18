@@ -105,20 +105,97 @@
     height: 6rem;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+    cursor: pointer;
+
+    position: relative;
 }
 .header__username-icon{
-    margin-right: 1rem;
     color: var(--text-color);
+}
+.header__username-dropdown{
+    width: 28rem;
+    cursor: default;
+    background-color: var(--section-color);
+    border-radius: 2rem;
+    color: var(--text-color);
+    padding: 2rem;
+
+    position: absolute;
+    top: 120%;
+    left: 0;
+
+    transition: all 200ms ease;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+}
+.header__username-dropdown--show{
+    visibility: visible;
+    opacity: 1;
+}
+.header__username-dropdown-name{
+    display: block;
+    border-bottom: 1px solid var(--text-color-light);
+    padding-bottom: 2rem;
+    text-align: center;
+}
+.header__username-dropdown-links{
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--text-color-light);
+}
+.header__username-dropdown-item,
+.header__username-dropdown-logout{
+    cursor: pointer;
+    display: block;
+    transition: all 200ms ease;
+    border-radius: 2rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.header__username-dropdown-item-icon,
+.header__username-dropdown-logout-icon{
+    width: 17px;
+    height: 17px;
+}
+.header__username-dropdown-item-text{
+
+}
+.header__username-dropdown-item:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.header__username-dropdown-logout{
+    margin-top: 1rem;
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+}
+.header__username-dropdown-logout:hover{
+    background-color: red;
+}
+.header__username-dropdown-logout-icon{
+
+}
+.header__username-dropdown-logout-text{
+
 }
 
 .header__search-btn,
 .header__theme-btn,
 .mobile__theme-btn{
+    padding: 0;
     background-color: transparent;
     border: none;
     border-radius: 100%;
     position: relative;
-    z-index: 20;
+
 }
 .header__theme-btn{
     margin: 0 1.5rem;
@@ -199,8 +276,8 @@
 }
 
 .header__mobile-toggle-btn {
-    width: 10.613rem;
-    height: 4rem;
+    width: 49.25px;
+    height: 52.2px;
     display: flex;
     justify-content: center;
     align-items: center;

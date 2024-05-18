@@ -9,12 +9,12 @@ import { getUserInfos } from "../../services/auth.js"
 const cover = document.querySelector('.cover')
 const searchBoxBtn = document.querySelector('.header__search-btn')
 const mobileMenu = document.querySelector('.mobile-menu')
+let headerUsername
 
-const headerUsername = document.querySelector('.header__username')
 
 const closeMobileMenu = () => {
-    removeClass('mobile-menu--open', mobileMenu)
-    removeClass('cover--show', cover)
+    removeClass('mobile-menu--open')
+    removeClass('cover--show')
 }
 
 const handleSearchBoxLogic = () => {
@@ -38,13 +38,11 @@ const handleSearchBoxLogic = () => {
     })
     searchBoxBtn.addEventListener('click', () => {
         searchBoxBtn.style.zIndex = "10"
+
         addClass('haeder__global-search-dropdown-wrapper--show', globalSearchDropdown)
         addClass('cover--show', cover)
     })
-    cover.addEventListener('click', () => {
-        removeClass('haeder__global-search-dropdown-wrapper--show', globalSearchDropdown)
-        closeMobileMenu()
-    })
+
 
     // mobile manu search logic
     const mobileGlobalSearchInput = document.querySelector('.mobile-menu__search-box-input')
@@ -78,7 +76,6 @@ const handleOpenMobileMenu = () => {
     })
 
     mobileToggleBtn.addEventListener('click', () => {
-        searchBoxBtn.style.zIndex = "0"
         toggleClass('mobile-menu--open', mobileMenu)
         toggleClass('cover--show', cover)
     })
@@ -89,13 +86,55 @@ const handleOpenMobileMenu = () => {
 }
 
 const getAndShowUserNameInHeader = async () => {
+    const headerLeft = document.querySelector('.header__left')
     const userInfos = await getUserInfos()
+    console.log(userInfos);
 
     const panelLinks = document.querySelectorAll('.panel-link')
 
+    // when user loged in
     if (userInfos) {
-        headerUsername.setAttribute('href', '#')
-        headerUsername.innerHTML = userInfos.data.name + '<i class="header__username-icon fa fa-user"></i>'
+
+        headerLeft.insertAdjacentHTML('beforeend',`
+            <div class="header__username">
+                <i class="header__username-icon fa fa-user"></i>
+                <div class="header__username-dropdown">
+                    <div class="header__username-dropdown-head">
+                        <span class="header__username-dropdown-name">parsa</span>
+                    </div>
+
+                    <div class="header__username-dropdown-links">
+                        <a href="#" class="header__username-dropdown-item">
+                            <i class="header__username-dropdown-item-icon far fa-folder-open"></i>
+                            <span class="header__username-dropdown-item-text">جزییات حساب</span>
+                        </a>
+                        <a href="#" class="header__username-dropdown-item">
+                            <i class="header__username-dropdown-item-icon far fa-folder-open"></i>
+                            <span class="header__username-dropdown-item-text">دوره های من</span>
+                        </a>
+                    </div>
+
+                    <button class="header__username-dropdown-logout">
+                        <i class="header__username-dropdown-logout-icon fas fa-power-off"></i>
+                        <span class="header__username-dropdown-logout-text">خروج</span>
+                    </button>
+
+                </div>
+            </div>
+        `)
+
+        const headerUsernameDropdown = document.querySelector('.header__username-dropdown')
+        headerUsername = document.querySelector('.header__username')
+
+
+        headerUsername.addEventListener('click', () => {
+            headerUsername.style.zIndex = "10"
+            addClass('header__username-dropdown--show', headerUsernameDropdown)
+            addClass('cover--show', cover)
+            
+        })
+
+
 
         // show panel link when the user is admin
         if (userInfos.data.role == 'ADMIN') {
@@ -104,9 +143,12 @@ const getAndShowUserNameInHeader = async () => {
             })
         }
 
+    // when user not loged in
     } else {
-        headerUsername.setAttribute('href', "/pages/login/login.html")
-        headerUsername.innerHTML = 'ورود/ثبت نام'
+        console.log('not login');
+        headerLeft.insertAdjacentHTML('beforeend',`
+            <a class="header__username" href="/pages/login/login.html">ورود/ثبت نام</a>
+        `)
     }
 
 }
@@ -152,6 +194,14 @@ const handleDarkMode = () => {
         })
     })
 }
+
+cover.addEventListener('click', () => {
+    searchBoxBtn.style.zIndex = "0"
+    headerUsername.style.zIndex = "0"
+    removeClass('haeder__global-search-dropdown-wrapper--show')
+    closeMobileMenu()
+    removeClass('header__username-dropdown--show')
+})
 
 
 export {

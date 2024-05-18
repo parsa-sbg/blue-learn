@@ -62,9 +62,13 @@ const getUserInfos = async () => {
     })
     const data = await res.json()
     
-    return {
-        res,
-        data
+    if(res.ok){
+        return {
+            res,
+            data
+        }
+    }else{
+        return false
     }
 }
 
