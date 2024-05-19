@@ -104,7 +104,7 @@ const getAndShowUserNameInHeader = async () => {
                     </div>
 
                     <div class="header__username-dropdown-links">
-                        <a href="#" class="header__username-dropdown-item">
+                        <a href="/account/pages/accountdetails/accountdetails.html" class="header__username-dropdown-item">
                             <i class="header__username-dropdown-item-icon far fa-folder-open"></i>
                             <span class="header__username-dropdown-item-text">جزییات حساب</span>
                         </a>

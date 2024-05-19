@@ -6,11 +6,6 @@ import { getUserCourses } from "../../../services/courses.js";
 
 window.addEventListener('load', async () => {
 
-    // show user name in welcome text
-    const contentWelcomeText = document.querySelector('.account-content__welcome')
-    const userInfos = await getUserInfos()
-    contentWelcomeText.innerHTML = `${userInfos.data.name} عزیز؛ خوش اومدی 🙌`
-
     // show user courses
     const coursesWrapper = document.querySelector('.account-content__courses-wrapper .row')
     const userCourses = await getUserCourses()

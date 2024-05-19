@@ -1,4 +1,6 @@
 import { addClass , removeClass }from "../../shared/utils.js"
+import { getUserInfos } from "../../services/auth.js"
+
 
 // handle dark mode
 {
@@ -60,3 +62,8 @@ import { addClass , removeClass }from "../../shared/utils.js"
         removeClass('account-menu--open', menu)
     })
 }
+
+// show user name in welcome text
+const contentWelcomeText = document.querySelector('.account-content__welcome')
+const userInfos = await getUserInfos()
+contentWelcomeText.innerHTML = `${userInfos.data.name} عزیز؛ خوش اومدی 🙌`

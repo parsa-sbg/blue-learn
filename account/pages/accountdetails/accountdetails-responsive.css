@@ -1,0 +1,52 @@
+@media (min-width: 1400px) {
+
+
+}
+
+@media screen and (max-width: 1350px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    body{
+        padding: 10px;
+        background-color: var(--app-bg-color);
+    }
+    .account-menu{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: -252.29px;
+        z-index: 20;
+    }
+    .account-menu--open{
+        right: 0;
+    }
+    .account-content{
+        border-radius: 0;
+        padding-top: 1rem;
+    }
+    .mobile-toggle-btn{
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .account-content{
+        padding: 2rem;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+
+}
+
+@media screen and (max-width: 576px) {
+
+
+}

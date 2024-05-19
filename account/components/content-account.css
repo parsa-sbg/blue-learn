@@ -1,3 +1,8 @@
+body{
+    background-color: var(--section-color);
+    padding: 5rem ;
+}
+
 .account-content{
     background-color: var(--app-bg-color);
     border-radius: 5rem;
@@ -81,6 +86,7 @@
     font-size: 2.5rem;
     display: block;
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 /* cover */
