@@ -181,6 +181,17 @@ const deleteSession = async (sessionId) => {
     return res
 }
 
+const getUserCourses = async () => {
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/users/courses',{
+        headers: {
+            Authorization : `bearer ${getUserToken()}`
+        }
+    })
+    const data = await res.json()
+
+    return data
+}
+
 export { 
     getAllCourses,
     renderCourseBoxInWrapper,
@@ -192,5 +203,6 @@ export {
     deleteCourse,
     getAllSessions,
     addNewSession,
-    deleteSession
+    deleteSession,
+    getUserCourses
 }
