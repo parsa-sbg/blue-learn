@@ -1,0 +1,109 @@
+.account-content{
+    background-color: var(--app-bg-color);
+    border-radius: 5rem;
+    color: var(--text-color);
+    padding: 5rem;
+    font-size: 2rem;
+}
+
+.account-content__head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--text-color-light);
+}
+
+.mobile-toggle-btn {
+    width: 49.25px;
+    height: 52.2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-toggle-btn-line {
+    width: 3rem;
+    height: 0.4rem;
+    background-color: var(--primary-color);
+    position: relative;
+    border-radius: 3rem;
+    transition: all 100ms ease;
+}
+
+.mobile-toggle-btn-line::after,
+.mobile-toggle-btn-line::before {
+    position: absolute;
+    content: " ";
+    width: 3rem;
+    height: 0.4rem;
+    background-color: var(--primary-color);
+    border-radius: 3rem;
+    transition: all 100ms ease;
+}
+
+.mobile-toggle-btn-line::after {
+    top: 1rem;
+}
+
+.mobile-toggle-btn-line::before {
+    top: -1rem;
+}
+
+.account-content__head-right{
+    display: flex;
+    align-items: center;
+}
+.account-content__welcome{
+    margin: 0;
+
+}
+.theme-btn{
+    background-color: transparent;
+    border: none;
+    width: 52.2px;
+    height: 52.2px;
+    padding: 0;
+}
+.theme-btn-icon{
+    background-color: var(--section-color);
+    width: 2rem;
+    height: 2rem;
+    padding: 2rem;
+    color: var(--text-color) !important;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.account-content__name{
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* cover */
+
+.cover{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 9;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    transition: all 50ms ease;
+}
+.cover--show{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+/* cover */

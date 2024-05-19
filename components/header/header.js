@@ -100,7 +100,7 @@ const getAndShowUserNameInHeader = async () => {
                 <i class="header__username-icon fa fa-user"></i>
                 <div class="header__username-dropdown">
                     <div class="header__username-dropdown-head">
-                        <span class="header__username-dropdown-name">parsa</span>
+                        <span class="header__username-dropdown-name">${userInfos.data.name}</span>
                     </div>
 
                     <div class="header__username-dropdown-links">
@@ -108,7 +108,7 @@ const getAndShowUserNameInHeader = async () => {
                             <i class="header__username-dropdown-item-icon far fa-folder-open"></i>
                             <span class="header__username-dropdown-item-text">جزییات حساب</span>
                         </a>
-                        <a href="#" class="header__username-dropdown-item">
+                        <a href="/account/pages/usercourses/usercourses.html" class="header__username-dropdown-item">
                             <i class="header__username-dropdown-item-icon far fa-folder-open"></i>
                             <span class="header__username-dropdown-item-text">دوره های من</span>
                         </a>

@@ -1,0 +1,64 @@
+.account-menu{
+    position: sticky;
+    top: 2rem;
+    height: 100vh;
+    background-color: var(--section-color);
+    padding: 0 2rem;
+    z-index: 5;
+    transition: all 200ms ease;
+}
+.account-menu__logo-wrapper{
+    max-width: 25rem;
+    display: block;
+}
+.account-menu__logo{
+    width: 100%;
+}
+
+.account-menu__list{
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.account-menu__list-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    transition: all 200ms ease;
+    text-wrap: nowrap;
+    padding-right: 2rem;
+}
+.account-menu__list-item:last-child:hover{
+    background-color: red;
+}
+.account-menu__list-item:hover{
+    color: #fff;
+    background-color: var(--primary-color);
+
+}
+.account-menu__list-item-icon{
+
+}
+.account-menu__list-link{
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+
+}
+.account-menu__list-link:hover{
+    color: #fff;
+}
+.account-menu__list-logout{
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    width: 100%;
+    text-align: start;
+    padding: 1.5rem;
+}
+.account-menu__list-logout:hover{
+    color: #fff;
+}
