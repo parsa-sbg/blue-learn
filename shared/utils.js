@@ -86,6 +86,11 @@ const getUrlParam = key => {
     return urlParams.get(key)
 };
 
+const logOut = () => {
+  localStorage.removeItem("userToken");
+  location.href = '/'
+}
+
 export {
     addClass,
     removeClass,
@@ -94,5 +99,6 @@ export {
     getUserToken,
     getUrlParam,
     showQuestionSwal,
-    showInputSwal
+    showInputSwal,
+    logOut
 }

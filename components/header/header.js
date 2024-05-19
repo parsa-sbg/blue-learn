@@ -2,6 +2,7 @@ import {
     addClass,
     removeClass,
     toggleClass,
+    logOut
 } from "../../shared/utils.js"
 
 import { getUserInfos } from "../../services/auth.js"
@@ -114,7 +115,7 @@ const getAndShowUserNameInHeader = async () => {
                         </a>
                     </div>
 
-                    <button class="header__username-dropdown-logout">
+                    <button onclick="logOut()" class="header__username-dropdown-logout">
                         <i class="header__username-dropdown-logout-icon fas fa-power-off"></i>
                         <span class="header__username-dropdown-logout-text">خروج</span>
                     </button>
@@ -202,6 +203,8 @@ cover.addEventListener('click', () => {
     closeMobileMenu()
     removeClass('header__username-dropdown--show')
 })
+
+window.logOut = logOut
 
 
 export {

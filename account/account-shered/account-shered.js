@@ -1,4 +1,4 @@
-import { addClass , removeClass }from "../../shared/utils.js"
+import { addClass , logOut, removeClass }from "../../shared/utils.js"
 import { getUserInfos } from "../../services/auth.js"
 
 
@@ -67,3 +67,9 @@ import { getUserInfos } from "../../services/auth.js"
 const contentWelcomeText = document.querySelector('.account-content__welcome')
 const userInfos = await getUserInfos()
 contentWelcomeText.innerHTML = `${userInfos.data.name} عزیز؛ خوش اومدی 🙌`
+
+// log out logic
+const logoutBtn = document.querySelector('.account-menu__list-logout')
+logoutBtn.addEventListener('click', () => {
+    logOut()
+})
