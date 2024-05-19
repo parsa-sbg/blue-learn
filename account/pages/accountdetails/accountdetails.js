@@ -2,20 +2,18 @@ import { getUserInfos, loginUser, updataUserInfos } from "../../../services/auth
 import { addClass, removeClass, showInputSwal, showTimerSwal } from "../../../shared/utils.js";
 import { createLoader } from "../../../shared/loader.js"
 const loader = createLoader()
-let userInfos = await getUserInfos()
-console.log(userInfos.data);
-
 const nameInput = document.querySelector('#name')
 const userNameInput = document.querySelector('#username')
 const emailInput = document.querySelector('#email')
 const phoneInput = document.querySelector('#phone')
-
-const allInputs = document.querySelectorAll('input')
-const allLabels = document.querySelectorAll('label')
-
+const allAccountInfoInputs = document.querySelectorAll('.accountinfo-input')
+const allIsChangeBalls = document.querySelectorAll('label')
 const saveChangesBtn = document.querySelector('.saveChangesBtn')
+let userInfos = await getUserInfos()
+const changePassBtn = document.querySelector('#changepassbtn')
 
 
+// fill account detail inputs
 nameInput.value = userInfos.data.name
 userNameInput.value = userInfos.data.username
 emailInput.value = userInfos.data.email
@@ -41,7 +39,7 @@ saveChangesBtn.addEventListener('click', async () => {
                 userInfos = await getUserInfos()
 
                 // make all balls green
-                allLabels.forEach(label => {
+                allIsChangeBalls.forEach(label => {
                     label.children[0].classList.remove('ischangelball--red')
                     label.children[0].innerHTML = 'ثبت شده'
                 })
@@ -59,9 +57,8 @@ saveChangesBtn.addEventListener('click', async () => {
 
 })
 
-// input events
 
-allInputs.forEach(input => {
+allAccountInfoInputs.forEach(input => {
     console.log(input.name);
     input.addEventListener('keyup', event => {
         if (input.value !== userInfos.data[input.name]) {
@@ -72,4 +69,35 @@ allInputs.forEach(input => {
             event.target.labels[0].children[0].innerHTML = 'ثبت شده'
         }
     })
+})
+
+// update pass
+changePassBtn.addEventListener('click', async () => {
+    const lastPassElem = document.querySelector('#lastpass')
+    const newPassElem = document.querySelector('#newpass')
+
+    loader.show()
+
+    const isPassCurrect = (await loginUser(userNameInput.value, lastPassElem.value)).res.ok
+
+
+    if(isPassCurrect){
+        const res = await updataUserInfos(userInfos.data.username, userInfos.data.name,userInfos.data.email, userInfos.data.phone,
+            newPassElem.value
+        )
+        if (res.ok) {
+            showTimerSwal('success', 'رمز عبور با موفقیت تغییر کرد', 'فهمیدم',
+            async () => {
+                userInfos = await getUserInfos()
+            })
+        }else{
+            showTimerSwal('error', 'مشکلی پیش آمد !  رمز عبور باید حداقل هشت رقم باشد.', 'فهمیدم', () => { })
+        }
+        loader.hide()
+    }else{
+        showTimerSwal('error', 'رمز عبور صحیح نیست!', 'فهمیدم', () => { })
+        loader.hide()
+    }
+    lastPassElem.value = ''
+    newPassElem.value = ''
 })

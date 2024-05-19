@@ -76,23 +76,45 @@
 
                         <div class="info-wrapper">
                             <label for="name"> <div class="ischangelball">ثبت شده</div>نام</label>
-                            <input type="text" name="name" id="name">
+                            <input class="accountinfo-input" type="text" name="name" id="name">
                         </div>
                         <div class="info-wrapper">
                             <label for="username"><div class="ischangelball">ثبت شده</div> نام کاربری</label>
-                            <input type="text" name="username" id="username">
+                            <input class="accountinfo-input" type="text" name="username" id="username">
                         </div>
                         <div class="info-wrapper">
                             <label for="email"><div class="ischangelball">ثبت شده</div> ایمیل</label>
-                            <input type="text" name="email" id="email">
+                            <input class="accountinfo-input" type="text" name="email" id="email">
                         </div>
                         <div class="info-wrapper">
                             <label for="phone"><div class="ischangelball">ثبت شده</div> شماره تلفن</label>
-                            <input type="text" name="phone" id="phone">
+                            <input class="accountinfo-input" type="text" name="phone" id="phone">
                         </div>
 
 
                         <button class="saveChangesBtn">ثبت تغییرات</button>
+
+                    </div>
+
+                </div>
+
+                <div id="passwordsection-wrapper" class="account-content">
+
+                    <span class="account-content__name">تغییر رمز عبور :</span>
+
+                    <div class="account-content__infos-wrapper">
+
+                        <div class="info-wrapper">
+                            <label for="lastpass">رمز عبور فعلی</label>
+                            <input type="password" name="lastpass" id="lastpass">
+                        </div>
+                        <div class="info-wrapper">
+                            <label for="newpass">رمز عبور جدید</label>
+                            <input type="password" name="newpass" id="newpass">
+                        </div>
+
+
+                        <button id="changepassbtn" class="saveChangesBtn">تغییر رمز</button>
 
                     </div>
 
