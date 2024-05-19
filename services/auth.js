@@ -106,6 +106,27 @@ const deleteUser = async (userId) => {
     return res
 }
 
+const updataUserInfos = async (username, name, email, phone, password) => {
+
+    const newUserInfos = {
+        name,
+        username,
+        email,
+        phone,
+        password
+    }
+
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/users',{
+        method : "PUT" ,
+        headers:{
+            Authorization : `bearer ${getUserToken()}`,
+            "Content-Type" : 'application/json'
+        },
+        body : JSON.stringify(newUserInfos)
+    })
+    return res
+}
+
 export {
     registerNewUser,
     saveIntoLocalStorage,
@@ -113,5 +134,6 @@ export {
     getUserInfos,
     routeProtection,
     getAllUsers,
-    deleteUser
+    deleteUser,
+    updataUserInfos
 }

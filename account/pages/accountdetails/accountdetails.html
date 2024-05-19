@@ -35,13 +35,14 @@
                     </a>
                     <ul class="account-menu__list">
                         <li class="account-menu__list-item">
-                            <i class="account-menu__list-item-icon far fa-folder-open"></i>
-                            <a href="../accountdetails/accountdetails.html" class="account-menu__list-link">جزییات حساب</a>
+                            <i class="account-menu__list-item-icon far fa-folder-open "></i>
+                            <a href="../usercourses/usercourses.html" class="account-menu__list-link">دوره های من</a>
                         </li>
                         <li class="account-menu__list-item">
                             <i class="account-menu__list-item-icon far fa-user"></i>
-                            <a href="../usercourses/usercourses.html" class="account-menu__list-link">دوره های من</a>
+                            <a href="../accountdetails/accountdetails.html" class="account-menu__list-link">جزییات حساب</a>
                         </li>
+                        
                         <li class="account-menu__list-item">
                             <i class="account-menu__list-item-icon fa fa-power-off"></i>
                             <button class="account-menu__list-logout">خروج</button>
@@ -71,13 +72,27 @@
 
                     <span class="account-content__name">اطلاعات حساب :</span>
 
-                    <div class="account-content__courses-wrapper">
+                    <div class="account-content__infos-wrapper">
 
-                        <div class="row">
-
-                            <!-- user courses loaded from js -->
-
+                        <div class="info-wrapper">
+                            <label for="name"> <div class="ischangelball">ثبت شده</div>نام</label>
+                            <input type="text" name="name" id="name">
                         </div>
+                        <div class="info-wrapper">
+                            <label for="username"><div class="ischangelball">ثبت شده</div> نام کاربری</label>
+                            <input type="text" name="username" id="username">
+                        </div>
+                        <div class="info-wrapper">
+                            <label for="email"><div class="ischangelball">ثبت شده</div> ایمیل</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+                        <div class="info-wrapper">
+                            <label for="phone"><div class="ischangelball">ثبت شده</div> شماره تلفن</label>
+                            <input type="text" name="phone" id="phone">
+                        </div>
+
+
+                        <button class="saveChangesBtn">ثبت تغییرات</button>
 
                     </div>
 
@@ -96,6 +111,7 @@
 
 
     <script src="../../../vendor/FontAwesome5/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../../account-shered/account-shered.js"></script>
     <script type="module" src="accountdetails.js"></script>
 </body>

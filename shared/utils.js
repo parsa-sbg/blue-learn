@@ -52,6 +52,30 @@ const showQuestionSwal = (icon, title, confirmButtonText, secondTitle , callback
       });
 }
 
+const showInputSwal = async (title) => {
+
+
+  const Toast = await Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showCancelButton: true,
+    showConfirmButton: true,
+    input: "text",
+    inputAttributes: {
+      autocapitalize: "off"
+    },
+    timerProgressBar: true,
+  });
+  const res = await Toast.fire({
+    title,
+    confirmButtonText : 'تایید',
+    cancelButtonText : 'لفو',
+  })
+
+  
+  return res.value
+}
+
 const getUserToken = () => {
     const userToken = JSON.parse(localStorage.getItem("userToken"));
     return userToken ? userToken : null;
@@ -69,5 +93,6 @@ export {
     showTimerSwal,
     getUserToken,
     getUrlParam,
-    showQuestionSwal
+    showQuestionSwal,
+    showInputSwal
 }

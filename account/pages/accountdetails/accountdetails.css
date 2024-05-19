@@ -1,3 +1,63 @@
 @import "../../../components/default.css";
 @import "../../components/menu-account.css";
 @import "../../components/content-account.css";
+
+.account-content__infos-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+.info-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+label{
+    position: relative;
+}
+.ischangelball{
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: green;
+}
+.ischangelball--red{
+    color: red;
+}
+input{
+    border: none;
+    background-color: var(--section-color);
+    border-radius: 2rem;
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+#name{
+
+}
+#username{
+
+}
+#email{
+
+}
+#phone{
+
+}
+.saveChangesBtn{
+    border: none;
+    background-color: green;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    max-width: 200px;
+    margin-top: 26.09px;
+    color: #fff;
+
+}
+.saveChangesBtn:hover{
+    background-color:#006e00;
+}
