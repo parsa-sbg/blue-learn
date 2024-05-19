@@ -30,7 +30,9 @@
 .coursebox__desc{
     font-size: 1.3rem;
     color: var(--text-color-light);
-    min-height: 6rem;
+    height: 6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .coursebox__teacher-star-wrapper{
     display: flex;
