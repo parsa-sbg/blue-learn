@@ -28,9 +28,9 @@
     min-height: 6.2rem;
 }
 .coursebox__desc{
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     color: var(--text-color-light);
-    height: 6rem;
+    height: 7rem;
     overflow: hidden;
     text-overflow: ellipsis;
 }
