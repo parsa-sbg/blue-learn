@@ -1,0 +1,90 @@
+@import "../../components/default.css";
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo-wrapper{
+    width: 100%;
+    margin-bottom: 12rem;
+    padding: 0 10rem;
+}
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    color: var(--text-color);
+    background-color: var(--section-color);
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.boc__banner{
+    max-width: 40rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: translateY(-10rem);
+}
+.box__image{
+    width: 100%;
+}
+.box__name{
+    width: 100%;
+    font-size: 2.5rem;
+    transform: translateY(-5rem);
+    border-bottom: 2px dashed var(--text-color-light);
+    padding-bottom: 2rem;
+    font-family: "IRANsans bold";
+}
+.box__price-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+}
+.box__price-text{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.box__price-text-icon{
+
+}
+.box__price-number{
+    color: green;
+}
+.buy-btn{
+    width: 100%;
+    border: none;
+    color: #fff;
+    background-color: green;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    padding: 1rem;
+
+}
+.buy-btn:hover{
+    background-color: #006e00;
+}
+.cancel-buy{
+    color: var(--text-color-light);
+    font-size: 2rem;
+    text-decoration: underline !important;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+.cancel-buy:hover{
+    color: var(--text-color-light);
+}

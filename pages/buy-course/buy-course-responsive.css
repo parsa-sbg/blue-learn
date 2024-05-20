@@ -1,0 +1,33 @@
+@media (min-width: 1400px) {
+
+}
+
+@media screen and (max-width: 1350px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 500px) {
+    .box__price-wrapper{
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .logo-wrapper{
+        padding: 0 7rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .logo-wrapper{
+        padding: 0 4rem;
+    }
+}
