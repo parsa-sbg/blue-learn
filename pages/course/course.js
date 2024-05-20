@@ -47,7 +47,7 @@ window.addEventListener('load', async () => {
             courseText.innerHTML = courseData.price ?`${courseData.price.toLocaleString()} تومن`: 'رایگان'
 
             courseBtn.innerHTML = '<i class="maincontent__btn-icon fas fa-graduation-cap"></i> ثبت نام در دوره'
-            courseBtn.setAttribute('href', '#')
+            courseBtn.setAttribute('href', `/pages/buy-course/buy-course.html?short-name=${courseData.shortName}`)
         }
 
         // cover

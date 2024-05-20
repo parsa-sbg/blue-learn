@@ -64,7 +64,8 @@ body{
 .box__price-number{
     color: green;
 }
-.buy-btn{
+.buy-btn,
+.seecourse-link{
     width: 100%;
     border: none;
     color: #fff;
@@ -87,4 +88,22 @@ body{
 }
 .cancel-buy:hover{
     color: var(--text-color-light);
+}
+
+/* registerd page */
+
+.logo-wrapper-registered{
+    width: 100%;
+    padding: 5rem;
+}
+.box__success-text{
+
+}
+
+.seecourse-link{
+    text-align: center;
+}
+.seecourse-link:hover{
+    color: #fff;
+    background-color: #006e00;
 }

@@ -9,7 +9,7 @@ const getAllCourses = async () => {
 const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
     const coursesFragment = document.createDocumentFragment();
     courses.slice(0, count).forEach(course => {
-    
+
         const coursebox = document.createElement('div')
         coursebox.className = wrapperType == 'swiper' ? 'swiper-slide' : 'col-12 col-md-6 col-lg-4'
         coursebox.insertAdjacentHTML('beforeend', `
@@ -37,7 +37,7 @@ const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
                                 <span class="coursebox__registers-count">${course.registers}</span>
                             </div>
                             <div class="coursebox__price-wrapper">
-                                ${course.price? `
+                                ${course.price ? `
                                     <span class="coursebox__price">${course.price.toLocaleString()}</span>
                                     <span class="coursebox__unit">تومان</span>
                                 ` : `
@@ -53,8 +53,8 @@ const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
         coursesFragment.append(coursebox)
     })
     wrapper.append(coursesFragment)
-    
-    
+
+
 }
 
 const getPopularCourses = async () => {
@@ -64,10 +64,10 @@ const getPopularCourses = async () => {
 }
 
 const getCourseData = async (courseShortname, userToken) => {
-    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseShortname}`,{
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseShortname}`, {
         method: "GET",
         headers: {
-            "Authorization" : `bearer ${userToken}`
+            "Authorization": `bearer ${userToken}`
         }
     })
     const data = await res.json()
@@ -79,9 +79,9 @@ const getCourseData = async (courseShortname, userToken) => {
 }
 
 const getSessionInfos = async (courseShortName, sessionId, userToken) => {
-    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseShortName}/${sessionId}`,{
-        headers : {
-            Authorization : `bearer ${userToken}`
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseShortName}/${sessionId}`, {
+        headers: {
+            Authorization: `bearer ${userToken}`
         }
     })
     const data = await res.json()
@@ -101,8 +101,8 @@ const getCagegoryCourses = async (courseShortName) => {
     }
 }
 
-const createNewCourse = async (name, description, cover , shortName, price, categoryID ,support) => {
-    
+const createNewCourse = async (name, description, cover, shortName, price, categoryID, support) => {
+
     const formData = new FormData()
 
     formData.append('name', name)
@@ -114,27 +114,27 @@ const createNewCourse = async (name, description, cover , shortName, price, cate
     formData.append('support', support)
     formData.append('status', 'start')
 
-    const res = await fetch ('https://bluelearn-bc.liara.run/v1/courses',{
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/courses', {
         method: "POST",
         headers: {
-            Authorization : `bearer ${getUserToken()}`,
+            Authorization: `bearer ${getUserToken()}`,
         },
-        body : formData
+        body: formData
     })
-    
+
     const data = await res.json()
     return {
         res,
         data
     }
-    
+
 }
 
 const deleteCourse = async courseId => {
-    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseId}`,{
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseId}`, {
         method: "DELETE",
-        headers:{
-            Authorization : `bearer ${getUserToken()}`
+        headers: {
+            Authorization: `bearer ${getUserToken()}`
         }
     })
     console.log(res);
@@ -147,7 +147,7 @@ const getAllSessions = async () => {
     return data
 }
 
-const addNewSession = async (courseId ,title, video, time, free) => {
+const addNewSession = async (courseId, title, video, time, free) => {
     const formData = new FormData()
 
     formData.append('title', title)
@@ -155,12 +155,12 @@ const addNewSession = async (courseId ,title, video, time, free) => {
     formData.append('time', time)
     formData.append('free', free)
 
-    const res = await fetch (`https://bluelearn-bc.liara.run/v1/courses/${courseId}/sessions`,{
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseId}/sessions`, {
         method: "POST",
         headers: {
-           Authorization : `bearer ${getUserToken()}`
+            Authorization: `bearer ${getUserToken()}`
         },
-        body : formData
+        body: formData
     })
     const data = await res.json()
 
@@ -171,10 +171,10 @@ const addNewSession = async (courseId ,title, video, time, free) => {
 }
 
 const deleteSession = async (sessionId) => {
-    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/sessions/${sessionId}`,{
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/sessions/${sessionId}`, {
         method: "DELETE",
-        headers:{
-            Authorization : `bearer ${getUserToken()}`
+        headers: {
+            Authorization: `bearer ${getUserToken()}`
         }
     })
 
@@ -182,17 +182,36 @@ const deleteSession = async (sessionId) => {
 }
 
 const getUserCourses = async () => {
-    const res = await fetch('https://bluelearn-bc.liara.run/v1/users/courses',{
+    const res = await fetch('https://bluelearn-bc.liara.run/v1/users/courses', {
         headers: {
-            Authorization : `bearer ${getUserToken()}`
+            Authorization: `bearer ${getUserToken()}`
         }
     })
     const data = await res.json()
 
-    return data
+    const userCourses = data.filter(course => {
+        return course.course
+    })
+    return userCourses
 }
 
-export { 
+const registerToCourse = async (courseId, coursePrice) => {
+    const res = await fetch(`https://bluelearn-bc.liara.run/v1/courses/${courseId}/register`,{
+        method : "POST",
+        headers : {
+            Authorization : `bearer ${getUserToken()}`,
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify( {price : coursePrice} )
+    }) 
+    const data = await res.json()
+    return {
+        res,
+        data
+    }
+}
+
+export {
     getAllCourses,
     renderCourseBoxInWrapper,
     getPopularCourses,
@@ -204,5 +223,6 @@ export {
     getAllSessions,
     addNewSession,
     deleteSession,
-    getUserCourses
+    getUserCourses,
+    registerToCourse
 }
