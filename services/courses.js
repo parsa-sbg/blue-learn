@@ -3,7 +3,12 @@ import { getUserToken } from "../shared/utils.js"
 const getAllCourses = async () => {
     const res = await fetch('https://bluelearn-bc.liara.run/v1/courses')
     const allCourses = await res.json()
-    return allCourses
+
+    if(res.ok){
+        return allCourses
+    }else{
+        return []
+    }
 }
 
 const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
@@ -60,7 +65,12 @@ const renderCourseBoxInWrapper = (courses, wrapper, wrapperType, count) => {
 const getPopularCourses = async () => {
     const res = await fetch('https://bluelearn-bc.liara.run/v1/courses/popular')
     const popularCourses = await res.json()
-    return popularCourses
+
+    if(res.ok){
+        return popularCourses
+    }else{
+        return[]
+    }
 }
 
 const getCourseData = async (courseShortname, userToken) => {
