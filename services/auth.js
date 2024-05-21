@@ -124,6 +124,7 @@ const updataUserInfos = async (username, name, email, phone, password) => {
         },
         body : JSON.stringify(newUserInfos)
     })
+    console.log(await res.json());
     return res
 }
 

@@ -28,7 +28,7 @@ saveChangesBtn.addEventListener('click', async () => {
 
     if (pass) {
         loader.show()
-        const isPassCurrect = (await loginUser(userNameInput.value, pass)).res.ok
+        const isPassCurrect = (await loginUser(userInfos.data.username, pass)).res.ok
 
         if (isPassCurrect) {
             const res = await updataUserInfos(userNameInput.value, nameInput.value, emailInput.value, phoneInput.value, pass)
