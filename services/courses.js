@@ -4,6 +4,7 @@ const getAllCourses = async () => {
     const res = await fetch('https://bluelearn-bc.liara.run/v1/courses')
     const allCourses = await res.json()
 
+    console.log(allCourses);
     if(res.ok){
         return allCourses
     }else{

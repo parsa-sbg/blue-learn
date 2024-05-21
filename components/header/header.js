@@ -150,6 +150,7 @@ const getAndShowUserNameInHeader = async () => {
         headerLeft.insertAdjacentHTML('beforeend',`
             <a class="header__username" href="/pages/login/login.html">ورود/ثبت نام</a>
         `)
+        headerUsername = document.querySelector('.header__username')
     }
 
 }
