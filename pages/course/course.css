@@ -50,7 +50,7 @@
 }
 .maincontent__btn:hover{
     color: #fff;
-    box-shadow: 3px 3px 10px #827b7b;
+    background-color: #0055a0;
 }
 .maincontent__btn-icon{
     margin-left: 0.5rem;
