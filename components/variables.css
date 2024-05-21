@@ -5,8 +5,8 @@
     --section-color: #fff;
     --text-color: #000;
     --text-color-light: #777777;
-
     --header-color: #ffffffc0;
+    --hint-color: orange; 
 }
 
 :root.dark{
@@ -15,7 +15,6 @@
     --section-color: #242a38;
     --text-color: #ffffff;
     --text-color-light: #9b9b9b;
-
     --header-color: #242a38c0;
-
+    --hint-color: yellow; 
 }

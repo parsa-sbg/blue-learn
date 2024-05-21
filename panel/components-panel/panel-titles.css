@@ -1,3 +1,6 @@
+@import "../../components/default.css";
+
+
 /* start title */
 
 .title-wrapper {
@@ -30,3 +33,19 @@
 }
 
 /* end title */
+
+/* hint */
+.hint{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    color: var(--hint-color);
+    margin-top: 1rem;
+}
+.hint__icon{
+
+}
+.hint__text{
+    margin: 0;
+}
