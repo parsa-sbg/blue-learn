@@ -15,7 +15,7 @@ const registerToFreeCourse = async (courseId) => {
 }
 
 const registerToNotFreeCourse = () => {
-    console.log('not free');   
+    showTimerSwal('warning', 'هنوز درگاه پرداخت اضافه نشده است. میتوانید در دوره های رایگان ثبت نام کنید.', 'متوجه هستم.', () => {})  
 }
 
 window.registerToFreeCourse = registerToFreeCourse
