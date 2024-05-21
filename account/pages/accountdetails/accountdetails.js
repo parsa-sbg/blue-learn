@@ -78,7 +78,7 @@ changePassBtn.addEventListener('click', async () => {
 
     loader.show()
 
-    const isPassCurrect = (await loginUser(userNameInput.value, lastPassElem.value)).res.ok
+    const isPassCurrect = (await loginUser(userInfos.data.username, lastPassElem.value)).res.ok
 
 
     if(isPassCurrect){
