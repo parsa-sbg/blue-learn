@@ -1,5 +1,5 @@
 import { getCourseData } from "../../services/courses.js";
-import { getUserToken, getUrlParam } from "../../shared/utils.js";
+import { getUserToken, getUrlParam, showTimerSwal } from "../../shared/utils.js";
 
 window.addEventListener('load', async () => {
     const courseShortName = getUrlParam('short-name')
@@ -47,7 +47,13 @@ window.addEventListener('load', async () => {
             courseText.innerHTML = courseData.price ?`${courseData.price.toLocaleString()} تومن`: 'رایگان'
 
             courseBtn.innerHTML = '<i class="maincontent__btn-icon fas fa-graduation-cap"></i> ثبت نام در دوره'
-            courseBtn.setAttribute('href', `/pages/buy-course/buy-course.html?short-name=${courseData.shortName}`)
+            if (userToken) {
+                courseBtn.setAttribute('href', `/pages/buy-course/buy-course.html?short-name=${courseData.shortName}`)
+            }else{
+                courseBtn.addEventListener('click', () => {
+                    showTimerSwal('warning','ابتدا وارد اکانت کاربری خود شوید.', 'فهمیدم', () => {})
+                })
+            }
         }
 
         // cover
