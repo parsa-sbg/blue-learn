@@ -7,7 +7,7 @@ const userNameInput = document.querySelector('#username')
 const emailInput = document.querySelector('#email')
 const phoneInput = document.querySelector('#phone')
 const allAccountInfoInputs = document.querySelectorAll('.accountinfo-input')
-const allIsChangeBalls = document.querySelectorAll('label')
+const allIsChangeBalls = document.querySelectorAll('.ischangelball')
 const saveChangesBtn = document.querySelector('.saveChangesBtn')
 let userInfos = await getUserInfos()
 const changePassBtn = document.querySelector('#changepassbtn')
@@ -39,9 +39,9 @@ saveChangesBtn.addEventListener('click', async () => {
                 userInfos = await getUserInfos()
 
                 // make all balls green
-                allIsChangeBalls.forEach(label => {
-                    label.children[0].classList.remove('ischangelball--red')
-                    label.children[0].innerHTML = 'ثبت شده'
+                allIsChangeBalls.forEach(ball => {
+                    ball.classList.remove('ischangelball--red')
+                    ball.innerHTML = 'ثبت شده'
                 })
 
             } else {
