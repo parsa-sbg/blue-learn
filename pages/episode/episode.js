@@ -14,8 +14,8 @@ window.addEventListener('load', async () => {
     const sessionInfos = sessionResponse.data.session
     const sessionsInfos = sessionResponse.data.sessions
 
-    console.log(sessionInfos);
-    console.log(sessionsInfos);
+    console.log(sessionResponse);
+
 
     // to find out if user is registered or not
     const isUserRegistered = await (await getCourseData(courseShortName, userToken)).data.isUserRegisteredToThisCourse

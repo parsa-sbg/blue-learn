@@ -1,6 +1,12 @@
 import { getCourseData } from "../../services/courses.js";
 import { getUserToken, getUrlParam, showTimerSwal } from "../../shared/utils.js";
 
+
+const showMustLogin = () => {
+    showTimerSwal('warning','ابتدا وارد اکانت کاربری خود شوید.', 'فهمیدم', () => {})
+}
+
+window.showMustLogin = showMustLogin
 window.addEventListener('load', async () => {
     const courseShortName = getUrlParam('short-name')
     const userToken = getUserToken()
@@ -51,7 +57,7 @@ window.addEventListener('load', async () => {
                 courseBtn.setAttribute('href', `/pages/buy-course/buy-course.html?short-name=${courseData.shortName}`)
             }else{
                 courseBtn.addEventListener('click', () => {
-                    showTimerSwal('warning','ابتدا وارد اکانت کاربری خود شوید.', 'فهمیدم', () => {})
+                    showMustLogin()
                 })
             }
         }
@@ -108,7 +114,11 @@ window.addEventListener('load', async () => {
                 courseData.sessions.forEach((session, index) => {
                     console.log(session);
                     courseSessionsWrapper.insertAdjacentHTML('beforeend',`
-                        <${session.free ? 'a' : 'i'} href="../episode/episode.html?course-s-n=${courseData.shortName}&session-id=${session._id}&session-num=${index+1}" class="session">
+                        <${session.free ? 'a' : 'i'} ${
+                            userToken ? `href="../episode/episode.html?course-s-n=${courseData.shortName}&session-id=${session._id}&session-num=${index+1}"`
+                            :
+                            `onclick = "showMustLogin()"`
+                        } class="session">
                             <div class="session__right">
                                 <span class="session__number">${index+1}</span>
                                 <p class="session__title">${session.title}</p>
