@@ -125,7 +125,7 @@
     top: 120%;
     left: 0;
 
-    transition: all 50ms ease;
+    transition: all 100ms ease;
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
@@ -154,6 +154,8 @@
     width: 100%;
     color: var(--text-color);
 
+    transition: all 100ms ease;
+
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -168,7 +170,7 @@
 }
 .header__username-dropdown-item:hover{
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: #fff;
 }
 .header__username-dropdown-logout{
     margin-top: 1rem;
@@ -178,6 +180,7 @@
 }
 .header__username-dropdown-logout:hover{
     background-color: red;
+    color: #fff;
 }
 .header__username-dropdown-logout-icon{
 
@@ -219,7 +222,7 @@
     opacity: 0;
     visibility: hidden;
     display: flex;
-    transition: all 50ms ease;
+    transition: all 100ms ease;
     z-index: 1000;
 }
 
