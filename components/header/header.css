@@ -3,7 +3,7 @@
 
 .header{
     background-color: var(--header-color);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
     position: fixed;
     left: 0;
     top: 0;
@@ -152,6 +152,7 @@
     border-radius: 2rem;
     padding: 1.5rem 1rem;
     width: 100%;
+    color: var(--text-color);
 
     display: flex;
     align-items: center;
@@ -167,7 +168,7 @@
 }
 .header__username-dropdown-item:hover{
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--text-color);
 }
 .header__username-dropdown-logout{
     margin-top: 1rem;
@@ -252,8 +253,8 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 3rem;
-    height: 3rem;
+    width: 2.3rem;
+    height: 2.3rem;
     color: var(--text-color);
     cursor: pointer;
 }
@@ -431,7 +432,7 @@
     justify-content: space-between;
 }
 .mobile-menu__item-angle-left{
-    transition: all 500ms ease;
+    transition: all 200ms ease;
     color: var(--text-color);
 }
 
