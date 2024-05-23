@@ -138,8 +138,8 @@ formSubmitBtn.addEventListener('click', async () => {
 
             displayMenusInSelectInputAndAllMenus()
             handleOpenAccordion()
-            titleElem.value = null
-            hrefElem.value = null
+            titleElem.value = ''
+            hrefElem.value = ''
             parentIdElem.value = null
 
         })
