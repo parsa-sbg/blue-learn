@@ -33,8 +33,8 @@ const displayMenusInSelectInputAndAllMenus = () => {
         // display in all menus
         const accordionWrapper = document.createElement('div')
         accordionWrapper.className = 'accordion-wrapper'
-        
-        accordionWrapper.insertAdjacentHTML('beforeend',`
+
+        accordionWrapper.insertAdjacentHTML('beforeend', `
 
             <button class="accordion__btn">
                 ${menu.title}
@@ -48,10 +48,10 @@ const displayMenusInSelectInputAndAllMenus = () => {
 
                 ${submenus.length ? `
 
-                    ${submenus.map((submenu, index)=> `
+                    ${submenus.map((submenu, index) => `
                         <div class="accordion__panel-item">
                             <div class="accordion__panel-item__right">
-                                <span class="accordion__panel-item__number">${index+1}</span>
+                                <span class="accordion__panel-item__number">${index + 1}</span>
                                 <p class="accordion__panel-item__title">${submenu.title}</p>
                             </div>
             
@@ -104,12 +104,12 @@ const showSwalAndDeleteMenu = (menuId) => {
 
 
     showQuestionSwal('warning', 'آیا از حذف این منو اطمینان دارید؟', 'بله', 'منو مورد نظر با موفقیت حذف شد.',
-    async () => {
-        await deleteMenu(menuId)
-        allMenues = await getAllMenues()
-        displayMenusInSelectInputAndAllMenus()
-        handleOpenAccordion()
-    })
+        async () => {
+            await deleteMenu(menuId)
+            allMenues = await getAllMenues()
+            displayMenusInSelectInputAndAllMenus()
+            handleOpenAccordion()
+        })
 }
 
 
@@ -126,11 +126,11 @@ window.addEventListener('load', async () => {
 
 /// add new menu logic ///
 formSubmitBtn.addEventListener('click', async () => {
-    const title = document.querySelector('#name').value
-    const href = document.querySelector('#href').value
-    const parentId = document.querySelector('#parent').value
+    const titleElem = document.querySelector('#name')
+    const hrefElem = document.querySelector('#href')
+    const parentIdElem = document.querySelector('#parent')
 
-    const response = await addNewMenu(title, href, parentId)
+    const response = await addNewMenu(titleElem.value, hrefElem.value, parentIdElem.value)
     if (response.res.ok) {
         showTimerSwal('success', 'منو اضافه شد', 'باشه', async () => {
 
@@ -138,6 +138,10 @@ formSubmitBtn.addEventListener('click', async () => {
 
             displayMenusInSelectInputAndAllMenus()
             handleOpenAccordion()
+            titleElem.value = null
+            hrefElem.value = null
+            parentIdElem.value = null
+
         })
     }
 })

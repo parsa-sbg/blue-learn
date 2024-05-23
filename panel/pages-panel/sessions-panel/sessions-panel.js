@@ -4,7 +4,7 @@ import {
     addNewSession,
     deleteSession
 } from "../../../services/courses.js"
-import { showQuestionSwal , showTimerSwal } from "../../../shared/utils.js"
+import { showQuestionSwal, showTimerSwal } from "../../../shared/utils.js"
 import { createLoader } from "../../../shared/loader.js";
 const loader = createLoader('در حال آپلود ...')
 
@@ -92,17 +92,17 @@ const fillEmptyAccordionPanels = () => {
 
 const showSwalAndDeleteSession = async (sessionId) => {
     showQuestionSwal('warning', 'آیا از حذف این جلسه اطمینان دارید؟', 'بله', 'جلسه مورد نظر با موفقیت حذف شد',
-    async () => {
-        const res = await deleteSession(sessionId)
-        if(res.ok){
-            // empty all panels and fill again with new data
-            document.querySelectorAll('.accordion__panel').forEach(panel => {
-                panel.innerHTML = ''
-            })
-            await getAndShowAllSessions()
-            fillEmptyAccordionPanels()
-        }
-    })
+        async () => {
+            const res = await deleteSession(sessionId)
+            if (res.ok) {
+                // empty all panels and fill again with new data
+                document.querySelectorAll('.accordion__panel').forEach(panel => {
+                    panel.innerHTML = ''
+                })
+                await getAndShowAllSessions()
+                fillEmptyAccordionPanels()
+            }
+        })
 }
 
 const handleOpenAcacordion = () => {
@@ -124,35 +124,40 @@ formBtn.addEventListener('click', async event => {
 
     loader.show()
 
-    const courseId = document.querySelector('#course').value
-    const name = document.querySelector('#name').value
-    const time = document.querySelector('#time').value
-    const free = document.querySelector('#free').checked ? 1 : 0
+    const courseIdElem = document.querySelector('#course')
+    const nameElem = document.querySelector('#name')
+    const timeElem = document.querySelector('#time')
+    const freeElem = document.querySelector('#free').checked ? 1 : 0
 
-    const response = await addNewSession(courseId, name, video, time, free)
+    const response = await addNewSession(courseIdElem.value, nameElem.value, video, timeElem.value, freeElem)
     loader.hide()
 
-    if(response.res.ok){
+    if (response.res.ok) {
         showTimerSwal('success', 'جلسه با موفقیت اضافه شد.', 'فهمیدم', async () => {
             await getAndShowAllCourses()
             await getAndShowAllSessions()
             fillEmptyAccordionPanels()
             handleOpenAcacordion()
+
+            courseIdElem.value = null
+            nameElem.value = null
+            timeElem.value = null
+            document.querySelector('#free').checked = false
         })
-    }else{
+    } else {
         console.log(response.data.message);
 
         switch (response.data.message[0].name) {
-            case 'title' : showTimerSwal('error', 'عنوان جلسه الزامی است.', 'فهمیدم', () => {})
-            break;
+            case 'title': showTimerSwal('error', 'عنوان جلسه الزامی است.', 'فهمیدم', () => { })
+                break;
 
-            case 'video': showTimerSwal('error', 'فایل ویدیوی جلسه الزامی است.', 'فهمیدم', () => {})
-            break;
+            case 'video': showTimerSwal('error', 'فایل ویدیوی جلسه الزامی است.', 'فهمیدم', () => { })
+                break;
 
-            case 'time' : showTimerSwal('error', 'زمان جلسه الزامی است.', 'فهمیدم', () => {})
-            break;
+            case 'time': showTimerSwal('error', 'زمان جلسه الزامی است.', 'فهمیدم', () => { })
+                break;
 
-            default : showTimerSwal('error', 'مشکلی رخ داد !', 'فهمیدم', () => {})
+            default: showTimerSwal('error', 'مشکلی رخ داد !', 'فهمیدم', () => { })
 
         }
     }

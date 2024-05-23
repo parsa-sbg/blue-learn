@@ -75,21 +75,21 @@ createCourseBtn.addEventListener('click', async event => {
 
     loader.show()
 
-    const newCourseName = document.querySelector('#name').value
-    const newCourseDescrioption = document.querySelector('#desc').value
-    const newCourseShortName = document.querySelector('#shortname').value
-    const newCoursePrice = document.querySelector('#price').value
-    const newCourseCategoryId = document.querySelector('#category').value
-    const newCourseSupport = document.querySelector('#support').value
+    const newCourseName = document.querySelector('#name')
+    const newCourseDescrioption = document.querySelector('#desc')
+    const newCourseShortName = document.querySelector('#shortname')
+    const newCoursePrice = document.querySelector('#price')
+    const newCourseCategoryId = document.querySelector('#category')
+    const newCourseSupport = document.querySelector('#support')
 
     const response = await createNewCourse(
-        newCourseName,
-        newCourseDescrioption,
+        newCourseName.value,
+        newCourseDescrioption.value,
         cover,
-        newCourseShortName,
-        newCoursePrice,
-        newCourseCategoryId,
-        newCourseSupport,
+        newCourseShortName.value,
+        newCoursePrice.value,
+        newCourseCategoryId.value,
+        newCourseSupport.value,
     )
 
     loader.hide()
@@ -97,6 +97,13 @@ createCourseBtn.addEventListener('click', async event => {
         getAndShowAllCourses()
         showTimerSwal('success', 'دوره با موفقیت اضافه شد', 'فهمیدم', () => {
         })
+        newCourseName.value = null
+        newCourseDescrioption.value = null
+        newCourseShortName.value = null
+        newCoursePrice.value = null
+        newCourseCategoryId.value = null
+        newCourseSupport.value = null
+        cover = null
     } else {
         showTimerSwal('error', response.data.message[0].message, 'فهمیدم', () => { })
     }
