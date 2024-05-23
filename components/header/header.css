@@ -69,7 +69,6 @@
     top: 5.7rem;
     padding: 0;
     text-wrap: nowrap;
-    transition: all 200ms ease;
     background-color: var(--section-color);
     padding: .5rem 1rem;
     border-radius: 1rem;
@@ -126,7 +125,7 @@
     top: 120%;
     left: 0;
 
-    transition: all 200ms ease;
+    transition: all 50ms ease;
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
@@ -150,7 +149,6 @@
 .header__username-dropdown-logout{
     cursor: pointer;
     display: block;
-    transition: all 200ms ease;
     border-radius: 2rem;
     padding: 1.5rem 1rem;
     width: 100%;
@@ -220,7 +218,7 @@
     opacity: 0;
     visibility: hidden;
     display: flex;
-    transition: all 200ms ease;
+    transition: all 50ms ease;
     z-index: 1000;
 }
 
@@ -351,7 +349,7 @@
     min-height: 100vh;
     background-color: var(--section-color);
     padding: 0 3rem;
-    transition: all 200ms ease;
+    transition: all 50ms ease;
     z-index: 100;
     display: none;
     width: 33rem;
@@ -447,7 +445,6 @@
     background-color: var(--section-color);
     right: 105%;
     top: 0;
-    transition: all 500ms ease;
     background-color: #edf3f3;
     border-radius: 3rem;
     list-style-type: disc;
