@@ -50,6 +50,7 @@
     opacity: 1;
     height: auto;
     cursor: pointer;
+    transition: all 200ms ease;
 }
 .menu-link{
     display: flex;
