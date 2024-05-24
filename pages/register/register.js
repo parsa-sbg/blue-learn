@@ -20,9 +20,9 @@ window.addEventListener('load', () => {
         laoder.show()
 
         const response = await registerNewUser(
-            nameInputValue.trim(),
-            userNameInputValue.trim(),
-            emailInputValue.trim(),
+            nameInputValue.toLowerCase().trim(),
+            userNameInputValue.toLowerCase().trim(),
+            emailInputValue.toLowerCase().trim(),
             phoneInputValue.trim(),
             passwordInputValue.trim(),
             passwordInputValue.trim()

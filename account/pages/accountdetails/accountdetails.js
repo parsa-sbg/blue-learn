@@ -28,10 +28,10 @@ saveChangesBtn.addEventListener('click', async () => {
 
     if (pass) {
         loader.show()
-        const isPassCurrect = (await loginUser(userInfos.data.username, pass)).res.ok
+        const isPassCurrect = (await loginUser(userInfos.data.username.toLowerCase(), pass)).res.ok
 
         if (isPassCurrect) {
-            const res = await updataUserInfos(userNameInput.value, nameInput.value, emailInput.value, phoneInput.value, pass)
+            const res = await updataUserInfos(userNameInput.value.toLowerCase(), nameInput.value.toLowerCase(), emailInput.value.toLowerCase(), phoneInput.value, pass)
             if (res.ok) {
                 showTimerSwal('success', 'اطلاعات شما با موفقیت آپدیت شد.', 'فهمیدم', () => { })
 
@@ -78,11 +78,11 @@ changePassBtn.addEventListener('click', async () => {
 
     loader.show()
 
-    const isPassCurrect = (await loginUser(userInfos.data.username, lastPassElem.value)).res.ok
+    const isPassCurrect = (await loginUser(userInfos.data.username.toLowerCase(), lastPassElem.value)).res.ok
 
 
     if(isPassCurrect){
-        const res = await updataUserInfos(userInfos.data.username, userInfos.data.name,userInfos.data.email, userInfos.data.phone,
+        const res = await updataUserInfos(userInfos.data.username.toLowerCase(), userInfos.data.name.toLowerCase() ,userInfos.data.email.toLowerCase(), userInfos.data.phone,
             newPassElem.value
         )
         if (res.ok) {

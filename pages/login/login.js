@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
 
         laoder.show()
 
-        const response = await loginUser(nameInput.value, passwordInput.value)
+        const response = await loginUser(nameInput.value.toLowerCase(), passwordInput.value)
 
         laoder.hide()
         
