@@ -1,9 +1,19 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 table{
     font-size: 2rem;
     width: 100%;
     color: var(--text-color);
     margin-top: 3rem;
-    user-select: text;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
 }
 
 th{

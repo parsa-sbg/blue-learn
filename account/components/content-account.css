@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 body{
     background-color: var(--section-color);
     padding: 5rem ;
@@ -12,9 +19,15 @@ body{
 }
 
 .account-content__head{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     font-size: 3rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--text-color-light);
@@ -23,9 +36,15 @@ body{
 .mobile-toggle-btn {
     width: 49.25px;
     height: 52.2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     cursor: pointer;
     display: none;
 }
@@ -36,6 +55,8 @@ body{
     background-color: var(--primary-color);
     position: relative;
     border-radius: 3rem;
+    -webkit-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
     transition: all 100ms ease;
 }
 
@@ -47,6 +68,8 @@ body{
     height: 0.4rem;
     background-color: var(--primary-color);
     border-radius: 3rem;
+    -webkit-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
     transition: all 100ms ease;
 }
 
@@ -59,8 +82,12 @@ body{
 }
 
 .account-content__head-right{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .account-content__welcome{
     margin: 0;
@@ -104,6 +131,8 @@ body{
     visibility: hidden;
     display: none;
     opacity: 0;
+    -webkit-transition: all 50ms ease;
+    -o-transition: all 50ms ease;
     transition: all 50ms ease;
 }
 .cover--show{

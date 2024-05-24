@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 .account-menu{
     position: sticky;
     top: 2rem;
@@ -5,6 +12,8 @@
     background-color: var(--section-color);
     padding: 0 2rem;
     z-index: 5;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
 .account-menu__logo-wrapper{
@@ -19,14 +28,25 @@
     color: var(--text-color);
     font-size: 2rem;
     margin-top: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .account-menu__list-item{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 1rem;
     border-radius: 2rem;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
     text-wrap: nowrap;
     padding-right: 2rem;

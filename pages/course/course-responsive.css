@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @media (min-width: 1400px) {
     .container {
         width: 1250px;
@@ -14,10 +21,14 @@
 
 @media screen and (max-width: 992px) {
     .maincontent-wrapper{
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
     }
     .maincontent__cover{
-        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
     }
     .maincontent__bottom{
         margin-top: 2rem;
@@ -36,7 +47,10 @@
 
 
     .courseinfoes__info-box{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         text-align: center;
     }
     .courseinfoes__icon{
@@ -57,8 +71,13 @@
 }
 @media screen and (max-width: 400px) {
     .maincontent__bottom{
-        flex-direction: column;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     .maincontent__text{
         margin-top: 2rem;

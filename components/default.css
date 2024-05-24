@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @import "../components/reset.css";
 @import "../components/variables.css";
 @import "../components/fonts.css";
@@ -8,15 +15,21 @@
 }
 
 html{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-size: 1.6rem;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 body{
     font-size: inherit;
     background-color: var(--app-bg-color);
     font-family: "IRANSans";
+    -webkit-transition: background-color 80ms ease;
+    -o-transition: background-color 80ms ease;
     transition: background-color 80ms ease;
 }
 
@@ -24,7 +37,10 @@ body{
 *::before,
 *::after {
     outline: none;
-    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+    -webkit-transition: color 50ms ease;
+    -o-transition: color 50ms ease;
     transition: color 50ms ease;
 }
 

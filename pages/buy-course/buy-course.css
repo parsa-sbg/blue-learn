@@ -1,17 +1,39 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @import "../../components/default.css";
 
 body{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 
     padding: 2rem;
 }
 .main{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .logo-wrapper{
     width: 100%;
@@ -19,10 +41,19 @@ body{
     padding: 0 10rem;
 }
 .box{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     color: var(--text-color);
     background-color: var(--section-color);
@@ -33,7 +64,9 @@ body{
     max-width: 40rem;
     border-radius: 2rem;
     overflow: hidden;
-    transform: translateY(-10rem);
+    -webkit-transform: translateY(-10rem);
+        -ms-transform: translateY(-10rem);
+            transform: translateY(-10rem);
 }
 .box__image{
     width: 100%;
@@ -41,21 +74,31 @@ body{
 .box__name{
     width: 100%;
     font-size: 2.5rem;
-    transform: translateY(-5rem);
+    -webkit-transform: translateY(-5rem);
+        -ms-transform: translateY(-5rem);
+            transform: translateY(-5rem);
     border-bottom: 2px dashed var(--text-color-light);
     padding-bottom: 2rem;
     font-family: "IRANsans bold";
 }
 .box__price-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     font-size: 2.5rem;
     margin-top: 3rem;
 }
 .box__price-text{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: .5rem;
 }
 .box__price-text-icon{

@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @media (min-width: 1400px) {
     .container {
         width: 1250px;
@@ -21,27 +28,40 @@
         width: 118%;
     }
     .ourhelp__icon{
-        flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+            flex-basis: 25%;
     }
 }
 
 @media screen and (max-width: 992px) {
     .home-wrapper{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-between;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
     .home__image{
         width: 100%;
     }
     .home__right{
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         margin-left: 0rem;
         text-align: center;
         margin-top: 5rem;
     }
     .ourhelp__box{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         text-align: center;
     }
     .ourhelp__icon{
@@ -67,11 +87,15 @@
     }
     .home__links{
         gap: .5rem;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         margin-top: 2rem;
     }
     .courses-section__header{
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         gap: .5rem;
     }
 

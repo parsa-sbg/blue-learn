@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @import "../../../components/header/header.css";
 @import "../../../components/default.css";
 @import "../../components-panel/panel-titles.css";
@@ -83,6 +90,8 @@ main {
     height: 34.78px;
     width: 34.78px;
     background-color: var(--app-bg-color);
+    -webkit-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
     transition: all 100ms ease;
     border-radius: 1rem;
     padding: .5rem 1rem;
@@ -91,13 +100,25 @@ main {
   /* On mouse-over, add a grey background color */
   .checkbox-wrapper:hover input ~ .checkmark {
     background-color: #313131;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: colomn;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: colomn;
+            flex-direction: colomn;
   }
   .checkbox-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     height: 52px;
     font-size: 2rem;
     padding: 0;
@@ -109,6 +130,8 @@ main {
   /* When the checkbox is checked, add a blue background */
   .checkbox-wrapper input:checked ~ .checkmark {
     background-color: var(--primary-color);
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
   }
   
@@ -163,8 +186,13 @@ main {
 /* start all sessions */
 
 .sessions-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 3rem;
     font-size: 2rem;
     margin-top: 3rem;

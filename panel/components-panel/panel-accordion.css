@@ -1,12 +1,25 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 .accordion-wrapper{
 
 }
 .accordion__btn{
     width: 100%;
     height: 6rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: .2rem 1rem;
     border-radius: 3rem;
     background-color: var(--section-color);
@@ -14,17 +27,28 @@
     border: 1px solid var(--primary-color);
     margin-bottom: 2rem;
 
+    -webkit-transition: all 300ms ease;
+
+    -o-transition: all 300ms ease;
+
     transition: all 300ms ease;
 }
 .accordion__panel{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     gap: 1rem;
     height: 0rem;
     overflow: hidden;
     visibility: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     opacity: 0;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
     transition: all 300ms ease;
 }
 
@@ -35,9 +59,15 @@
 }
 
 .accordion__panel-item{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--section-color);
     padding: 1rem 2rem;
     border-radius: 3rem;
@@ -45,14 +75,26 @@
     color: var(--text-color-light);
 }
 .accordion__panel-item__right{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .accordion__panel-item__number{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     min-width: 4rem;
     min-height: 4rem;
     background-color: var(--primary-color);
@@ -64,15 +106,23 @@
     margin-bottom: 0;
 }
 .accordion__panel-item__left{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-right: 1rem;
 }
 .accordion__panel-item__delbtn{
     color: var(--text-color);
     background-color: var(--app-bg-color);
     border: none;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
     border-radius: 3rem;
     padding: .5rem 1rem;
@@ -87,7 +137,8 @@
 
 #time{
     -moz-appearance: textfield;
-    appearance: textfield;
+    -webkit-appearance: textfield;
+            appearance: textfield;
 }
 #time::-webkit-outer-spin-button,
 #time::-webkit-inner-spin-button {

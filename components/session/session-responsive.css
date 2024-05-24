@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @media (min-width: 1400px) {
     .container {
         width: 1250px;
@@ -27,16 +34,23 @@
 }
 @media screen and (max-width: 470px){
     .session{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         /* align-items: end;  */
     }
     .session__right{
         width: 100%;
-        justify-content: start;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: start;
     }
     .session__left{
         width: 100%;
-        justify-content: end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: end;
     }
 }
 @media screen and (max-width: 400px) {

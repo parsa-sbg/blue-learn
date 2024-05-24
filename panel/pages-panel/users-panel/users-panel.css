@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @import "../../../components/header/header.css";
 @import "../../../components/default.css";
 @import "../../components-panel/panel-titles.css";
@@ -37,9 +44,15 @@ main {
 
 }
 .user-box__header{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 2rem;
 
     padding: .5rem 1rem;
@@ -56,6 +69,8 @@ main {
     background-color: var(--app-bg-color);
     border: none;
     padding: .3rem 1rem;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
 .user-box__removebtn:hover{
@@ -68,6 +83,8 @@ main {
     background-color: var(--app-bg-color);
     border: none;
     padding: .3rem 1rem;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
 .user-box__promotbtn:hover{
@@ -91,6 +108,8 @@ main {
     opacity: 0;
     height: 0;
     overflow: hidden;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
     transition: all 200ms ease;
 }
 .user-box__header:hover ~ .user-box__infos{
@@ -101,8 +120,12 @@ main {
     border: 2px solid var(--primary-color);
 }
 .user-box__info-wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 1rem;
 }
 .user-box__info-label{
@@ -121,4 +144,3 @@ main {
 }
 
 /* end all users */
-

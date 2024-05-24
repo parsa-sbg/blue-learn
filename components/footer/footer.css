@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 6 version
+*/
+
 @import "../default.css";
 
 .footer {
@@ -11,16 +18,22 @@
 }
 
 .footer__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     border-bottom: 2px solid var(--text-color-light);
     padding-bottom: 2rem;
     color: var(--text-color);
 }
 
 .footer__about-us {
-    flex-basis: 30%;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
 
 }
 
@@ -37,7 +50,8 @@
 }
 
 .footer__useful-links {
-    flex-basis: 30%;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
 }
 
 .footer__useful-links-title {
@@ -57,9 +71,15 @@
 
 }
 .footer__socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-basis: 30%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
     gap: 1rem;
 }
 
@@ -71,8 +91,12 @@
 .footer__social {
     font-size: 1.8rem;
     color: var(--text-color-light);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     cursor: pointer;
 }
 
@@ -122,7 +146,9 @@
     }
 
     .footer__social {
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 }
 
@@ -130,11 +156,13 @@
 
     .footer__about-us,
     .footer__useful-links {
-        flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
     }
 
     .footer__socials {
-        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
     }
 }
 
@@ -145,7 +173,8 @@
     .footer__about-us,
     .footer__useful-links,
     .footer__socials {
-        flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
         margin-top: 2rem;
     }
 }
