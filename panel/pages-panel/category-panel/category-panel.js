@@ -69,7 +69,7 @@ submitBtn.addEventListener('click', () => {
     const titleValue = document.querySelector('#name').value
     const hrefValue = document.querySelector('#href').value
 
-    validateAndAddNewCat(titleValue, hrefValue)
+    validateAndAddNewCat(titleValue, hrefValue.toLowerCase())
     
 })
 

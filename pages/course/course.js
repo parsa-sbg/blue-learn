@@ -102,7 +102,7 @@ window.addEventListener('load', async () => {
                                 <p class="session__title">${session.title}</p>
                             </div>
                             <div class="session__left">
-                                <span class="session__time">${session.time}</span>
+                                <span class="session__time">${session.time} دقیقه</span>
                                 <i class="session__icon fa fa-play"></i>
                             </div>
                         </a>

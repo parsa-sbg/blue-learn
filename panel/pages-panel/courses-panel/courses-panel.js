@@ -86,7 +86,7 @@ createCourseBtn.addEventListener('click', async event => {
         newCourseName.value,
         newCourseDescrioption.value,
         cover,
-        newCourseShortName.value,
+        newCourseShortName.value.toLowerCase(),
         newCoursePrice.value,
         newCourseCategoryId.value,
         newCourseSupport.value,

@@ -130,7 +130,7 @@ formSubmitBtn.addEventListener('click', async () => {
     const hrefElem = document.querySelector('#href')
     const parentIdElem = document.querySelector('#parent')
 
-    const response = await addNewMenu(titleElem.value, hrefElem.value, parentIdElem.value)
+    const response = await addNewMenu(titleElem.value, hrefElem.value.toLowerCase(), parentIdElem.value)
     if (response.res.ok) {
         showTimerSwal('success', 'منو اضافه شد', 'باشه', async () => {
 
