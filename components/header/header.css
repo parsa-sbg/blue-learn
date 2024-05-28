@@ -569,6 +569,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 1.5rem;
+    transition: all 200ms ease-out;
 }
 .mobile-menu__dropdown-list--open{
     visibility: visible;
