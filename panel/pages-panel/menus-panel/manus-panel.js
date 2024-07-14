@@ -92,20 +92,23 @@ const handleOpenAccordion = () => {
 }
 
 const showSwalAndDeleteMenu = (menuId) => {
-    // delete submenus
-    const mainMenu = allMenues.find(menu => {
-        return menu._id = menuId
-    })
-    if (mainMenu.submenus) {
-        mainMenu.submenus.forEach(subMenu => {
-            deleteMenu(subMenu._id)
-        })
-    }
-
 
     showQuestionSwal('warning', 'آیا از حذف این منو اطمینان دارید؟', 'بله', 'منو مورد نظر با موفقیت حذف شد.',
         async () => {
-            await deleteMenu(menuId)
+
+            // delete submenus
+            const mainMenu = allMenues.find(menu => {
+                return menu._id == menuId
+            })
+
+            if (mainMenu?.submenus.length) {
+                mainMenu.submenus.forEach(async subMenu => {
+                    await deleteMenu(subMenu._id)
+                })
+            } else {
+                await deleteMenu(menuId)
+            }
+
             allMenues = await getAllMenues()
             displayMenusInSelectInputAndAllMenus()
             handleOpenAccordion()
